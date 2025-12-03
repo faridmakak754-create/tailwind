@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Tailwind</title>
+</head>
+
+<body class="bg-slate-500">
+    <nav class="flex justify-between items-center bg-blue-700 h-14 px-5 ">
+        <h1 class="font-bold text-white/80 text-[20px]">Kripa Store</h1>
+        <div class=" max-sm:hidden flex gap-5 text-white/80 font-semibold">
+            <a href="#" class="hover:text-slate-800">Home</a>
+            <a href="#" class="hover:text-slate-800">Products</a>
+            <a href="#" class="hover:text-slate-800"> Features</a>
+            <a href="#" class="hover:text-slate-800">Contact</a>
+            <a href="#" class="hover:text-slate-800"> About</a>
+
+        </div>
+        <div>
+            <button class="bg-violet-800 p-1 rounded-lg text-white/80 font-light hover:bg-violet-700">
+                Sign Up
+            </button>
+            <button id="sidebarBtn" class="text-white bg-violet-500 w-10 rounded-md sm:hidden">
+                <i class="fa-solid fa-list"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section id="sidebar"
+        class="sm:hidden text-white/80 flex flex-col  bg-slate-900 w-48 p-4 absolute top-16 right-2 rounded-md gap-4 shadow-lg shadow-violet-600"
+         >
+        <a href="#" class="hover:bg-violet-800 rounded-[4px]"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="#" class="hover:bg-violet-800 rounded-[4px]"><i class="fa-solid fa-box"></i> Products</a>
+        <a href="#" class="hover:bg-violet-800 rounded-[4px]"><i class="fa-solid fa-star"></i> Features</a>
+        <a href="#" class="hover:bg-violet-800 rounded-[4px]"><i class="fa-solid fa-phone contact-icon"></i> Contact</a>
+        <a href="#" class="hover:bg-violet-800 rounded-[4px]"><i class="fa-solid fa-circle-info"></i> About</a>
+    </section>
+    <!-- Js -->
+     <script>
+        const sidebarBtn =document.getElementById("sidebarBtn");
+        const sidebar=document.getElementById("sidebar");
+        sidebarBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("hidden");
+
+     })
+     </script>
+
+
+</body>
+
+</html>
