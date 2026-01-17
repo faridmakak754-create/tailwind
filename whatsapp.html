@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+
+<body>
+
+    <header class="min-h-screen">
+        <div class="flex items-center gap-1 bg-black/5">
+            <i class="fa-brands fa-whatsapp text-4xl text-green-800 font-extrabold "></i>
+            <h1 class="text- font-semibold">Whatsapp</h1>
+        </div>
+
+        <!-- body -->
+        <div class="min-h-screen w-full flex bg-black/5">
+            <!-- left side -->
+            <div class=" w-[5%] bg-black/5 flex flex-col justify-between items-center py-2">
+                <div class="flex flex-col gap-6 ">
+                    <i class="fa-solid fa-message       text-black    text-xl"></i>
+                    <i class="fa-solid fa-phone         text-black/80 text-xl"></i>
+                    <i class="fa-solid fa-circle-notch  text-black/80 text-xl"></i>
+                    <i class="fa-solid fa-comment-dots  text-black/80 text-xl"></i>
+                    <i class="fa-solid fa-users text-xl text-black/80 text-xl"></i>
+                </div>
+                <div class="flex flex-col gap-6">
+                    <i class="fa-regular fa-message   text-xl text-black/80"></i>
+                    <i class="fa-solid fa-photo-film    text-xl text-black/80"></i>
+                    <i class="fa-solid fa-gear text-xl  text-xl text-black/80"></i>
+                    <i class="fa-solid fa-user text-xl  text-xl text-black/80"></i>
+                </div>
+            </div>
+            <!-- middle -->
+
+            <div class=" w-[35%] bg-white rounded-tl-2xl shadow-lg shadow-black/70  ">
+                <div class="flex justify-between p-4 ">
+                    <h1 class="text-black/90 font-bold text-2xl">Chats</h1>
+                    <div class="flex items-center gap-4">
+                        <i class="fa-solid fa-message           text-2xl text-black/90"></i>
+                        <i class="fa-solid fa-ellipsis-vertical  text-2xl text-black/90"></i>
+                    </div>
+                </div>
+                <!-- search -->
+                <input type="text" placeholder="Ask Meta AI Or Search"
+                    class="w-[80%] rounded-xl bg-black/5 text-center h-11 translate-x-6 outline-none hover:shadow-sm shadow-red-500 focus:shadow-sm shadow-green-900 ">
+
+                    <!--Categories  -->
+                <div class="flex items-center justify-around mt-3">
+                    <button class="h-10 w-24 bg-white rounded-2xl text-black font-bold shadow-sm shadow-black/60">
+                        All
+                    </button>
+                    <button class="h-10 w-24 bg-white rounded-2xl text-black font-bold shadow-sm shadow-black/60">
+                        Unread
+                    </button>
+                    <button class="h-10 w-24 bg-white rounded-2xl text-black font-bold shadow-sm shadow-black/60">
+                        Favourite
+                    </button>
+                    <button class="h-10 w-24 bg-white rounded-2xl text-black font-bold shadow-sm shadow-black/60">
+                        Groups
+                    </button>
+                </div>
+                <!-- message -->
+               <div class="mt-4 flex flex-col gap-1 h-[calc(100vh-200px)] overflow-y-auto">
+
+                    <!-- profile 1 -->
+                    <div class="flex items-start justify-between px-4  hover:bg-slate-200 h-20 w-full rounded-2xl">
+                        <div class="flex items-start gap-3">
+                            <img src="photo/rojit.png" alt="profile" class="h-20 w-20 rounded-full">
+                            <div class="flex flex-col gap-4">
+                                <h1 class="text-black font-semibold text-lg">Rojit Bishnupur</h1>
+                                <p>Keidwrino</p>
+                            </div>
+                        </div>
+                        <p class="text-black/70">7:25 am</p>
+                    </div>
+
+                      <!-- profile 2 -->
+                    <div class="flex items-start justify-between px-4  hover:bg-slate-200 h-20 w-full rounded-2xl">
+                        <div class="flex items-start gap-3">
+                            <img src="photo/sachikanta.png" alt="profile" class="h-20 w-20 rounded-full">
+                            <div class="flex flex-col gap-4">
+                                 <h1 class="text-black font-semibold text-lg">Sachikanta</h1>
+                                <p>Charabo</p>
+                            </div>
+                        </div>
+                        <p class="text-black/70">7:30 am</p>
+                    </div>
+
+                      <!-- profile 3-->
+                    <div class="flex items-start justify-between px-4  hover:bg-slate-200 h-20 w-full rounded-2xl">
+                        <div class="flex items-start gap-3">
+                            <img src="photo/kripa.png" alt="profile" class="h-20 w-20 rounded-full">
+                            <div class="flex flex-col gap-4">
+                                <h1 class="text-black font-semibold text-lg">Kripa Nanda</h1>
+                                <p>Tumlbo</p>
+                            </div>
+                        </div>
+                        <p class="text-black/70">8:50 am</p>
+                    </div>
+
+                      <!-- profile 4 -->
+                    <div class="flex items-start justify-between px-4  hover:bg-slate-200 h-20 w-full rounded-2xl">
+                        <div class="flex items-start gap-3">
+                            <img src="photo/priyanshu.png" alt="profile" class="h-20 w-20 rounded-full">
+                            <div class="flex flex-col gap-4">
+                                <h1 class="text-black font-semibold text-lg"> Priyanshu</h1>
+                                <p>Keidwrino</p>
+                            </div>
+                        </div>
+                        <p class="text-black/70">9:15 am</p>
+                    </div>
+
+                      <!-- profile 5-->
+                    <div class="flex items-start justify-between px-4  hover:bg-slate-200 h-20 w-full rounded-2xl">
+                        <div class="flex items-start gap-3">
+                            <img src="photo/robinson.png" alt="profile" class="h-20 w-20 rounded-full">
+                            <div class="flex flex-col gap-4">
+                                <h1 class="text-black font-semibold text-lg">Robinson Engineer</h1>
+                                <p > <i class="fa-solid fa-check text-red-500 font-semibold"></i>
+                                    Keidwrino
+                                    
+                                </p>
+                               
+                            </div>
+                        </div>
+                        <p class="text-black/70">10:25 am</p>
+                    </div>
+                        <!-- profile 6 -->
+                    <div class="flex items-start justify-between px-4  hover:bg-slate-200 h-20 w-full rounded-2xl">
+                        <div class="flex items-start gap-3">
+                            <img src="photo/taslima.jpg" alt="profile" class="h-20 w-20 rounded-full object-cover">
+                            <div class="flex flex-col gap-4">
+                                <h1 class="text-black font-semibold text-lg">Taslima</h1>
+                                <p><i class="fa-solid fa-check text-red-500 font-semibold"></i>
+                                    
+                                    Nungyribo 
+                                     
+                                </p>
+                            </div>
+                        </div>
+                        <p class="text-black/70">11:00 am</p>
+                    </div>
+                    <!-- profile-7 -->
+                     <div class="flex items-start justify-between px-4  hover:bg-slate-200 h-20 w-full rounded-2xl">
+                        <div class="flex items-start gap-3">
+                            <img src="photo/kabong.jpg" alt="profile" class="h-20 w-20 rounded-full object-cover">
+                            <div class="flex flex-col gap-4">
+                                <h1 class="text-black font-semibold text-lg">Kabongailu</h1>
+                                <p><i class="fa-solid fa-check text-red-500 font-semibold"></i>
+                                    
+                                 Whats Up
+                                     
+                                </p>
+                            </div>
+                        </div>
+                        <p class="text-black/70">11:00 am</p>
+                    </div>
+                   
+                 
+
+                </div>
+            </div>
+
+            <div class="w-[60%] bg-green-700">
+
+            </div>
+        </div>
+
+
+        </header>
+
+      
+
+</body>
+
+</html>
+
+
+<!-- https://www.figma.com/design/ZUYrSiXzd2b1NP6dyx3tEF/Minimal-Landing-Page-Design-%7C-Website-Home-Page-Design-%7C-Agency-Website-UI-Design--Community-?node-id=1-2&p=f&t=Drmpkaq3w73Z80ai-0 -->
