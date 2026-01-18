@@ -4,17 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> 
+     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    
     <title>Document</title>
+    <style>
+       .scrollbar-hide{
+        scrollbar-width: none;
+        
+       }
+       .scrollbar-hide:hover{
+        scrollbar-width: thin;
+       }
+    </style>
+
+
 </head>
 
 
 
 <body>
 
-    <div class="min-h-screen">
-        <div class="flex items-center gap-1 bg-black/5">
+    <div class="min-h-screen ">
+        <div class="flex items-center gap-1  bg-black/5">
             <i class="fa-brands fa-whatsapp text-4xl text-green-800 font-extrabold "></i>
             <h1 class="text- font-semibold">Whatsapp</h1>
         </div>
@@ -39,7 +52,7 @@
             </div>
             <!-- middle -->
 
-            <div class=" w-[35%] bg-white rounded-tl-2xl shadow-lg shadow-black/70  ">
+            <div class=" w-[35%] bg-white rounded-tl-2xl shadow-sm shadow-slate-800/40  ">
                 <div class="flex justify-between p-4 ">
                     <h1 class="text-black/90 font-bold text-2xl">Chats</h1>
                     <div class="flex items-center gap-4">
@@ -53,21 +66,21 @@
 
                 <!--Categories  -->
                 <div class="flex items-center justify-around mt-3">
-                    <button class="h-10 w-24 bg-white rounded-2xl text-black font-bold shadow-sm shadow-black/60">
+                    <button class="h-10 w-24 bg-white rounded-2xl text-black font-bold shadow-sm shadow-black/20">
                         All
                     </button>
-                    <button class="h-10 w-24 bg-white rounded-2xl text-black font-bold shadow-sm shadow-black/60">
+                    <button class="h-10 w-24 bg-white rounded-2xl text-black font-bold shadow-sm shadow-black/20">
                         Unread
                     </button>
-                    <button class="h-10 w-24 bg-white rounded-2xl text-black font-bold shadow-sm shadow-black/60">
+                    <button class="h-10 w-24 bg-white rounded-2xl text-black font-bold shadow-sm shadow-black/20">
                         Favourite
                     </button>
-                    <button class="h-10 w-24 bg-white rounded-2xl text-black font-bold shadow-sm shadow-black/60">
+                    <button class="h-10 w-24 bg-white rounded-2xl text-black font-bold shadow-sm shadow-black/20">
                         Groups
                     </button>
                 </div>
                 <!-- message -->
-                <div class="mt-4 flex flex-col gap-1 h-[calc(100vh-200px)] overflow-y-auto no-scrollbar  ">
+                <div class="mt-4 flex flex-col gap-1 h-[calc(100vh-200px)] overflow-y-auto scrollbar-hide ">
 
                     <!-- profile 1 -->
                     <div class="flex items-start justify-between px-4  bg-slate-200 h-20 w-full rounded-2xl">
@@ -76,7 +89,7 @@
                             <div class="flex flex-col gap-4">
                                 <h1 class="text-black font-semibold text-lg">Rojit Bishnupur</h1>
                                 <p> <i class="fa-solid fa-check text-red-500 font-semibold"></i>
-                                    Kha Twrme
+                                    Ok Wait....
 
                                 </p>
                             </div>
@@ -138,7 +151,7 @@
                     <!-- profile 6 -->
                     <div class="flex items-start justify-between px-4  hover:bg-slate-200 h-20 w-full rounded-2xl">
                         <div class="flex items-start gap-3">
-                            <img src="photo/taslima.jpg" alt="profile" class="h-20 w-20 rounded-full object-cover">
+                            <img src="photo/taslima.jpg" alt="profile" class="h-20 w-20 rounded-full">
                             <div class="flex flex-col gap-4">
                                 <h1 class="text-black font-semibold text-lg">Taslima</h1>
                                 <p><i class="fa-solid fa-check text-red-500 font-semibold"></i>
@@ -153,7 +166,7 @@
                     <!-- profile-7 -->
                     <div class="flex items-start justify-between px-4  hover:bg-slate-200 h-20 w-full rounded-2xl">
                         <div class="flex items-start gap-3">
-                            <img src="photo/kabong.jpg" alt="profile" class="h-20 w-20 rounded-full object-cover">
+                            <img src="photo/kabong.jpg" alt="profile" class="h-20 w-20 rounded-full ">
                             <div class="flex flex-col gap-4">
                                 <h1 class="text-black font-semibold text-lg">Kabongailu</h1>
                                 <p><i class="fa-solid fa-check text-red-500 font-semibold"></i>
@@ -170,9 +183,9 @@
 
             <!-- Right Side  -->
 
-            <div class="w-[60%] bg-slate-400 flex flex-col justify-between pb-2">
-                <!-- chat heading  -->
-                <div class="flex justify-between items-center h-24 bg-white">
+           <div class="w-[60%] bg-[url('photo/bg.jpg')] bg-cover bg-center  flex flex-col justify-between pb-2">
+
+                <div class="flex justify-between items-center h-24 bg-white ">
                     <div class="flex items-center gap-2">
                         <img src="photo/rojit.png" alt="profile" class="h-20 w-20 rounded-full">
                         <div>
@@ -192,7 +205,7 @@
 
                 </div>
                 <!-- midle -->
-                <div class="h-[calc(100vh-150px)] flex flex-col gap-4 overflow-y-auto  px-4">
+                <div class="h-[calc(100vh-150px)] flex flex-col gap-4 overflow-y-auto scrollbar-hide  px-4">
                     <h1 class="h-16 bg-yellow-100 w-[80%] mx-auto rounded-xl p-2 mt-1">
                         Message and calls are end-to end encrypted.Only people in this chat can read ,
                         listen too, or share them. Click to learn more
@@ -202,46 +215,47 @@
                     </button>
 
                     <div class="flex flex-col justify-around font-semibold "> <!-- chatting -->
-                        <div class="h-40 relative ">
-                            <div class=" bg-white w-60 p-2 relative rounded-lg">
-                                <p>Chrbo</p>
-                                <p class="absolute bottom-0 right-2">7:24 am</p>
+                           <!-- chatting -->
+                        <div class=" h-40 flex items-start justify-between ">
+                            <div class=" bg-white w-60 p-2 flex justify-between self-start rounded-lg">
+                                <p>Bro</p>
+                                <p class="">7:26 am</p>
                             </div>
-                            <div class="w-60 bg-red-300 absolute bottom-0 right-0 p-2 rounded-lg">
-                                <p>Chare </p>
-                                <p class="absolute bottom-0 right-2">
-                                    7:25 am
-                                    <i class="fa-solid fa-check text-red-500 font-semibold"></i>
-                                </p>
-
-                            </div>
-                        </div>
-
-                        <!-- chatting -->
-                        <div class="h-40 relative ">
-                            <div class=" bg-white w-60 p-2 relative rounded-lg">
-                                <p>Keidwrino</p>
-                                <p class="absolute bottom-0 right-2">7:26 am</p>
-                            </div>
-                            <div class="w-60 bg-red-300 absolute bottom-0 right-0 p-2 rounded-lg">
-                                <p>Hipliye </p>
-                                <p class="absolute bottom-0 right-2">
+                            <div class="w-60 bg-green-400  p-2 rounded-lg flex justify-between self-end">
+                                <p>Haooo</p>
+                                <p class="flex self-end">
                                     7:26 am
                                     <i class="fa-solid fa-check text-red-500 font-semibold"></i>
                                 </p>
 
                             </div>
                         </div>
-
                         <!-- chatting -->
-                        <div class="h-40 relative ">
-                            <div class=" bg-white w-60 p-2 relative rounded-lg">
-                                <p>Tailwind Heirbo</p>
-                                <p class="absolute bottom-0 right-2">7:27 am</p>
+                        <div class=" h-40 flex items-start justify-between   ">
+                            <div class=" bg-white w-60 p-2 flex justify-between self-start rounded-lg">
+                                <p>Keidwrino</p>
+                                <p class="">7:27 am</p>
                             </div>
-                            <div class="w-60 bg-red-300 absolute bottom-0 right-0 p-2 rounded-lg">
-                                <p>Heire </p>
-                                <p class="absolute bottom-0 right-2">
+                            <div class="w-60 bg-green-400  p-2 rounded-lg flex justify-between self-end">
+                                <p>Hipliye</p>
+                                <p class="flex self-end">
+                                    7:27 am
+                                    <i class="fa-solid fa-check text-red-500 font-semibold"></i>
+                                </p>
+
+                            </div>
+                        </div>
+
+                 
+                          <!-- chatting -->
+                        <div class=" h-40 flex items-start justify-between ">
+                            <div class=" bg-white w-60 p-2 flex justify-between self-start rounded-lg">
+                                <p>Hougttribo</p>
+                                <p class="">7:28 am</p>
+                            </div>
+                            <div class="w-60 bg-green-400  p-2 rounded-lg flex justify-between self-end">
+                                <p>Hougtrida</p>
+                                <p class="flex self-end">
                                     7:28 am
                                     <i class="fa-solid fa-check text-red-500 font-semibold"></i>
                                 </p>
@@ -249,14 +263,31 @@
                             </div>
                         </div>
 
-                        <div class="h-40 relative ">
-                            <div class=" bg-white w-60 p-2 relative rounded-lg">
-                                <p>Ng Neirene</p>
-                                <p class="absolute bottom-0 right-2">7:29 am</p>
+                           <!-- chatting -->
+                        <div class=" h-40 flex items-start justify-between  ">
+                            <div class=" bg-white w-60 p-2 flex justify-between self-start rounded-lg">
+                                <p>Meeting Twsiro</p>
+                                <p class="">7:29 am</p>
                             </div>
-                            <div class="w-60 bg-red-300 absolute bottom-0 right-0 p-2 rounded-lg">
-                                <p>Kha Twrme </p>
-                                <p class="absolute bottom-0 right-2">
+                            <div class="w-60 bg-green-400  p-2 rounded-lg flex justify-between self-end">
+                                <p>Yaiye</p>
+                                <p class="flex self-end">
+                                    7:29 am
+                                    <i class="fa-solid fa-check text-red-500 font-semibold"></i>
+                                </p>
+
+                            </div>
+                        </div>
+
+                           <!-- chatting -->
+                        <div class=" h-40 flex items-start justify-between  ">
+                            <div class=" bg-white w-60 p-2 flex justify-between self-start rounded-lg">
+                                <p>Link thrko</p>
+                                <p class="">7:30 am</p>
+                            </div>
+                            <div class="w-60 bg-green-400  p-2 rounded-lg flex justify-between self-end">
+                                <p>Ok Wait...</p>
+                                <p class="flex self-end">
                                     7:30 am
                                     <i class="fa-solid fa-check text-red-500 font-semibold"></i>
                                 </p>
@@ -265,17 +296,20 @@
                         </div>
 
 
+
                     </div>
 
 
                 </div>
                 <!-- below -->
 
-                <div class="bg-white h-16 w-[90%] rounded-full mx-auto flex items-center px-4 gap-4">
+                <div class="bg-white h-16 w-[90%] rounded-full mx-auto flex items-center px-4 gap-4 ">
 
                     <i class="fa-regular fa-face-smile text-xl text-black/70"></i>
 
-                    <input type="text" placeholder="Type a message" class="flex-1 h-12 bg-transparent outline-none">
+                    <input type="text" placeholder="Type a message" 
+                    class="flex-1 h-12 bg-transparent outline-none "
+                    >
 
                     <i class="fa-solid fa-paperclip text-xl text-black/70"></i>
                     <i class="fa-solid fa-microphone text-xl text-black/70"></i>
