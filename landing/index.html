@@ -20,31 +20,41 @@
                 <h1 class="font-bold text-2xl">Nexcent</h1>
             </div>
 
-            <div class="flex items-center gap-6 text-sm ">
+            <div class="flex items-center gap-6 text-sm max-lg:hidden ">
                 <a href="#">Home</a>
                 <a href="#">Features</a>
                 <a href="#">Community</a>
                 <a href="#">Blog</a>
                 <a href="#">Pricing</a>
-                <a href="#" class=" bg-green-600 text-white h-8 px-5 flex items-center gap-1 font-semibold rounded-sm">
-                    Register Now <i class="fa-solid fa-arrow-right-long "></i>
+                <a href="#"
+                    class=" bg-green-600 text-white h-8 px-5 flex items-center gap-1 font-semibold rounded-sm shadow-sm shadow-black/50 hover:bg-green-700">
+                    Register Now
+                    <i class="fa-solid fa-arrow-right-long "></i>
                 </a>
 
+            </div>
+
+            <div class="hidden max-lg:block text-2xl">
+                <i class="fa-solid fa-bars"></i>
             </div>
         </div>
     </nav>
 
-    <header class="bg-gray-100">
-        <div class="flex justify-between py-5 max-w-[80%] mx-auto ">
-            <div class="flex flex-col  gap-4">
-                <h1 class="text-4xl font-semibold text-black/90">Lessons and insights
+    <header class="bg-gray-100 max-full">
+        <div class=" max-md:flex-col-reverse items-center gap-5
+        flex justify-between  py-10 max-w-[80%] mx-auto 
+        
+        ">
+            <div class="flex flex-col justify-around max-md:items-center gap-4">
+                <h1 class="text-5xl font-semibold text-black/90 max-md:text-4xl">Lessons and insights
                     <br>
                     <span class="text-green-600">from 8 years</span>
                 </h1>
                 <p class="text-sm text-gray-500">Where to grow your business as a photograher:site or social media ?</p>
-                <button class="bg-green-600 text-white h-8 w-24 px-6 rounded-sm">Register</button>
+                <button
+                    class="bg-green-600 text-white h-8 w-24 px-6 rounded-sm hover:bg-green-700 cursor-pointer">Register</button>
             </div>
-            <img src="hero.png" alt="">
+            <img src="hero.png" alt="" class=" max-md:h-54 w-64">
 
         </div>
         <div class="flex items-center justify-center pb-5 gap-1">
@@ -54,36 +64,42 @@
         </div>
     </header>
 
-    <main class="">
+    <!-- <main class="">
         <section class="bg-gray-50">
-            <div class="max-w-[80%] mx-auto ">
-                <div class="flex flex-col items-center pt-10">
+            <div class="max-w-[80%] mx-auto flex flex-col  gap-6 justify-center  h-80 ">
+                <div class=" text-center">
                     <h1 class="text-3xl font-semibold text-gray-700">Our Clients</h1>
                     <p class="text-gray-600">We have been working with some Fortune 500+ clients</p>
                 </div>
-                <!-- image -->
-                <div class="flex justify-between items-center mt-10">
-                    <img src="icon1.png" alt="">
-                    <img src="icon2.png" alt="">
-                    <img src="icon3.png" alt="">
-                    <img src="icon4.png" alt="">
-                    <img src="icon5.png" alt="">
-                    <img src="icon6.png" alt="">
-                    <img src="icon7.png" alt="">
+                <!-- image --
+                <div class="flex flex-wrap justify-between ">
+
+                    <img src="icon1.png" class="h-10 object-contain" alt="">
+                    <img src="icon2.png" class="h-10 object-contain" alt="">
+                    <img src="icon3.png" class="h-10 object-contain" alt="">
+                    <img src="icon4.png" class="h-10 object-contain" alt="">
+                    <img src="icon5.png" class="h-10 object-contain" alt="">
+                    <img src="icon6.png" class="h-10 object-contain" alt="">
+                    <img src="icon7.png" class="h-10 object-contain" alt="">
                 </div>
-                <!--  -->
-                <div class="flex flex-col items-center mt-10">
-                    <h1 class="text-center text-3xl font-semibold text-gray-700">Manage your entire community <br> in a
+            </div>
+        </section>
+
+        <section class="bg-gray-50">
+            <div class="max-w-[80%] mx-auto h-124 flex flex-col justify-center">
+                <div class=" text-center">
+                    <h1 class="text-3xl font-semibold text-gray-700 mb-3">Manage your entire community <br> in a
                         single system</h1>
                     <p class="text-gray-500">Who is Nextcent suitable foe ?</p>
                 </div>
-                <!-- card -->
+                <!--card part  --
+
                 <div class="flex justify-between w-full mt-10 flex-wrap gap-8">
 
                     <div
-                        class="  w-60 flex flex-col items-center text-center gap-3 shadow-sm shadow-slate-200 rounded-sm">
+                        class=" flex flex-col justify-center  px-8 text-center h-56 shadow-sm shadow-slate-300 rounded-sm">
                         <img src="logo1.png" alt="" class="h-10 w-10 flex   mx-auto">
-                        <h1 class="text-3xl font-semibold  text-gray-700">Membership <br> Organisation</h1>
+                        <h1 class="text-2xl font-semibold  text-gray-700">Membership <br> Organisation</h1>
                         <p class="text-sm text-gray-600">Our membership management <br> software provides full
                             automation
                             of
@@ -92,9 +108,9 @@
                     </div>
 
                     <div
-                        class="w-60 flex flex-col items-center text-center gap-3 shadow-sm shadow-slate-200 rounded-sm">
+                        class=" flex flex-col justify-center  px-8 text-center h-56 shadow-sm shadow-slate-300 rounded-sm">
                         <img src="logo2.png" alt="" class="h-10 w-10 flex   mx-auto">
-                        <h1 class="text-3xl font-semibold  text-gray-700">National <br> Association</h1>
+                        <h1 class="text-2xl font-semibold  text-gray-700">National <br> Association</h1>
                         <p class="text-sm text-gray-600">Our membership management <br> software provides full
                             automation
                             of
@@ -103,9 +119,9 @@
                     </div>
 
                     <div
-                        class="  w-60 flex flex-col items-center text-center gap-3 shadow-sm shadow-slate-200 rounded-sm">
+                        class=" flex flex-col justify-center  px-8 text-center h-56 shadow-sm shadow-slate-300 rounded-sm">
                         <img src="logo3.png" alt="" class="h-10 w-10 flex   mx-auto">
-                        <h1 class="text-3xl font-semibold  text-gray-700">Clubs And <br> Groups</h1>
+                        <h1 class="text-2xl font-semibold  text-gray-700">Clubs And <br> Groups</h1>
                         <p class="text-sm text-gray-600">Our membership management <br> software provides full
                             automation
                             of
@@ -113,24 +129,33 @@
                         </p>
                     </div>
                 </div>
-
-                <!-- second part -->
-                <div class="flex justify-between items-center">
-                    <img src="Frame 35.png" alt="frame">
-                    <div class="w-130 flex flex-col gap-3">
-                        <h1 class="text-3xl font-semibold text-black/80">The unseen of spending three <br> years at
-                            Pixelgrade</h1>
-                        <p class="text-gray-600">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo dolores praesentium ad
-                            quisquam? Animi expedita neque sapiente, officiis doloremque magnam maxime similique aut non
-                            ab quia dicta, cum, quam perspiciatis?
-                        </p>
-                        <button class="bg-green-600  h-11 w-36 rounded-sm text-white font-semibold">Learn More</button>
-                    </div>
-                </div>
-                <div>
+            </div>
         </section>
-        <!-- section 2 -->
+
+
+        <section class="bg-gray-50">
+            <div class="max-w-[80%] mx-auto h-112 flex flex-col justify-center">
+                 <div class="flex justify-between items-center">
+                <img src="Frame 35.png" alt="frame" class="h-90 w-80">
+                <div class=" flex flex-col gap-3">
+                    <h1 class="text-3xl font-semibold text-black/80">The unseen of spending three <br> years at
+                        Pixelgrade</h1>
+                    <p class="text-gray-600">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+                        Illo dolores praesentium ad
+                        quisquam? Animi expedita neque sapiente, <br> officiis doloremque magnam maxime similique
+                        ab quia dicta, cum, quam perspiciatis?
+                    </p>
+                    <button class="bg-green-600  h-11 w-36 rounded-sm text-white font-semibold cursor-pointer">Learn
+                        More</button>
+                </div>
+            </div>
+
+            </div>
+           
+        </section>
+
+        <!-- section 2 --
 
         <section class="bg-gray-100">
             <div class="flex justify-between items-center max-w-[80%] mx-auto  h-60">
@@ -145,7 +170,7 @@
                     </p>
                 </div>
                 <div class="flex flex-col gap-6">
-                    <!--above  -->
+                    <!--above  --
                     <div class="flex gap-6 ">
                         <div class="flex gap-6">
                             <img src="vector1.png" alt="" class="h-10 w-10">
@@ -164,7 +189,7 @@
                         </div>
 
                     </div>
-                    <!-- below -->
+                    <!-- below --
                     <div class="flex gap-6">
 
                         <div class="flex gap-6">
@@ -187,7 +212,7 @@
             </div>
 
         </section>
-        <!-- section 3 -->
+        <!-- section 3 --
         <section class="bg-gray-50">
 
             <div class="flex justify-between items-center max-w-[80%] mx-auto h-92">
@@ -201,13 +226,14 @@
                         quisquam? Animi expedita neque sapiente, officiis doloremque magnam maxime similique aut non
                         ab quia dicta, cum, quam perspiciatis?
                     </p>
-                    <button class="bg-green-600  h-11 w-36 rounded-sm text-white font-semibold">Learn More</button>
+                    <button class="bg-green-600  h-11 w-36 rounded-sm text-white font-semibold cursor-pointer">Learn
+                        More</button>
                 </div>
             </div>
 
         </section>
 
-        <!-- Section4 -->
+        <!-- Section4 --
         <section class="bg-gray-100">
             <div class="max-w-[80%] mx-auto flex justify-between items-center h-80">
                 <img src="image 9.png" alt="" class="h-60 w-60 rounded-md">
@@ -229,7 +255,7 @@
                         <img src="icon5.png" alt="">
                         <img src="icon6.png" alt="">
                         <img src="icon7.png" alt="">
-                        <p class="text-lg text-green-600 font-semibold">
+                        <p class="text-base text-green-600 font-semibold ">
                             Meet All Customer
                             <i class="fa-solid fa-arrow-right-long "></i>
                         </p>
@@ -240,7 +266,7 @@
 
         </section>
 
-        <!-- Section 5 -->
+        <!-- Section 5 --
         <section class="bg-gray-50">
             <div class="max-w-[80%] mx-auto h-120">
                 <div class="flex flex-col items-center gap-2 text-center pt-10">
@@ -253,7 +279,7 @@
                 </div>
                 <div>
                     <div class="flex justify-around flex-wrap">
-                        <!-- card 1 -->
+                        <!-- card 1 --
                         <div class="relative mt-10  ">
 
                             <img src="nupiii.jpg" alt=""
@@ -270,7 +296,7 @@
                             </div>
                         </div>
 
-                        <!-- card2 -->
+                        <!-- card2 --
                         <div class="relative mt-10">
 
                             <img src="nupa.jpg" alt=""
@@ -288,7 +314,7 @@
 
                             </div>
                         </div>
-                        <!-- card 3 -->
+                        <!-- card 3 --
 
                         <div class="relative mt-10">
 
@@ -308,74 +334,75 @@
                     </div>
         </section>
 
-        <!-- Section 6 -->
+        <!-- Section 6 --
 
         <section class=" bg-gray-200">
             <div class="h-60 max-w-[80%] mx-auto text-center flex flex-col justify-evenly">
-                <h1 class="text-4xl font-extrabold text-black/90 tracking-wider ">Pellentesque syscipit <br> 
+                <h1 class="text-4xl font-extrabold text-black/90 tracking-wider ">Pellentesque syscipit <br>
                     fringilla libero eu.
                 </h1>
-                <button class="bg-green-600 h-11 w-40 self-center rounded-md text-white font-medium cursor-pointer"> 
-                    Get a Demo 
-                     <i class="fa-solid fa-arrow-right-long "></i>
+                <button class="bg-green-600 h-11 w-40 self-center rounded-md text-white font-medium cursor-pointer">
+                    Get a Demo
+                    <i class="fa-solid fa-arrow-right-long "></i>
                 </button>
             </div>
         </section>
-    </main>
+    </main> -->
 
-<!-- Footer -->
-    <footer class="bg-slate-900">
-       <div class="h-80 max-w-[80%] mx-auto flex justify-between items-center">
+    <!-- <footer class="bg-slate-900">
+        <div class="h-80 max-w-[80%] mx-auto flex justify-between items-center">
             <div class="h-48 w-1/5 flex flex-col justify-between">
-                <div class="flex items-center gap-1" >
-                    <img src="logo.png" alt="" class="h-8 w-8">
+                <div class="flex items-center gap-1">
+                    <img src="logo.png" alt="" class="h-6 w-6">
                     <h1 class="text-3xl font-semibold text-white">Nexcent</h1>
                 </div>
                 <p class="text-sm text-gray-200">
                     Copyright &copy; 2020 Landify UI Kit.
                     <br>All rights reserved
                 </p>
-                <div class="text-white/70">
-                    <i class="fa-brands fa-square-instagram" ></i>
+                <div class="text-white/70 text-2xl ">
+                    <i class="fa-brands fa-square-instagram"></i>
                     <i class="fa-solid fa-earth-africa"></i>
                     <i class="fa-brands fa-square-twitter"></i>
                     <i class="fa-brands fa-square-youtube"></i>
                 </div>
-                
+
             </div>
 
-            <!-- second -->
+            <!-- second --
 
             <div class="h-48 w-9/12  flex justify-between">
                 <div class="h-full w-[30%] flex flex-col justify-between">
                     <h1 class="text-2xl text-white/90 font-semibold">Company</h1>
-                  
-                        <a href=""class="text-gray-200 text-sm font-semibold">About us</a>
-                        <a href=""class="text-gray-200 text-sm font-semibold">Blog</a>
-                        <a href=""class="text-gray-200 text-sm font-semibold">Contact us</a>
-                        <a href=""class="text-gray-200 text-sm font-semibold">Pricing</a>
-                        <a href=""class="text-gray-200 text-sm font-semibold">Testimonals</a>
-                    
-                </div>
-                <div class="h-full w-[30%] flex flex-col justify-between">
-                     <h1  class="text-2xl text-white/90 font-semibold">Support</h1>
-                     <a href="#" class="text-gray-200 text-sm font-semibold">Help Center</a>
-                     <a href=""class="text-gray-200 text-sm font-semibold">Terms of services</a>
-                     <a href=""class="text-gray-200 text-sm font-semibold">Legal</a>
-                     <a href=""class="text-gray-200 text-sm font-semibold">Privacy policy</a>
-                     <a href=""class="text-gray-200 text-sm font-semibold">Status</a>
+
+                    <a href="" class="text-gray-200 text-sm font-semibold">About us</a>
+                    <a href="" class="text-gray-200 text-sm font-semibold">Blog</a>
+                    <a href="" class="text-gray-200 text-sm font-semibold">Contact us</a>
+                    <a href="" class="text-gray-200 text-sm font-semibold">Pricing</a>
+                    <a href="" class="text-gray-200 text-sm font-semibold">Testimonals</a>
 
                 </div>
-                 <div class="h-full w-[30%] ">
-                    <h1  class="text-2xl text-white/90 font-semibold">Stay up to date</h1>
+                <div class="h-full w-[30%] flex flex-col justify-between">
+                    <h1 class="text-2xl text-white/90 font-semibold">Support</h1>
+                    <a href="#" class="text-gray-200 text-sm font-semibold">Help Center</a>
+                    <a href="" class="text-gray-200 text-sm font-semibold">Terms of services</a>
+                    <a href="" class="text-gray-200 text-sm font-semibold">Legal</a>
+                    <a href="" class="text-gray-200 text-sm font-semibold">Privacy policy</a>
+                    <a href="" class="text-gray-200 text-sm font-semibold">Status</a>
+
+                </div>
+                <div class="h-full w-[30%] ">
+                    <h1 class="text-2xl text-white/90 font-semibold">Stay up to date</h1>
                     <div class="mt-5 relative">
-                    <input type="text" placeholder="Your email address" 
-                    class="bg-gray-400 h-9 w-64 outline-none  rounded-md px-2 hover:shadow-sm shadow-red-500 focus:shadow-sm shadow-red-500 " >
-                    <i class="fa-regular fa-paper-plane absolute top-3 right-1 text-gray-200"></i>
+                        <input type="text" placeholder="Your email address"
+                            class="bg-gray-400 h-9 w-64 outline-none  rounded-md px-2 hover:shadow-sm shadow-red-500 focus:shadow-sm shadow-red-500  ">
+                        <i class="fa-regular fa-paper-plane absolute top-3 right-1 text-gray-200"></i>
                     </div>
                 </div>
             </div>
-       </div>
+        </div>
     </footer>
+     -->
 </body>
+
 </html>
