@@ -15,14 +15,15 @@
     </style>
 </head>
 
-<body class="bg-gray-50">
-    <nav class="bg-white">
-        <div class="max-w-[85%] mx-auto h-18 flex justify-between items-center">
+<body>
+
+    <nav class="bg-white/90  sticky top-0 z-50 ">
+        <div class="max-w-[85%] mx-auto h-18 flex justify-between items-center ">
             <div class="flex items-center gap-2">
                 <img src="/logo.png" alt="logo" class="h-6 w-6">
                 <h2 class="text-2xl text-gray-700 font-bold">Quiz <span class="text-blue-500">Master</span></h2>
             </div>
-            <div class="flex gap-6 max-lg:gap-5 max-md:hidden">
+            <div class="flex gap-6 font-semibold max-lg:gap-5  max-md:hidden">
                 <a href="#">Home</a>
                 <a href="#">Quizzes</a>
                 <a href="#">Features</a>
@@ -31,15 +32,17 @@
             </div>
 
             <button
-                class="bg-gradient-to-tr from-blue-500 to bg-purple-200 h-8 w-18 font-semibold rounded-sm max-md:hidden">
+                class="bg-gradient-to-tr from-blue-500 to bg-purple-600 h-8 w-18 font-semibold text-gray-100 rounded-sm max-md:hidden">
                 <a href="#">Login</a></button>
 
-            <div id="sidebarBtn" class="md:hidden">
+            <div id="sidebarBtn" class="md:hidden text-2xl">
                 <i class="fa-solid fa-bars"></i>
             </div>
         </div>
 
     </nav>
+    </div>
+
 
     <!-- Mobile Nav Bar -->
 
@@ -49,7 +52,7 @@
         <a href="#">Features</a>
         <a href="#">Leaderboard</a>
         <a href="#">About</a>
-        <button class="bg-gradient-to-tr from-blue-500 to bg-purple-200 h-8 w-18 font-semibold rounded-sm">
+        <button class="bg-gradient-to-tr from-blue-500 to bg-purple-600 h-8 w-18 font-semibold rounded-sm">
             <a href="#">Login</a></button>
     </div>
 
@@ -103,84 +106,267 @@
 
     <main>
         <!-- section 1 -->
-           <section class="bg-white">
-        <div class=" pt-16 pb-24 max-w-[85%] mx-auto">
-            <div class="text-center ">
-                <h1 class="text-4xl font-extrabold pb-4">Explore Quiz Categories</h1>
-                <p class="pb-14 text-base font-semibold text-gray-600">Choose from a wide variety of topics to test your Knowledge and learn something new
-                    every dsy.</p>
+        <section class="bg-white">
+            <div class=" pt-16 pb-24 max-w-[85%] mx-auto">
+                <div class="text-center ">
+                    <h1 class="text-4xl font-extrabold pb-4">Explore Quiz Categories</h1>
+                    <p class="pb-14 text-base font-semibold text-gray-600">Choose from a wide variety of topics to test
+                        your Knowledge and learn something new
+                        every dsy.</p>
 
-            </div>
-            <div class="grid grid-cols-4 gap-3  max-xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1">
-                <!-- card 1 -->
-                <div class=" bg-gradient-to-br from-blue-50 to-blue-100 flex flex-col px-5 py-10 shadow-md rounded-md ">
-                    <div class="w-14 h-14 rounded-full bg-blue-400 flex items-center justify-center mb-2">
-                        <i class="fa-brands fa-java text-white text-2xl"></i>
+                </div>
+                <div class="grid grid-cols-4 gap-3  max-xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1">
+                    <!-- card 1 -->
+                    <div
+                        class=" bg-gradient-to-br from-blue-50 to-blue-100 flex flex-col px-5 py-10 shadow-md rounded-md ">
+                        <div class="w-14 h-14 rounded-full bg-blue-500 flex items-center justify-center mb-2">
+                            <i class="fa-brands fa-java text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold  mb-2">Java Quiz</h3>
+                        <p class="text-sm text-gray-600 mb-2">Test your Knowledge of programming concepts, logic, and
+                            Java
+                            fundamentals.</p>
+
+                        <div class="flex justify-between items-center text-blue-400 font-semibold text-xl">
+                            <h1 class="">200 Quizes</h1>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
                     </div>
-                    <h3 class="text-2xl font-semibold  mb-2">Java Quiz</h3>
-                    <p class="text-sm text-gray-600 mb-2">Test your Knowledge of programming concepts, logic, and Java
-                        fundamentals.</p>
 
-                    <div class="flex justify-between items-center text-blue-400 font-semibold text-xl">
-                        <h1 class="">200 Quizes</h1>
-                        <i class="fa-solid fa-arrow-right"></i>
+                    <!-- card 2 -->
+                    <div
+                        class=" bg-gradient-to-br from-green-50 to-green-100 flex flex-col px-5 py-10 shadow-md rounded-md ">
+                        <div class="w-14 h-14 rounded-full bg-green-400 flex items-center justify-center mb-2">
+                            <i class="fa-brands fa-html5 text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold  mb-2">Html Quiz</h3>
+                        <p class="text-sm text-gray-600 mb-2">Test your Knowledge of web structure, tags, and
+                            page building with HTML.
+                        </p>
+
+                        <div class="flex justify-between items-center text-blue-400 font-semibold text-xl">
+                            <h1 class="">100 Quizes</h1>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+
+                    <!-- card 3 -->
+                    <div
+                        class=" bg-gradient-to-br from-pink-50 to-pink-100 flex flex-col px-5 py-10 shadow-md rounded-md ">
+                        <div class="w-14 h-14 rounded-full bg-pink-400 flex items-center justify-center mb-2">
+                            <i class="fa-brands fa-css3-alt text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold  mb-2">Css Quiz</h3>
+                        <p class="text-sm text-gray-600 mb-2">Styling,layouts,colors,
+                            and responsive design.
+                        </p>
+
+                        <div class="flex justify-between items-center text-blue-400 font-semibold text-xl">
+                            <h1 class="">50 Quizes</h1>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+
+                    <!-- card 4 -->
+                    <div
+                        class=" bg-gradient-to-br from-orange-50 to-orange-100 flex flex-col px-5 py-10 shadow-md rounded-md ">
+                        <div class="w-14 h-14 rounded-full bg-orange-400 flex items-center justify-center mb-2">
+                            <i class="fa-brands fa-js text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold  mb-2">Java_Script Quiz</h3>
+                        <p class="text-sm text-gray-600 mb-2">Test your Knowledge of JavaScript, logic, DOM, and dynamic
+                            web behvior.
+                        </p>
+
+                        <div class="flex justify-between items-center text-blue-400 font-semibold text-xl">
+                            <h1 class="">100 Quizes</h1>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                 <!-- card 2 -->
-                <div class=" bg-gradient-to-br from-green-50 to-green-100 flex flex-col px-5 py-10 shadow-md rounded-md ">
-                    <div class="w-14 h-14 rounded-full bg-green-400 flex items-center justify-center mb-2">
-                        <i class="fa-brands fa-html5 text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-semibold  mb-2">Html Quiz</h3>
-                    <p class="text-sm text-gray-600 mb-2">Test your Knowledge of web structure, tags, and 
-                        page building with HTML.
+        <!-- Section 2 -->
+
+        <section class="bg-gray-50">
+            <div class=" pt-16 pb-24 max-w-[85%] mx-auto">
+                <div class="text-center ">
+                    <h1 class="text-4xl font-extrabold pb-4">Why Choose Quiz Master</h1>
+                    <p class="pb-14 text-base font-semibold text-gray-600">Our platform offers an engaging learning with
+                        features designed for
+                        both fun and education.
                     </p>
 
-                    <div class="flex justify-between items-center text-blue-400 font-semibold text-xl">
-                        <h1 class="">100 Quizes</h1>
-                        <i class="fa-solid fa-arrow-right"></i>
+                </div>
+                <div class="grid grid-cols-3 gap-3 max-lg:grid-cols-2 max-md:grid-cols-1 ">
+                    <!-- card 1 -->
+                    <div class=" bg-white/70 flex flex-col gap-2 py-6 px-5 shadow-md rounded-md ">
+                        <div class="w-14 h-14 rounded-full bg-violet-700 flex items-center justify-center mb-2">
+                            <i class="fas fa-stopwatch text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold  mb-2">Time Challenges </h3>
+                        <p class="text-base font-semibold text-gray-600 mb-2">Test your speed and acucuracy with time
+                            quizzes that push your limits.
+                        </p>
+
+
                     </div>
+
+                    <!-- card 2 -->
+                    <div class=" bg-white/70 flex flex-col gap-2 py-6 px-5 shadow-md rounded-md ">
+                        <div class="w-14 h-14 rounded-full bg-green-700 flex items-center justify-center mb-2">
+                            <i class="fas fa-chart-line text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold  mb-2">Progress Tracking</h3>
+                        <p class="text-base font-semibold text-gray-600 mb-2">Monitor your improvement with detailled
+                            analytics and
+                            performance reports.
+
+                        </p>
+
+
+                    </div>
+
+                    <!-- card 3 -->
+                    <div class=" bg-white/70  flex flex-col gap-2 py-6 px-5  shadow-md rounded-md ">
+                        <div class="w-14 h-14 rounded-full bg-yellow-500 flex items-center justify-center mb-2">
+                            <i class="fas fa-users text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold  mb-2">Multiplayer Mode</h3>
+                        <p class="text-base font-semibold text-gray-600 mb-2">Compete with friends or random opponents
+                            in real-time quiz battles.
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </section>
+
+        <!-- section 3 -->
+        <section class="bg-white">
+            <div class="max-w-[85%] mx-auto pt-16 pb-24">
+                <div class="text-center ">
+                    <h1 class="text-4xl font-bold pb-4 max-md:xl max-md:font-semibold">Top Quiz Champions</h1>
+                    <p class="font-semibold text-gray-500 pb-14 max-md:text-sm">See who's leading this month's challenge
+                        and aim for
+                        the top ! </p>
                 </div>
 
-                 <!-- card 3 -->
-                <div class=" bg-gradient-to-br from-pink-50 to-pink-100 flex flex-col px-5 py-10 shadow-md rounded-md ">
-                    <div class="w-14 h-14 rounded-full bg-pink-400 flex items-center justify-center mb-2">
-                        <i class="fa-brands fa-css3-alt text-white text-2xl"></i>
+                <!-- Table Header -->
+                <div class="max-w-[80%] mx-auto bg-gray-300 pb-8  rounded-lg overflow-hidden ">
+                    <div class="h-18 w-full gradient-bg flex justify-between items-center px-5  mb-4">
+                        <h1 class="text-2xl text-white font-semibold max-md:text-xl ">Monthly Leaderboard</h1>
+                        <p class="text-blue-400 font-semibold p-1 rounded-md bg-white max-md:text-sm ">Current Month</p>
                     </div>
-                    <h3 class="text-2xl font-semibold  mb-2">Css Quiz</h3>
-                    <p class="text-sm text-gray-600 mb-2">Styling,layouts,colors,
-                        and responsive design.
-                       </p>
 
-                    <div class="flex justify-between items-center text-blue-400 font-semibold text-xl">
-                        <h1 class="">50 Quizes</h1>
-                        <i class="fa-solid fa-arrow-right"></i>
+
+                    <!-- Topper List -->
+                    <div class="flex flex-col gap-4 max-w-[95%] mx-auto max-sm:overflow-x-scroll">
+                        <!-- topper1 -->
+
+                        <div class="h-18 bg-white   flex items-center justify-between px-4 rounded-md ">
+                            <!-- left side -->
+                            <div class="flex gap-4 max-md:gap-2">
+                                <div
+                                    class=" max-md:h-10 max-md:w-10
+                                    h-12 w-12 rounded-full gradient-bg flex justify-center items-center text-2xl font-semibold text-white">
+                                    1
+                                </div>
+                                <div class=" max-md:h-10 max-md:w-10 
+                                bg-gray-300 h-12 w-12 rounded-full  flex justify-center items-center">
+                                    <i class="fas fa-crown text-yellow-500 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h1 class="text-xl font-semibold max-md:text-lg ">Farid</h1>
+                                    <p class="text-gray-400 text-sm">Java Quizzes</p>
+                                </div>
+                            </div>
+
+                            <!-- right side -->
+                            <div>
+                                <h1 class="text-blue-400 font-bold text-xl max-md:text-lg max-md:font-semibold">9,807
+                                </h1>
+                                <p class="text-sm">Points</p>
+                            </div>
+
+                        </div>
+
+                        <div class="h-18 bg-white   flex items-center justify-between px-4 rounded-md ">
+                            <!-- left side -->
+                            <div class="flex gap-4 max-md:gap-2">
+                                <div
+                                    class=" max-md:h-10 max-md:w-10
+                                    h-12 w-12 rounded-full gradient-bg flex justify-center items-center text-2xl font-semibold text-white">
+                                    1
+                                </div>
+                                <div class=" max-md:h-10 max-md:w-10 
+                                bg-gray-300 h-12 w-12 rounded-full  flex justify-center items-center">
+                                    <i class="fas fa-crown text-yellow-500 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h1 class="text-xl font-semibold max-md:text-lg ">Farid</h1>
+                                    <p class="text-gray-400 text-sm">Java Quizzes</p>
+                                </div>
+                            </div>
+
+                            <!-- right side -->
+                            <div>
+                                <h1 class="text-blue-400 font-bold text-xl max-md:text-lg max-md:font-semibold">9,807
+                                </h1>
+                                <p class="text-sm">Points</p>
+                            </div>
+
+                        </div>
+
+                        <div class="h-18 bg-white   flex items-center justify-between px-4 rounded-md ">
+                            <!-- left side -->
+                            <div class="flex gap-4 max-md:gap-2">
+                                <div
+                                    class=" max-md:h-10 max-md:w-10
+                                    h-12 w-12 rounded-full gradient-bg flex justify-center items-center text-2xl font-semibold text-white">
+                                    1
+                                </div>
+                                <div class=" max-md:h-10 max-md:w-10 
+                                bg-gray-300 h-12 w-12 rounded-full  flex justify-center items-center">
+                                    <i class="fas fa-crown text-yellow-500 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h1 class="text-xl font-semibold max-md:text-lg ">Farid</h1>
+                                    <p class="text-gray-400 text-sm">Java Quizzes</p>
+                                </div>
+                            </div>
+
+                            <!-- right side -->
+                            <div>
+                                <h1 class="text-blue-400 font-bold text-xl max-md:text-lg max-md:font-semibold">9,807
+                                </h1>
+                                <p class="text-sm">Points</p>
+                            </div>
+
+                        </div>
+
                     </div>
-                </div>
-
-                 <!-- card 4 -->
-                <div class=" bg-gradient-to-br from-orange-50 to-orange-100 flex flex-col px-5 py-10 shadow-md rounded-md ">
-                    <div class="w-14 h-14 rounded-full bg-orange-400 flex items-center justify-center mb-2">
-                        <i class="fa-brands fa-js text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-semibold  mb-2">Java_Script Quiz</h3>
-                    <p class="text-sm text-gray-600 mb-2">Test your Knowledge of JavaScript,  logic, DOM, and dynamic 
-                        web behvior.
-                      </p>
-
-                    <div class="flex justify-between items-center text-blue-400 font-semibold text-xl">
-                        <h1 class="">100 Quizes</h1>
-                        <i class="fa-solid fa-arrow-right"></i>
+                    <div class="text-center ">
+                        <button
+                            class=" max-sm:font-semibold
+                            bg-gradient-to-br from-blue-500 to bg-purple-600 h-10 px-4 mt-4 text-gray-100 font-bold rounded-md">
+                            <a href="">View Full Leaderboard</a>
+                        </button>
+                        </di>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+
+        </section>
 
 
     </main>
-  
+
 
     <script>
         const sidebarBtn = document.getElementById("sidebarBtn");
