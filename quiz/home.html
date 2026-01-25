@@ -48,7 +48,7 @@
 
     <div id="sidebar" class="w-52 h-80 bg-white flex flex-col items-center justify-evenly absolute z-10 hidden">
         <a href="#">Home</a>
-        <a href="#">Quizzes</a>
+        <a href="#quizz">Quizzes</a>
         <a href="#">Features</a>
         <a href="#">Leaderboard</a>
         <a href="#">About</a>
@@ -106,7 +106,7 @@
 
     <main>
         <!-- section 1 -->
-        <section class="bg-white">
+        <section id="quiz" class="bg-white">
             <div class=" pt-16 pb-24 max-w-[85%] mx-auto">
                 <div class="text-center ">
                     <h1 class="text-4xl font-extrabold pb-4">Explore Quiz Categories</h1>
@@ -169,8 +169,8 @@
 
                     <!-- card 4 -->
                     <div
-                        class=" bg-gradient-to-br from-orange-50 to-orange-100 flex flex-col px-5 py-10 shadow-md rounded-md ">
-                        <div class="w-14 h-14 rounded-full bg-orange-400 flex items-center justify-center mb-2">
+                        class=" bg-gradient-to-br from-yellow-50 to-yellow-100 flex flex-col px-5 py-10 shadow-md rounded-md ">
+                        <div class="w-14 h-14 rounded-full bg-yellow-400 flex items-center justify-center mb-2">
                             <i class="fa-brands fa-js text-white text-2xl"></i>
                         </div>
                         <h3 class="text-2xl font-semibold  mb-2">Java_Script Quiz</h3>
@@ -364,9 +364,86 @@
 
         </section>
 
+        <section class="gradient-bg pt-16 pb-24">
+            <div class="max-w-[85%] mx-auto">
+                <div class="text-center pb-12">
+                    <h1 class="text-3xl pb-4 text-gray-100 font-bold max-md:text-2xl ">Ready to Challenge Your Mind ?
+                    </h1>
+                    <p class="text-lg text-gray-100 font-semibold max-md:text-base max-md:font-medium">Join our
+                        community of quiz enthusiasts and start your journey to
+                        becomming a QuizMaster tody !
+                    </p>
+                </div>
+                <div class="flex  justify-center items-center gap-3 max-sm:flex-col">
+                    <button class=" max-md:text-base max-md:font-medium max-sm:text-sm
+                    bg-white h-12 px-4 text-lg font-semibold text-blue-400 rounded-md"><a href="#">Create Free
+                            Account</a></button>
+                    <button class=" max-md:text-base max-md:font-medium max-sm:text-sm
+                    h-12 px-4 text-lg font-semibold text-white rounded-md border-2 border-white"><a href="#">Try Demo
+                            Quiz</a></button>
+                </div>
+
+            </div>
+
+        </section>
+
 
     </main>
+    <footer class="bg-gray-800">
+        <div class="max-w-[85%] mx-auto grid grid-cols-2 pb-10 pt-16 max-lg:grid-cols-1 max-lg:gap-4">
+            <div class="flex flex-col gap-2">
+                <div class="flex items-center gap-2">
+                    <img src="/logo.png" alt="logo" class="h-6 w-6">
+                    <h2 class="text-2xl text-white font-bold">Quiz <span class="text-blue-500">Master</span></h2>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-300 mb-6">
+                    Challenge your mind, expand your knowledge.
+                </h3>
+                <div class="flex space-x-4">
+                     <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-500 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-500 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-500 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-500 transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                </div>
 
+            </div>
+            <div class="grid grid-cols-3 max-md:grid-cols-2 max-md:gap-4 max-sm:grid-cols-1 max-">
+                <div class="flex flex-col">
+                    <h1 class="text-white text-2xl font-semibold">Platform</h1>
+                    <a href="" class="text-gray-400 font-semibold">Home</a>
+                    <a href="" class="text-gray-400 font-semibold">Quizes</a>
+                    <a href="" class="text-gray-400 font-semibold">Leaderboard</a>
+                    <a href="" class="text-gray-400 font-semibold">Categories</a>
+                </div>
+                <div class="flex flex-col">
+                    <h1  class="text-white text-2xl font-semibold">Company</h1>
+                    <a href=""  class="text-gray-400 font-semibold" >About us</a>
+                    <a href=""  class="text-gray-400 font-semibold">Contact </a>
+                    <a href=""  class="text-gray-400 font-semibold">Privacy Policy</a>
+                    <a href=""  class="text-gray-400 font-semibold">Terms of Services</a>
+                </div>
+                <div class="flex flex-col">
+                    <h1  class="text-white text-2xl font-semibold">Support</h1>
+                    <a href="" class="text-gray-400 font-semibold">Help Center</a>
+                    <a href="" class="text-gray-400 font-semibold">FAQ</a>
+                    <a href="" class="text-gray-400 font-semibold">Community</a>
+                    <a href="" class="text-gray-400 font-semibold">Feedback</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="text-center text-gray-400 font-bold pb-10">
+            <p>&copy; 2026 QuizMaster. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script>
         const sidebarBtn = document.getElementById("sidebarBtn");
