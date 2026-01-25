@@ -46,7 +46,7 @@
 
     <!-- Mobile Nav Bar -->
 
-    <div id="sidebar" class="w-52 min-h-screen bg-white font-semibold flex flex-col items-center gap-8 absolute  -left-52  z-10  transition-all duration-300">
+    <div id="sidebar" class="w-64 min-h-screen bg-white font-semibold flex flex-col items-center gap-8 absolute  -left-64  z-10  transition-all duration-300">
         <a href="#">Home</a>
         <a href="#quizz">Quizzes</a>
         <a href="#">Features</a>
@@ -406,7 +406,7 @@
         <div class="max-w-[85%] mx-auto grid grid-cols-2 pb-10 pt-16 max-lg:grid-cols-1 max-lg:gap-4">
             <div class="flex flex-col gap-2">
                 <div class="flex items-center gap-2">
-                    <img src="/logo.png" alt="logo" class="h-6 w-6">
+                    <img src="logo.png" alt="logo" class="h-6 w-6">
                     <h2 class="text-2xl text-white font-bold">Quiz <span class="text-blue-500">Master</span></h2>
                 </div>
                 <h3 class="text-lg font-semibold text-gray-300 mb-6">
@@ -467,12 +467,12 @@
     const sidebarBtn = document.getElementById("sidebarBtn");
 
     sidebarBtn.addEventListener("click", () => {
-        if (sidebar.classList.contains("-left-52")) {
-            sidebar.classList.remove("-left-52");
+        if (sidebar.classList.contains("-left-64")) {
+            sidebar.classList.remove("-left-64");
             sidebar.classList.add("left-0");
         } else {
             sidebar.classList.remove("left-0");
-            sidebar.classList.add("-left-52");
+            sidebar.classList.add("-left-64");
         }
     });
 </script>
