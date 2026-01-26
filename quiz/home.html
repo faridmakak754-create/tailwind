@@ -24,15 +24,19 @@
                 <h2 class="text-2xl text-gray-700 font-bold">Quiz <span class="text-blue-500">Master</span></h2>
             </div>
             <div class="flex gap-6 font-semibold max-lg:gap-5  max-md:hidden">
-                <a href="#">Home</a>
-                <a href="#">Quizzes</a>
-                <a href="#">Features</a>
-                <a href="#">Leaderboard</a>
-                <a href="#">About</a>
+                <a href="home.html" class="text-blue-700 " >Home</a>
+                <a href="#quizz" class="hover:text-blue-700">Quizzes</a>
+                <a href="#features"     class="hover:text-blue-700"  >Features</a>
+                <a href="#leaderboard"  class="hover:text-blue-700"  >Leaderboard</a>
+                <a href="#about"        class="hover:text-blue-700"   >About</a>
             </div>
 
             <button
-                class="bg-gradient-to-tr from-blue-500 to bg-purple-600 h-8 w-18 font-semibold text-gray-100 rounded-sm max-md:hidden">
+                class=" hover:bg-gradient-to-br from-blue-500 to bg-purple-600
+                bg-gradient-to-tr from-blue-500 to bg-purple-600 h-8 w-18 font-semibold text-gray-100 rounded-sm max-md:hidden
+                
+                
+                ">
                 <a href="#">Login</a></button>
 
             <div id="sidebarBtn" class="md:hidden text-2xl">
@@ -49,9 +53,9 @@
     <div id="sidebar" class="w-64 min-h-screen bg-white font-semibold flex flex-col items-center gap-8 absolute  -left-64  z-10  transition-all duration-300">
         <a href="#">Home</a>
         <a href="#quizz">Quizzes</a>
-        <a href="#">Features</a>
-        <a href="#">Leaderboard</a>
-        <a href="#">About</a>
+        <a href="#features">Features</a>
+        <a href="#leaderboard">Leaderboard</a>
+        <a href="#about">About</a>
         <button class="bg-gradient-to-tr from-blue-500 to bg-purple-600 h-8 w-24 font-semibold text-white rounded-sm">
             <a href="#">Login</a></button>
     </div>
@@ -67,11 +71,13 @@
                     <br> Explore various categories,compete with friends, and track your progress
                 </p>
                 <div class="flex items-center gap-4 max-sm:flex-col">
-                    <button class=" max-lg:h-12 max-md:h-10 max-lg:text-base
+                    <button class="hover:bg-blue-600 hover:text-white 
+                    max-lg:h-12 max-md:h-10 max-lg:text-base shadow shadow-gray-700
                     h-14 bg-white px-4 font-semibold text-lg rounded-md text-blue-500 "><a href="">
                             <i class="fas fa-play-circle mr-3"></i>
                             Start Quiz Now</a></button>
-                    <button class=" max-lg:h-12 max-md:h-10 max-lg:text-base
+                    <button class=" hover:bg-white hover:text-blue-500
+                    max-lg:h-12 max-md:h-10 max-lg:text-base
                     h-14 text-white px-4 font-semibold text-lg rounded-md border-2 border-white"><a href="">
                             <i class="fas fa-trophy mr-3"></i>
                             View Leaderboard</a></button>
@@ -106,7 +112,7 @@
 
     <main>
         <!-- section 1 -->
-        <section id="quiz" class="bg-white">
+        <section id="quizz" class="bg-white">
             <div class=" pt-16 pb-24 max-w-[85%] mx-auto">
                 <div class="text-center ">
                     <h1 class="text-4xl font-extrabold pb-4">Explore Quiz Categories</h1>
@@ -118,7 +124,8 @@
                 <div class="grid grid-cols-4 gap-3  max-xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1">
                     <!-- card 1 -->
                     <div
-                        class=" bg-gradient-to-br from-blue-50 to-blue-100 flex flex-col px-5 py-10 shadow-md rounded-md ">
+                        class="  hover:-translate-y-2 transition-all hover:shadow-lg
+                        bg-gradient-to-br from-blue-50 to-blue-100 flex flex-col px-5 py-10 shadow-sm shadow-blue-300 rounded-md ">
                         <div class="w-14 h-14 rounded-full bg-blue-500 flex items-center justify-center mb-2">
                             <i class="fa-brands fa-java text-white text-2xl"></i>
                         </div>
@@ -135,7 +142,8 @@
 
                     <!-- card 2 -->
                     <div
-                        class=" bg-gradient-to-br from-green-50 to-green-100 flex flex-col px-5 py-10 shadow-md rounded-md ">
+                        class=" hover:-translate-y-2 transition-all hover:shadow-lg
+                         bg-gradient-to-br from-green-50 to-green-100 flex flex-col px-5 py-10 shadow-sm shadow-green-300 rounded-md ">
                         <div class="w-14 h-14 rounded-full bg-green-400 flex items-center justify-center mb-2">
                             <i class="fa-brands fa-html5 text-white text-2xl"></i>
                         </div>
@@ -152,7 +160,8 @@
 
                     <!-- card 3 -->
                     <div
-                        class=" bg-gradient-to-br from-pink-50 to-pink-100 flex flex-col px-5 py-10 shadow-md rounded-md ">
+                        class="  hover:-translate-y-2 transition-all hover:shadow-lg
+                        bg-gradient-to-br from-pink-50 to-pink-100 flex flex-col px-5 py-10 shadow-sm shadow-purple-300 rounded-md ">
                         <div class="w-14 h-14 rounded-full bg-pink-400 flex items-center justify-center mb-2">
                             <i class="fa-brands fa-css3-alt text-white text-2xl"></i>
                         </div>
@@ -169,7 +178,8 @@
 
                     <!-- card 4 -->
                     <div
-                        class=" bg-gradient-to-br from-yellow-50 to-yellow-100 flex flex-col px-5 py-10 shadow-md rounded-md ">
+                        class="  hover:-translate-y-2 transition-all hover:shadow-lg
+                        bg-gradient-to-br from-yellow-50 to-yellow-100 flex flex-col px-5 py-10 shadow-sm shadow-yellow-300 rounded-md ">
                         <div class="w-14 h-14 rounded-full bg-yellow-400 flex items-center justify-center mb-2">
                             <i class="fa-brands fa-js text-white text-2xl"></i>
                         </div>
@@ -189,7 +199,7 @@
 
         <!-- Section 2 -->
 
-        <section class="bg-gray-50">
+        <section  id="features"  class="bg-gray-50">
             <div class=" pt-16 pb-24 max-w-[85%] mx-auto">
                 <div class="text-center ">
                     <h1 class="text-4xl font-extrabold pb-4">Why Choose Quiz Master</h1>
@@ -201,7 +211,8 @@
                 </div>
                 <div class="grid grid-cols-3 gap-3 max-lg:grid-cols-2 max-md:grid-cols-1 ">
                     <!-- card 1 -->
-                    <div class=" bg-white/70 flex flex-col gap-2 py-6 px-5 shadow-md rounded-md ">
+                    <div class=" hover:-translate-y-2 transition-all hover:shadow-lg
+                     bg-white/70 flex flex-col gap-2 py-6 px-5 shadow-sm shadow-gray-300 rounded-md ">
                         <div class="w-14 h-14 rounded-full bg-violet-700 flex items-center justify-center mb-2">
                             <i class="fas fa-stopwatch text-white text-2xl"></i>
                         </div>
@@ -214,7 +225,8 @@
                     </div>
 
                     <!-- card 2 -->
-                    <div class=" bg-white/70 flex flex-col gap-2 py-6 px-5 shadow-md rounded-md ">
+                    <div class=" hover:-translate-y-2 transition-all hover:shadow-lg
+                     bg-white/70 flex flex-col gap-2 py-6 px-5 shadow-sm shadow-gray-300 rounded-md ">
                         <div class="w-14 h-14 rounded-full bg-green-700 flex items-center justify-center mb-2">
                             <i class="fas fa-chart-line text-white text-2xl"></i>
                         </div>
@@ -229,7 +241,8 @@
                     </div>
 
                     <!-- card 3 -->
-                    <div class=" bg-white/70  flex flex-col gap-2 py-6 px-5  shadow-md rounded-md ">
+                    <div class=" hover:-translate-y-2 transition-all hover:shadow-lg
+                     bg-white/70 flex flex-col gap-2 py-6 px-5 shadow-sm shadow-gray-300 rounded-md ">
                         <div class="w-14 h-14 rounded-full bg-yellow-500 flex items-center justify-center mb-2">
                             <i class="fas fa-users text-white text-2xl"></i>
                         </div>
@@ -248,7 +261,7 @@
         </section>
 
         <!-- section 3 -->
-        <section class="bg-white">
+        <section  id="leaderboard"   class="bg-white">
             <div class="max-w-[85%] mx-auto pt-16 pb-24">
                 <div class="text-center ">
                     <h1 class="text-4xl font-bold pb-4 max-md:xl max-md:font-semibold">Top Quiz Champions</h1>
@@ -270,7 +283,7 @@
 
 
                     <!-- Topper List -->
-                    <div class="flex flex-col gap-4 max-w-[95%] mx-auto max-sm:overflow-x-scroll">
+                    <div class="flex flex-col gap-4 max-w-[95%] mx-auto">
                         <!-- topper1 -->
 
                         <div class="h-18 bg-white   flex items-center justify-between px-4 rounded-md ">
@@ -366,7 +379,7 @@
                     </div>
                     <div class="text-center ">
                         <button
-                            class=" max-sm:font-semibold
+                            class=" max-sm:font-semibold hover:bg-gradient-to-r from-blue-500 to bg-purple-600 
                             bg-gradient-to-br from-blue-500 to bg-purple-600 h-10 px-4 mt-4 text-gray-100 font-bold rounded-md">
                             <a href="">View Full Leaderboard</a>
                         </button>
@@ -374,8 +387,89 @@
                     </div>
                 </div>
             </div>
+          </section>
+            <!-- about -->
 
-        </section>
+            <section  id="about" class="bg-gray-50">
+                <div class="max-w-[85%] mx-auto pt-16 pb-14">
+
+                    <div class="text-center pb-20">
+                        <h1 class="text-4xl font-bold pb-4">About Us </h1>
+                        <p class="text-lg text-gray-700 font-medium ">Learn. Play. Competitive. Improve.</p>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-10  max-lg:grid-cols-2 max-md:grid-cols-1 ">
+                        <!-- card 1 -->
+                        <div class="hover:-translate-y-2 transition-all hover:shadow-lg
+                        bg-gradient-to-tr from-gray-50 to-gray-100 flex  flex-col items-center px-6 justify-center h-48  rounded-md shadow-sm shadow-gray-300 relative">
+                            <i class=" fas fa-user-friends absolute -top-5 text-5xl text-blue-400"></i>
+                            <h1 class="text-2xl pb-2">Who We Are</h1>
+                            <p class="text-black/80 font-light text-center">
+                                QuizMaster is an online platform for fun and Competitive quizzes to boost your knowledge.
+                            </p>
+                        </div>
+
+                         <!-- card 2 -->
+                        <div class="hover:-translate-y-2 transition-all hover:shadow-lg
+                        bg-gradient-to-tr from-gray-50 to-gray-100 flex  flex-col items-center px-6 justify-center h-48  rounded-md shadow-sm shadow-gray-300 relative">
+                            <i class="fas fa-laptop-code absolute -top-5 text-5xl text-blue-400"></i>
+                            <h1 class="text-2xl pb-2">What We Do</h1>
+                            <p class="text-black/80 font-light text-center">
+                                QuizMaster is an online platform for fun and Competitive quizzes to boost your knowledge.
+                            </p>
+                        </div>
+
+                         <!-- card 3 -->
+                        <div class="hover:-translate-y-2 transition-all hover:shadow-lg
+                        bg-gradient-to-tr from-gray-50 to-gray-100 flex  flex-col items-center px-6 justify-center h-48  rounded-md shadow-sm shadow-gray-300 relative">
+                            <i class="fas fa-star absolute -top-5 text-5xl text-orange-400"></i>
+                            <h1 class="text-2xl pb-2">Why Choose Us</h1>
+                            <p class="text-black/80 font-light text-left">
+                              Time-Based Challenges <br>
+                               Live Leaderboard <br>
+                               For Learner & Developers
+                            </p>
+                        </div>
+            
+
+                    </div>
+                </div>
+
+                <!-- Our Vision -->
+                        <div class="pb-24 max-w-[85%] mx-auto">
+                           <h3 class="text-center text-2xl font-semibold pb-10">Our Vision & Mission</h3> 
+
+                           <div class="grid grid-cols-2 gap-20 max-lg:grid-cols-1">
+
+                            <!-- Mission -->
+
+                            <div class="hover:-translate-y-2 transition-all hover:shadow-lg
+                            py-10 bg-white flex justify-between items-center gap-6 px-8 rounded-md shadow-sm shadow-gray-300">
+                                <i class="fas fa-crosshairs text-blue-600 text-7xl max-lg:text-5xl "></i>
+                                <div>
+                                    <h2 class="text-2xl pb-4">Our Mission</h2>
+                                    <p class=" font-semibold text-gray-700">To make learning engaging and accessible to everyone.</p>
+                                </div>
+                            </div>
+
+                            <!-- vision -->
+
+                               <div class="hover:-translate-y-2 transition-all hover:shadow-lg
+                               py-10 bg-white flex justify-between items-center gap-6 px-8 rounded-md shadow-sm shadow-gray-300">
+                                <i class="fas fa-eye  text-blue-600 text-7xl  max-lg:text-5xl "></i>
+                                <div>
+                                    <h2 class="text-2xl pb-4">Our Vision</h2>
+                                    <p class=" font-semibold text-gray-700">To be the leading platform for skill-based quizzes .</p>
+                                </div>
+                            </div>
+
+                           </div>
+                        </div>
+
+
+            </section>
+
+      
         <!-- cta -->
         <section class="gradient-bg pt-16 pb-24">
             <div class="max-w-[85%] mx-auto">
@@ -388,10 +482,12 @@
                     </p>
                 </div>
                 <div class="flex  justify-center items-center gap-3 max-sm:flex-col">
-                    <button class=" max-md:text-base max-md:font-medium max-sm:text-sm
+                    <button class=" hover:bg-blue-600 hover:text-white
+                    max-md:text-base max-md:font-medium max-sm:text-sm
                     bg-white h-12 px-4 text-lg font-semibold text-blue-400 rounded-md"><a href="#">Create Free
                             Account</a></button>
-                    <button class=" max-md:text-base max-md:font-medium max-sm:text-sm
+                    <button class=" hover:bg-white hover:text-blue-500
+                    max-md:text-base max-md:font-medium max-sm:text-sm
                     h-12 px-4 text-lg font-semibold text-white rounded-md border-2 border-white"><a href="#">Try Demo
                             Quiz</a></button>
                 </div>
@@ -435,24 +531,24 @@
             <div class="grid grid-cols-3 max-md:grid-cols-2 max-md:gap-4 max-sm:grid-cols-1 max-">
                 <div class="flex flex-col">
                     <h1 class="text-white text-2xl font-semibold">Platform</h1>
-                    <a href="" class="text-gray-400 font-semibold">Home</a>
-                    <a href="" class="text-gray-400 font-semibold">Quizes</a>
-                    <a href="" class="text-gray-400 font-semibold">Leaderboard</a>
-                    <a href="" class="text-gray-400 font-semibold">Categories</a>
+                    <a href="#" class="text-gray-400 font-semibold           hover:text-white ">Home</a>
+                    <a href="#quizz" class="text-gray-400 font-semibold        hover:text-white ">Quizes</a>
+                    <a href="#leaderboard" class="text-gray-400 font-semibold  hover:text-white ">Leaderboard</a>
+                    <a href="#features" class="text-gray-400 font-semibold     hover:text-white">Features</a>
                 </div>
                 <div class="flex flex-col">
                     <h1 class="text-white text-2xl font-semibold">Company</h1>
-                    <a href="" class="text-gray-400 font-semibold">About us</a>
-                    <a href="" class="text-gray-400 font-semibold">Contact </a>
-                    <a href="" class="text-gray-400 font-semibold">Privacy Policy</a>
-                    <a href="" class="text-gray-400 font-semibold">Terms of Services</a>
+                    <a href="" class="text-gray-400 font-semibold  hover:text-white">About us</a>
+                    <a href="" class="text-gray-400 font-semibold  hover:text-white">Contact </a>
+                    <a href="" class="text-gray-400 font-semibold  hover:text-white">Privacy Policy</a>
+                    <a href="" class="text-gray-400 font-semibold  hover:text-white">Terms of Services</a>
                 </div>
                 <div class="flex flex-col">
                     <h1 class="text-white text-2xl font-semibold">Support</h1>
-                    <a href="" class="text-gray-400 font-semibold">Help Center</a>
-                    <a href="" class="text-gray-400 font-semibold">FAQ</a>
-                    <a href="" class="text-gray-400 font-semibold">Community</a>
-                    <a href="" class="text-gray-400 font-semibold">Feedback</a>
+                    <a href="" class="text-gray-400 font-semibold  hover:text-white">Help Center</a>
+                    <a href="" class="text-gray-400 font-semibold  hover:text-white">FAQ</a>
+                    <a href="" class="text-gray-400 font-semibold  hover:text-white">Community</a>
+                    <a href="" class="text-gray-400 font-semibold  hover:text-white">Feedback</a>
                 </div>
             </div>
 
