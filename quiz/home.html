@@ -25,14 +25,14 @@
             </div>
             <div class="flex gap-6 font-semibold max-lg:gap-5  max-md:hidden">
                 <a href="home.html" class="text-blue-700 " >Home</a>
-                <a href="#quizz" class="hover:text-blue-700">Quizzes</a>
-                <a href="#features"     class="hover:text-blue-700"  >Features</a>
-                <a href="#leaderboard"  class="hover:text-blue-700"  >Leaderboard</a>
-                <a href="#about"        class="hover:text-blue-700"   >About</a>
+                <a href="#quizz"        class="hover:text-blue-700  active:text-blue-700">Quizzes</a>
+                <a href="#features"     class="hover:text-blue-700 active:text-blue-700">Features</a>
+                <a href="#leaderboard"  class="hover:text-blue-700 active:text-blue-700">Leaderboard</a>
+                <a href="#about"        class="hover:text-blue-700 active:text-blue-700">About</a>
             </div>
 
             <button
-                class=" hover:bg-gradient-to-br from-blue-500 to bg-purple-600
+                class=" hover:bg-gradient-to-br from-blue-500 to bg-purple-600 active:bg-gradient-to-br from-blue-500 to bg-purple-600
                 bg-gradient-to-tr from-blue-500 to bg-purple-600 h-8 w-18 font-semibold text-gray-100 rounded-sm max-md:hidden
                 
                 
@@ -51,12 +51,13 @@
     <!-- Mobile Nav Bar -->
 
     <div id="sidebar" class="w-64 min-h-screen bg-white font-semibold flex flex-col items-center gap-8 absolute  -left-64  z-10  transition-all duration-300">
-        <a href="#">Home</a>
-        <a href="#quizz">Quizzes</a>
-        <a href="#features">Features</a>
-        <a href="#leaderboard">Leaderboard</a>
-        <a href="#about">About</a>
-        <button class="bg-gradient-to-tr from-blue-500 to bg-purple-600 h-8 w-24 font-semibold text-white rounded-sm">
+        <a href="#"  class="text-blue-700 ">Home</a>
+        <a href="#quizz"       class="hover:text-blue-700  active:text-blue-700">Quizzes</a>
+        <a href="#features"    class="hover:text-blue-700  active:text-blue-700" >Features</a>
+        <a href="#leaderboard" class="hover:text-blue-700  active:text-blue-700" >Leaderboard</a>
+        <a href="#about"       class="hover:text-blue-700  active:text-blue-700">About</a>
+        <button class="hover:bg-gradient-to-br from-blue-500 to bg-purple-600 active:bg-gradient-to-br from-blue-500 to bg-purple-600
+        bg-gradient-to-tr from-blue-500 to bg-purple-600 h-8 w-24 font-semibold text-white rounded-sm">
             <a href="#">Login</a></button>
     </div>
 
@@ -71,12 +72,12 @@
                     <br> Explore various categories,compete with friends, and track your progress
                 </p>
                 <div class="flex items-center gap-4 max-sm:flex-col">
-                    <button class="hover:bg-blue-600 hover:text-white 
+                    <button class="hover:bg-blue-600 hover:text-white active:bg-blue-600 active:text-white 
                     max-lg:h-12 max-md:h-10 max-lg:text-base shadow shadow-gray-700
                     h-14 bg-white px-4 font-semibold text-lg rounded-md text-blue-500 "><a href="">
                             <i class="fas fa-play-circle mr-3"></i>
                             Start Quiz Now</a></button>
-                    <button class=" hover:bg-white hover:text-blue-500
+                    <button class=" hover:bg-white hover:text-blue-500  active:bg-white active:text-blue-500
                     max-lg:h-12 max-md:h-10 max-lg:text-base
                     h-14 text-white px-4 font-semibold text-lg rounded-md border-2 border-white"><a href="">
                             <i class="fas fa-trophy mr-3"></i>
@@ -124,7 +125,8 @@
                 <div class="grid grid-cols-4 gap-3  max-xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1">
                     <!-- card 1 -->
                     <div
-                        class="  hover:-translate-y-2 transition-all hover:shadow-lg active:-translate-y-2 active:transition-all active:shadow-lg
+                        class="  hover:-translate-y-2 transition-all hover:shadow-lg 
+                        active:-translate-y-2 active:transition-all active:shadow-lg
                         bg-gradient-to-br from-blue-50 to-blue-100 flex flex-col px-5 py-10 shadow-sm shadow-blue-300 rounded-md ">
                         <div class="w-14 h-14 rounded-full bg-blue-500 flex items-center justify-center mb-2">
                             <i class="fa-brands fa-java text-white text-2xl"></i>
@@ -142,7 +144,8 @@
 
                     <!-- card 2 -->
                     <div
-                        class=" hover:-translate-y-2 transition-all hover:shadow-lg
+                        class=" hover:-translate-y-2 transition-all hover:shadow-lg 
+                         active:-translate-y-2 active:transition-all active:shadow-lg
                          bg-gradient-to-br from-green-50 to-green-100 flex flex-col px-5 py-10 shadow-sm shadow-green-300 rounded-md ">
                         <div class="w-14 h-14 rounded-full bg-green-400 flex items-center justify-center mb-2">
                             <i class="fa-brands fa-html5 text-white text-2xl"></i>
@@ -161,6 +164,7 @@
                     <!-- card 3 -->
                     <div
                         class="  hover:-translate-y-2 transition-all hover:shadow-lg
+                         active:-translate-y-2 active:transition-all active:shadow-lg
                         bg-gradient-to-br from-pink-50 to-pink-100 flex flex-col px-5 py-10 shadow-sm shadow-purple-300 rounded-md ">
                         <div class="w-14 h-14 rounded-full bg-pink-400 flex items-center justify-center mb-2">
                             <i class="fa-brands fa-css3-alt text-white text-2xl"></i>
@@ -178,7 +182,8 @@
 
                     <!-- card 4 -->
                     <div
-                        class="  hover:-translate-y-2 transition-all hover:shadow-lg
+                        class="  hover:-translate-y-2 transition-all hover:shadow-lg 
+                        active:-translate-y-2 active:transition-all active:shadow-lg
                         bg-gradient-to-br from-yellow-50 to-yellow-100 flex flex-col px-5 py-10 shadow-sm shadow-yellow-300 rounded-md ">
                         <div class="w-14 h-14 rounded-full bg-yellow-400 flex items-center justify-center mb-2">
                             <i class="fa-brands fa-js text-white text-2xl"></i>
@@ -212,6 +217,7 @@
                 <div class="grid grid-cols-3 gap-3 max-lg:grid-cols-2 max-md:grid-cols-1 ">
                     <!-- card 1 -->
                     <div class=" hover:-translate-y-2 transition-all hover:shadow-lg
+                                 active:-translate-y-2 active:transition-all active:shadow-lg
                      bg-white/70 flex flex-col gap-2 py-6 px-5 shadow-sm shadow-gray-300 rounded-md ">
                         <div class="w-14 h-14 rounded-full bg-violet-700 flex items-center justify-center mb-2">
                             <i class="fas fa-stopwatch text-white text-2xl"></i>
@@ -226,6 +232,7 @@
 
                     <!-- card 2 -->
                     <div class=" hover:-translate-y-2 transition-all hover:shadow-lg
+                                 active:-translate-y-2 active:transition-all active:shadow-lg
                      bg-white/70 flex flex-col gap-2 py-6 px-5 shadow-sm shadow-gray-300 rounded-md ">
                         <div class="w-14 h-14 rounded-full bg-green-700 flex items-center justify-center mb-2">
                             <i class="fas fa-chart-line text-white text-2xl"></i>
@@ -242,6 +249,7 @@
 
                     <!-- card 3 -->
                     <div class=" hover:-translate-y-2 transition-all hover:shadow-lg
+                                 active:-translate-y-2 active:transition-all active:shadow-lg
                      bg-white/70 flex flex-col gap-2 py-6 px-5 shadow-sm shadow-gray-300 rounded-md ">
                         <div class="w-14 h-14 rounded-full bg-yellow-500 flex items-center justify-center mb-2">
                             <i class="fas fa-users text-white text-2xl"></i>
@@ -379,7 +387,8 @@
                     </div>
                     <div class="text-center ">
                         <button
-                            class=" max-sm:font-semibold hover:bg-gradient-to-r from-blue-500 to bg-purple-600 
+                            class=" max-sm:font-semibold
+                             hover:bg-gradient-to-r from-blue-500 to bg-purple-600   active:bg-gradient-to-r from-blue-500 to bg-purple-600 
                             bg-gradient-to-br from-blue-500 to bg-purple-600 h-10 px-4 mt-4 text-gray-100 font-bold rounded-md">
                             <a href="">View Full Leaderboard</a>
                         </button>
@@ -400,7 +409,7 @@
 
                     <div class="grid grid-cols-3 gap-10  max-lg:grid-cols-2 max-md:grid-cols-1 ">
                         <!-- card 1 -->
-                        <div class="hover:-translate-y-2 transition-all hover:shadow-lg
+                        <div class="hover:-translate-y-2 transition-all hover:shadow-lg active:-translate-y-2 active:transition-all active:shadow-lg
                         bg-gradient-to-tr from-gray-50 to-gray-100 flex  flex-col items-center px-6 justify-center h-48  rounded-md shadow-sm shadow-gray-300 relative">
                             <i class=" fas fa-user-friends absolute -top-5 text-5xl text-blue-400"></i>
                             <h1 class="text-2xl pb-2">Who We Are</h1>
@@ -410,7 +419,7 @@
                         </div>
 
                          <!-- card 2 -->
-                        <div class="hover:-translate-y-2 transition-all hover:shadow-lg
+                        <div class="hover:-translate-y-2 transition-all hover:shadow-lg active:-translate-y-2 active:transition-all active:shadow-lg
                         bg-gradient-to-tr from-gray-50 to-gray-100 flex  flex-col items-center px-6 justify-center h-48  rounded-md shadow-sm shadow-gray-300 relative">
                             <i class="fas fa-laptop-code absolute -top-5 text-5xl text-blue-400"></i>
                             <h1 class="text-2xl pb-2">What We Do</h1>
@@ -420,7 +429,7 @@
                         </div>
 
                          <!-- card 3 -->
-                        <div class="hover:-translate-y-2 transition-all hover:shadow-lg
+                        <div class="hover:-translate-y-2 transition-all hover:shadow-lg active:-translate-y-2 active:transition-all active:shadow-lg
                         bg-gradient-to-tr from-gray-50 to-gray-100 flex  flex-col items-center px-6 justify-center h-48  rounded-md shadow-sm shadow-gray-300 relative">
                             <i class="fas fa-star absolute -top-5 text-5xl text-orange-400"></i>
                             <h1 class="text-2xl pb-2">Why Choose Us</h1>
@@ -443,7 +452,7 @@
 
                             <!-- Mission -->
 
-                            <div class="hover:-translate-y-2 transition-all hover:shadow-lg
+                            <div class="hover:-translate-y-2 transition-all hover:shadow-lg active:-translate-y-2 active:transition-all active:shadow-lg
                             py-10 bg-white flex justify-between items-center gap-6 px-8 rounded-md shadow-sm shadow-gray-300">
                                 <i class="fas fa-crosshairs text-blue-600 text-7xl max-lg:text-5xl "></i>
                                 <div>
@@ -454,7 +463,7 @@
 
                             <!-- vision -->
 
-                               <div class="hover:-translate-y-2 transition-all hover:shadow-lg
+                               <div class="hover:-translate-y-2 transition-all hover:shadow-lg active:-translate-y-2 active:transition-all active:shadow-lg
                                py-10 bg-white flex justify-between items-center gap-6 px-8 rounded-md shadow-sm shadow-gray-300">
                                 <i class="fas fa-eye  text-blue-600 text-7xl  max-lg:text-5xl "></i>
                                 <div>
@@ -482,11 +491,11 @@
                     </p>
                 </div>
                 <div class="flex  justify-center items-center gap-3 max-sm:flex-col">
-                    <button class=" hover:bg-blue-600 hover:text-white
+                    <button class=" hover:bg-blue-600 hover:text-white active::bg-blue-600 active:text-white
                     max-md:text-base max-md:font-medium max-sm:text-sm
                     bg-white h-12 px-4 text-lg font-semibold text-blue-400 rounded-md"><a href="#">Create Free
                             Account</a></button>
-                    <button class=" hover:bg-white hover:text-blue-500
+                    <button class=" hover:bg-white hover:text-blue-500 active::bg-white active:text-blue-500
                     max-md:text-base max-md:font-medium max-sm:text-sm
                     h-12 px-4 text-lg font-semibold text-white rounded-md border-2 border-white"><a href="#">Try Demo
                             Quiz</a></button>
@@ -510,19 +519,19 @@
                 </h3>
                 <div class="flex space-x-4">
                     <a href="#"
-                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-500 transition">
+                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-500 transition  active:bg-blue-500 transition">
                         <i class="fab fa-facebook-f"></i>
                     </a>
                     <a href="#"
-                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-500 transition">
+                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-500 transition active:bg-blue-500 transition">
                         <i class="fab fa-twitter"></i>
                     </a>
                     <a href="#"
-                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-500 transition">
+                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-500 transition active:bg-blue-500 transition">
                         <i class="fab fa-instagram"></i>
                     </a>
                     <a href="#"
-                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-500 transition">
+                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-500 transition active:bg-blue-500 transition">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
                 </div>
@@ -531,24 +540,24 @@
             <div class="grid grid-cols-3 max-md:grid-cols-2 max-md:gap-4 max-sm:grid-cols-1 max-">
                 <div class="flex flex-col">
                     <h1 class="text-white text-2xl font-semibold">Platform</h1>
-                    <a href="#" class="text-gray-400 font-semibold           hover:text-white ">Home</a>
-                    <a href="#quizz" class="text-gray-400 font-semibold        hover:text-white ">Quizes</a>
-                    <a href="#leaderboard" class="text-gray-400 font-semibold  hover:text-white ">Leaderboard</a>
-                    <a href="#features" class="text-gray-400 font-semibold     hover:text-white">Features</a>
+                    <a href="#" class="text-gray-400 font-semibold           hover:text-white   active:text-white">Home</a>
+                    <a href="#quizz" class="text-gray-400 font-semibold        hover:text-white active:text-white ">Quizes</a>
+                    <a href="#leaderboard" class="text-gray-400 font-semibold  hover:text-white active:text-white ">Leaderboard</a>
+                    <a href="#features" class="text-gray-400 font-semibold     hover:text-white active:text-white ">Features</a>
                 </div>
                 <div class="flex flex-col">
                     <h1 class="text-white text-2xl font-semibold">Company</h1>
-                    <a href="" class="text-gray-400 font-semibold  hover:text-white">About us</a>
-                    <a href="" class="text-gray-400 font-semibold  hover:text-white">Contact </a>
-                    <a href="" class="text-gray-400 font-semibold  hover:text-white">Privacy Policy</a>
-                    <a href="" class="text-gray-400 font-semibold  hover:text-white">Terms of Services</a>
+                    <a href="" class="text-gray-400 font-semibold  hover:text-white  active:text-white ">About us</a>
+                    <a href="" class="text-gray-400 font-semibold  hover:text-white  active:text-white ">Contact </a>
+                    <a href="" class="text-gray-400 font-semibold  hover:text-white  active:text-white ">Privacy Policy</a>
+                    <a href="" class="text-gray-400 font-semibold  hover:text-white  active:text-white ">Terms of Services</a>
                 </div>
                 <div class="flex flex-col">
                     <h1 class="text-white text-2xl font-semibold">Support</h1>
-                    <a href="" class="text-gray-400 font-semibold  hover:text-white">Help Center</a>
-                    <a href="" class="text-gray-400 font-semibold  hover:text-white">FAQ</a>
-                    <a href="" class="text-gray-400 font-semibold  hover:text-white">Community</a>
-                    <a href="" class="text-gray-400 font-semibold  hover:text-white">Feedback</a>
+                    <a href="" class="text-gray-400 font-semibold  hover:text-white  active:text-white">Help Center</a>
+                    <a href="" class="text-gray-400 font-semibold  hover:text-white  active:text-white">FAQ</a>
+                    <a href="" class="text-gray-400 font-semibold  hover:text-white  active:text-white">Community</a>
+                    <a href="" class="text-gray-400 font-semibold  hover:text-white  active:text-white">Feedback</a>
                 </div>
             </div>
 
