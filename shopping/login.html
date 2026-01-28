@@ -13,7 +13,8 @@
 
 <body>
 
-        <header class="bg-violet-50">
+    
+    <header class="bg-violet-50">
         <div class="">
             <!-- top -->
             <div class="max-w-[90%] h-20 mx-auto flex justify-between items-center gap-3 py-3 max-sm:py-1">
@@ -96,51 +97,54 @@
         <div class="max-w-[85%] mx-auto">
             <div
                 class=" max-sm:py-6 max-sm:px-4
-                p-8 mb-24 max-w-100 bg-gradient-to-tl from-orange-200 to-indigo-100 mt-30 mx-auto flex flex-col justify-center rounded-xl shadow-sm shadow-indigo-400">
+                p-8 mb-24 max-w-100 bg-gradient-to-tl from-blue-200 to-green-100 mt-30 mx-auto flex flex-col justify-center rounded-xl shadow-sm shadow-blue-400">
 
                 <h1
                     class=" max-sm:text-2xl
-                    text-center text-3xl font-bold pb-8 bg-gradient-to-r from-pink-600 to-blue-600 bg-clip-text text-transparent">
-                    Create An Account
+                    text-center text-3xl font-bold pb-8 bg-gradient-to-tr from-pink-600 to-blue-600 bg-clip-text text-transparent">
+                    Welcome Back
                 </h1>
                 <form action="" class=" flex flex-col">
-                    
-                    <input type="text" name="" placeholder="Enter Your Name" required
-                        class="bg-white h-10 outline-none mb-4 px-4 rounded-md hover:shadow-sm hover:shadow-blue-600 focus:shadow-sm focus:shadow-red-500">
 
                     <input type="email" name="" placeholder="Enter Your Email" required
                         class="bg-white h-10 outline-none mb-4 px-4 rounded-md hover:shadow-sm hover:shadow-blue-600 focus:shadow-sm focus:shadow-red-500">
                     <input type="password" name="" placeholder="Enter your password" required
                         class="bg-white h-10 outline-none mb-4 px-4 rounded-md hover:shadow-sm hover:shadow-blue-600 focus:shadow-sm focus:shadow-red-500">
-                  
+                    <div class="flex items-center justify-between pb-8">
+                        <div class="flex  items-center gap-2">
+                            <input type="checkbox">
+                            <p class="font-medium max-sm:text-sm">Remember me</p>
+                        </div>
+                        <a href="#" class=" max-sm:text-sm
+                        text-blue-800 font-medium hover:text-blue-500">forgot password ?</a>
+                    </div>
                     <button type="submit"
                         class=" max-sm:p-1 max-sm:w-[40%]
-            bg-indigo-400 p-2 w-[50%] mx-auto rounded-md text-lg font-semibold text-gray-200 cursor-pointer hover:bg-indigo-500 ">
+            bg-blue-400 p-2 w-[50%] mx-auto rounded-md text-lg font-semibold text-gray-200 cursor-pointer hover:bg-blue-500 ">
                         Login
                     </button>
                 </form>
-                <p class="text-center pt-4 pb-6 font-medium max-sm:text-sm">Already have an account ?
-                    <a href="login.html" class="text-blue-800 font-semibold hover:text-blue-500">Login</a>
+                <p class="text-center pt-4 pb-6 font-medium max-sm:text-sm">Don't have an account ?
+                    <a href="register.html" class="text-blue-800 font-semibold hover:text-blue-500">Sign up</a>
                 </p>
             </div>
         </div>
 
     </section>
-
-   <footer class="bg-gray-800">
+ 
+    <footer class="bg-gray-800">
         <div class="max-w-[85%] mx-auto grid grid-cols-2 pb-10 pt-16 max-lg:grid-cols-1 max-lg:gap-4">
             <div class="flex flex-col gap-2">
-                <div class="flex items-center gap-2">
-                    <img src="logo.png" alt="logo" class="h-6 w-6">
-                    <h2 class="text-2xl text-white font-bold">Quiz <span class="text-blue-500">Master</span></h2>
-                </div>
+
+                <img src="logo.png" alt="logo" class="h-12 w-36 object-cover">
+
                 <h3 class="text-lg font-semibold text-gray-300 mb-6">
-                    Challenge your mind, expand your knowledge.
+                    Your one-stop destination for <br> quality Products at unbeatable prices .
                 </h3>
-                <div class="flex space-x-4">
+                <div class="flex space-x-4 text-white">
                     <a href="#"
                         class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-500 transition  active:bg-blue-500 transition">
-                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-facebook-f "></i>
                     </a>
                     <a href="#"
                         class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-500 transition active:bg-blue-500 transition">
@@ -159,35 +163,58 @@
             </div>
             <div class="grid grid-cols-3 max-md:grid-cols-2 max-md:gap-4 max-sm:grid-cols-1 max-">
                 <div class="flex flex-col">
-                    <h1 class="text-white text-2xl font-semibold">Platform</h1>
-                    <a href="#" class="text-gray-400 font-semibold           hover:text-white   active:text-white">Home</a>
-                    <a href="#quizz" class="text-gray-400 font-semibold        hover:text-white active:text-white ">Quizes</a>
-                    <a href="#leaderboard" class="text-gray-400 font-semibold  hover:text-white active:text-white ">Leaderboard</a>
-                    <a href="#features" class="text-gray-400 font-semibold     hover:text-white active:text-white ">Features</a>
+                    <h1 class="text-white text-2xl font-semibold">Quick Links</h1>
+                    <a href="#"
+                        class="text-gray-400 font-semibold           hover:text-white   active:text-white">Home</a>
+                    <a href="#quizz"
+                        class="text-gray-400 font-semibold        hover:text-white active:text-white ">Products</a>
+                    <a href="#leaderboard"
+                        class="text-gray-400 font-semibold  hover:text-white active:text-white ">Features</a>
+                    <a href="#features"
+                        class="text-gray-400 font-semibold     hover:text-white active:text-white ">About</a>
                 </div>
                 <div class="flex flex-col">
                     <h1 class="text-white text-2xl font-semibold">Company</h1>
-                    <a href="" class="text-gray-400 font-semibold  hover:text-white  active:text-white ">About us</a>
-                    <a href="" class="text-gray-400 font-semibold  hover:text-white  active:text-white ">Contact </a>
-                    <a href="" class="text-gray-400 font-semibold  hover:text-white  active:text-white ">Privacy Policy</a>
-                    <a href="" class="text-gray-400 font-semibold  hover:text-white  active:text-white ">Terms of Services</a>
+                    <a href="" class="text-gray-400 font-semibold  hover:text-white  active:text-white ">Contact us</a>
+                    <a href="" class="text-gray-400 font-semibold  hover:text-white  active:text-white ">Returns &
+                        Refunds </a>
+                    <a href="" class="text-gray-400 font-semibold  hover:text-white  active:text-white ">Privacy
+                        Policy</a>
+                    <a href="" class="text-gray-400 font-semibold  hover:text-white  active:text-white ">Terms of
+                        Services</a>
                 </div>
                 <div class="flex flex-col">
-                    <h1 class="text-white text-2xl font-semibold">Support</h1>
-                    <a href="" class="text-gray-400 font-semibold  hover:text-white  active:text-white">Help Center</a>
-                    <a href="" class="text-gray-400 font-semibold  hover:text-white  active:text-white">FAQ</a>
-                    <a href="" class="text-gray-400 font-semibold  hover:text-white  active:text-white">Community</a>
-                    <a href="" class="text-gray-400 font-semibold  hover:text-white  active:text-white">Feedback</a>
+                    <h1 class="text-white text-2xl font-semibold pb-2">Contact</h1>
+                    <div class="flex flex-col gap-2 text-gray-400 font-semibold">
+                        <p class="flex items-center"> <i class="fas fa-map-marker-alt mr-3 text-indigo-400"></i>
+                            Lilong Turel Ahanbi
+                        </p>
+
+                        <p class="flex items-center">
+                            <i class="fas fa-phone mr-3 text-indigo-400"></i>
+                            +91 8119934105
+                        </p>
+                        <p class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-indigo-400"></i>
+                           fdstore123@gmail.com
+                        </p>
+                        <p class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-indigo-400"></i>
+                            fdkhanz@gmail.com
+                        </p>
+                    </div>
+
+
                 </div>
             </div>
 
         </div>
         <div class="text-center text-gray-400 font-bold pb-10">
-            <p>&copy; 2026 QuizMaster. All rights reserved.</p>
+            <p>&copy; 2026 FDStore. All rights reserved.</p>
         </div>
     </footer>
 
-    <script>
+      <script>
     const sidebar = document.getElementById("sidebar");
     const sidebarBtn = document.getElementById("sidebarBtn");
 
@@ -201,5 +228,8 @@
         }
     });
 </script>
+
+
 </body>
+
 </html>

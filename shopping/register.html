@@ -13,13 +13,13 @@
 
 <body>
 
-        <header class="bg-violet-50">
+       <header class="bg-violet-50">
         <div class="">
             <!-- top -->
             <div class="max-w-[90%] h-20 mx-auto flex justify-between items-center gap-3 py-3 max-sm:py-1">
                 <img src="logo.png" alt="logo" class="h-19 w-36 object-cover ">
 
-                <div class="relative max-lg:hidden">
+                <div class="relative max-sm:hidden">
                     <input type="text" placeholder="Search for Products"
                         class=" max-md:w-80 max-sm:w-50 max-sm:text-sm max-sm:p-1 max-sm:h-8 
                         h-10 px-3 w-100  bg-white shadow-sm outline-none rounded-full shadow-sm shadow-gray-200 hover:shadow-blue-400 focus:shadow-red-500">
@@ -33,65 +33,26 @@
                     <i class="fa-regular fa-heart text-gray-600 text-lg hover:text-gray-900"></i>
                     <i class="fa-regular fa-heart text-gray-600 text-lg hover:text-gray-900"></i>
                     <i class="fa-solid fa-cart-shopping text-gray-600 text-lg hover:text-gray-900"></i>
-                    <button
-                        class="shadow-md px-6 h-8 font-semibold rounded-sm bg-indigo-700 text-white hover:bg-indigo-800">
-                        <a href="login.html">Login</a>
-                    </button>
+                    <button class="shadow-md px-6 h-8 font-semibold rounded-sm bg-indigo-700 text-white">
+                        <a href="login.html">Login</a></button>
                 </div>
-                <!-- handburger -->
                 <div id="sidebarBtn" class="lg:hidden text-xl ">
                     <i class="fa-solid fa-bars"></i>
                 </div>
-
             </div>
         </div>
         <hr class="text-gray-400 max-lg:hidden">
         <nav class=" py-4 max-lg:hidden">
-            <div class="max-w-[85%] mx-auto text-indigo-500 flex items-center justify-center gap-6">
-                <a href="index.html" class="font-semibold  hover:text-indigo-800 hover:border-b-2 hover:border-yellow-400 ">Home</a>
-                <a href="product.html" class="font-semibold  hover:text-indigo-800 hover:border-b-2 hover:border-yellow-400">Products</a>
-                <a href="" class="font-semibold  hover:text-indigo-800 hover:border-b-2 hover:border-yellow-400">Features</a>
-                <a href="" class="font-semibold hover:text-indigo-800 hover:border-b-2 hover:border-yellow-400">About</a>
-                <a href="" class="font-semibold hover:text-indigo-800 hover:border-b-2 hover:border-yellow-400">Contact</a>
+            <div class="max-w-[85%] mx-auto text-indigo-800 flex items-center justify-center gap-6">
+                <a href="index.html" class="font-semibold">Home</a>
+                <a href="product.html" class="font-semibold">Products</a>
+                <a href="" class="font-semibold">Features</a>
+                <a href="" class="font-semibold">About</a>
+                <a href="" class="font-semibold">Contact</a>
             </div>
 
-        </nav>
-        <!-- mobile -->
-        <div id="sidebar"  class="bg-indigo-400 min-h-screen w-64 absolute z-50 py-6 px-4 -left-64 transition-all duration-300">
-            <div class=" relative">
-                <input type="text" placeholder="Search for Products"
-                    class="
-                        h-10 px-3 w-56  bg-white shadow-sm outline-none rounded-full shadow-sm shadow-gray-200 hover:shadow-blue-400 focus:shadow-red-500">
-                <i class=" fas fa-search absolute right-3 top-3 max-sm:text-xs "></i>
-
-
-            </div>
-
-            <div class="flex flex-col items-center pt-5 gap-5">
-                <a href="index.html" class="font-semibold text-white hover:text-indigo-800 hover:border-b-2 hover:border-yellow-400">Home</a>
-                <a href="product.html" class="font-semibold text-white hover:text-indigo-800 hover:border-b-2 hover:border-yellow-400">Products</a>
-                <a href="" class="font-semibold text-white hover:text-indigo-800 hover:border-b-2 hover:border-yellow-400">Features</a>
-                <a href="" class="font-semibold text-white hover:text-indigo-800 hover:border-b-2 hover:border-yellow-400">About</a>
-                <a href="" class="font-semibold text-white hover:text-indigo-800 hover:border-b-2 hover:border-yellow-400">Contact</a>
-
-                <button
-                        class="shadow-md px-6 h-8 w-40 font-semibold rounded-sm bg-indigo-700 text-white hover:bg-indigo-800">
-                        <a href="login.html">Login</a>
-                    </button>
-
-                   
-            </div>
-            <hr class="mt-5 text-gray-300 font-extra-bold  border ">
-
-            <div class="flex gap-3 pt-5 justify-center items-center">
-                <i class="fa-regular fa-heart text-4xl text-white/90"></i>
-                <i class="fa-solid fa-cart-shopping text-4xl text-white/90"></i>
-            </div>
-                
-
-        </div>
+        </nav>    
     </header>
-
     <section>
         <div class="max-w-[85%] mx-auto">
             <div
@@ -126,21 +87,19 @@
         </div>
 
     </section>
-
-   <footer class="bg-gray-800">
+        <footer class="bg-gray-800">
         <div class="max-w-[85%] mx-auto grid grid-cols-2 pb-10 pt-16 max-lg:grid-cols-1 max-lg:gap-4">
             <div class="flex flex-col gap-2">
-                <div class="flex items-center gap-2">
-                    <img src="logo.png" alt="logo" class="h-6 w-6">
-                    <h2 class="text-2xl text-white font-bold">Quiz <span class="text-blue-500">Master</span></h2>
-                </div>
+
+                <img src="logo.png" alt="logo" class="h-12 w-36 object-cover">
+
                 <h3 class="text-lg font-semibold text-gray-300 mb-6">
-                    Challenge your mind, expand your knowledge.
+                    Your one-stop destination for <br> quality Products at unbeatable prices .
                 </h3>
-                <div class="flex space-x-4">
+                <div class="flex space-x-4 text-white">
                     <a href="#"
                         class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-500 transition  active:bg-blue-500 transition">
-                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-facebook-f "></i>
                     </a>
                     <a href="#"
                         class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-500 transition active:bg-blue-500 transition">
@@ -159,34 +118,59 @@
             </div>
             <div class="grid grid-cols-3 max-md:grid-cols-2 max-md:gap-4 max-sm:grid-cols-1 max-">
                 <div class="flex flex-col">
-                    <h1 class="text-white text-2xl font-semibold">Platform</h1>
-                    <a href="#" class="text-gray-400 font-semibold           hover:text-white   active:text-white">Home</a>
-                    <a href="#quizz" class="text-gray-400 font-semibold        hover:text-white active:text-white ">Quizes</a>
-                    <a href="#leaderboard" class="text-gray-400 font-semibold  hover:text-white active:text-white ">Leaderboard</a>
-                    <a href="#features" class="text-gray-400 font-semibold     hover:text-white active:text-white ">Features</a>
+                    <h1 class="text-white text-2xl font-semibold">Quick Links</h1>
+                    <a href="#"
+                        class="text-gray-400 font-semibold           hover:text-white   active:text-white">Home</a>
+                    <a href="#quizz"
+                        class="text-gray-400 font-semibold        hover:text-white active:text-white ">Products</a>
+                    <a href="#leaderboard"
+                        class="text-gray-400 font-semibold  hover:text-white active:text-white ">Features</a>
+                    <a href="#features"
+                        class="text-gray-400 font-semibold     hover:text-white active:text-white ">About</a>
                 </div>
                 <div class="flex flex-col">
                     <h1 class="text-white text-2xl font-semibold">Company</h1>
-                    <a href="" class="text-gray-400 font-semibold  hover:text-white  active:text-white ">About us</a>
-                    <a href="" class="text-gray-400 font-semibold  hover:text-white  active:text-white ">Contact </a>
-                    <a href="" class="text-gray-400 font-semibold  hover:text-white  active:text-white ">Privacy Policy</a>
-                    <a href="" class="text-gray-400 font-semibold  hover:text-white  active:text-white ">Terms of Services</a>
+                    <a href="" class="text-gray-400 font-semibold  hover:text-white  active:text-white ">Contact us</a>
+                    <a href="" class="text-gray-400 font-semibold  hover:text-white  active:text-white ">Returns &
+                        Refunds </a>
+                    <a href="" class="text-gray-400 font-semibold  hover:text-white  active:text-white ">Privacy
+                        Policy</a>
+                    <a href="" class="text-gray-400 font-semibold  hover:text-white  active:text-white ">Terms of
+                        Services</a>
                 </div>
                 <div class="flex flex-col">
-                    <h1 class="text-white text-2xl font-semibold">Support</h1>
-                    <a href="" class="text-gray-400 font-semibold  hover:text-white  active:text-white">Help Center</a>
-                    <a href="" class="text-gray-400 font-semibold  hover:text-white  active:text-white">FAQ</a>
-                    <a href="" class="text-gray-400 font-semibold  hover:text-white  active:text-white">Community</a>
-                    <a href="" class="text-gray-400 font-semibold  hover:text-white  active:text-white">Feedback</a>
+                    <h1 class="text-white text-2xl font-semibold pb-2">Contact</h1>
+                    <div class="flex flex-col gap-2 text-gray-400 font-semibold">
+                        <p class="flex items-center"> <i class="fas fa-map-marker-alt mr-3 text-indigo-400"></i>
+                            Lilong Turel Ahanbi
+                        </p>
+
+                        <p class="flex items-center">
+                            <i class="fas fa-phone mr-3 text-indigo-400"></i>
+                            +91 8119934105
+                        </p>
+                        <p class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-indigo-400"></i>
+                           fdstore123@gmail.com
+                        </p>
+                        <p class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-indigo-400"></i>
+                            fdkhanz@gmail.com
+                        </p>
+                    </div>
+
+
                 </div>
             </div>
 
         </div>
         <div class="text-center text-gray-400 font-bold pb-10">
-            <p>&copy; 2026 QuizMaster. All rights reserved.</p>
+            <p>&copy; 2026 FDStore. All rights reserved.</p>
         </div>
     </footer>
 
+
+  
     <script>
     const sidebar = document.getElementById("sidebar");
     const sidebarBtn = document.getElementById("sidebarBtn");
@@ -201,5 +185,8 @@
         }
     });
 </script>
+
+
 </body>
+
 </html>

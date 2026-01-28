@@ -26,13 +26,13 @@
 </style>
 
 <body>
-    <header class="bg-violet-50">
+     <header class="bg-violet-50">
         <div class="">
             <!-- top -->
             <div class="max-w-[90%] h-20 mx-auto flex justify-between items-center gap-3 py-3 max-sm:py-1">
                 <img src="logo.png" alt="logo" class="h-19 w-36 object-cover ">
 
-                <div class="relative max-sm:hidden">
+                <div class="relative max-lg:hidden">
                     <input type="text" placeholder="Search for Products"
                         class=" max-md:w-80 max-sm:w-50 max-sm:text-sm max-sm:p-1 max-sm:h-8 
                         h-10 px-3 w-100  bg-white shadow-sm outline-none rounded-full shadow-sm shadow-gray-200 hover:shadow-blue-400 focus:shadow-red-500">
@@ -46,26 +46,66 @@
                     <i class="fa-regular fa-heart text-gray-600 text-lg hover:text-gray-900"></i>
                     <i class="fa-regular fa-heart text-gray-600 text-lg hover:text-gray-900"></i>
                     <i class="fa-solid fa-cart-shopping text-gray-600 text-lg hover:text-gray-900"></i>
-                    <button class="shadow-md px-6 h-8 font-semibold rounded-sm bg-indigo-700 text-white">Login</button>
+                    <button
+                        class="shadow-md px-6 h-8 font-semibold rounded-sm bg-indigo-700 text-white hover:bg-indigo-800">
+                        <a href="login.html">Login</a>
+                    </button>
                 </div>
+                <!-- handburger -->
                 <div id="sidebarBtn" class="lg:hidden text-xl ">
                     <i class="fa-solid fa-bars"></i>
                 </div>
+
             </div>
         </div>
         <hr class="text-gray-400 max-lg:hidden">
+        <!-- nav -->
         <nav class=" py-4 max-lg:hidden">
-            <div class="max-w-[85%] mx-auto text-indigo-800 flex items-center justify-center gap-6">
-                <a href="index.html" class="font-semibold">Home</a>
-                <a href="product.html" class="font-semibold">Products</a>
-                <a href="" class="font-semibold">Features</a>
-                <a href="" class="font-semibold">About</a>
-                <a href="" class="font-semibold">Contact</a>
+            <div class="max-w-[85%] mx-auto text-indigo-500 flex items-center justify-center gap-6">
+                <a href="index.html" class="font-semibold  hover:text-indigo-800 hover:border-b-2 hover:border-yellow-400 ">Home</a>
+                <a href="product.html" class="font-semibold  hover:text-indigo-800 hover:border-b-2 hover:border-yellow-400">Products</a>
+                <a href="" class="font-semibold  hover:text-indigo-800 hover:border-b-2 hover:border-yellow-400">Features</a>
+                <a href="" class="font-semibold hover:text-indigo-800 hover:border-b-2 hover:border-yellow-400">About</a>
+                <a href="" class="font-semibold hover:text-indigo-800 hover:border-b-2 hover:border-yellow-400">Contact</a>
             </div>
 
         </nav>
+        <!-- mobile -->
+        <div id="sidebar"  class="bg-indigo-400 min-h-screen w-64 absolute z-50 py-6 px-4 -left-64 transition-all duration-300">
+            <div class=" relative">
+                <input type="text" placeholder="Search for Products"
+                    class="
+                        h-10 px-3 w-56  bg-white shadow-sm outline-none rounded-full shadow-sm shadow-gray-200 hover:shadow-blue-400 focus:shadow-red-500">
+                <i class=" fas fa-search absolute right-3 top-3 max-sm:text-xs "></i>
 
-        <!-- hero -->
+
+            </div>
+
+            <div class="flex flex-col items-center pt-5 gap-5">
+                <a href="index.html" class="font-semibold text-white hover:text-indigo-800 hover:border-b-2 hover:border-yellow-400">Home</a>
+                <a href="product.html" class="font-semibold text-white hover:text-indigo-800 hover:border-b-2 hover:border-yellow-400">Products</a>
+                <a href="" class="font-semibold text-white hover:text-indigo-800 hover:border-b-2 hover:border-yellow-400">Features</a>
+                <a href="" class="font-semibold text-white hover:text-indigo-800 hover:border-b-2 hover:border-yellow-400">About</a>
+                <a href="" class="font-semibold text-white hover:text-indigo-800 hover:border-b-2 hover:border-yellow-400">Contact</a>
+
+                <button
+                        class="shadow-md px-6 h-8 w-40 font-semibold rounded-sm bg-indigo-700 text-white hover:bg-indigo-800">
+                        <a href="login.html">Login</a>
+                    </button>
+
+                   
+            </div>
+            <hr class="mt-5 text-gray-300 font-extra-bold  border ">
+
+            <div class="flex gap-3 pt-5 justify-center items-center">
+                <i class="fa-regular fa-heart text-4xl text-white/90"></i>
+                <i class="fa-solid fa-cart-shopping text-4xl text-white/90"></i>
+            </div>
+                
+
+        </div>
+
+           <!-- hero -->
         <div class=" bg-gradient-to-br from-violet-200 to bg-indigo-300">
             <div
                 class="max-w-[90%] mx-auto py-24 flex justify-between max-lg:flex-col-reverse max-lg:items-center max-lg:gap-7">
@@ -81,7 +121,7 @@
                     </p>
                     <div class="flex items-center gap-4 max-sm:flex-col">
                         <button class="hover:bg-indigo-600
-                        bg-indigo-600/80 h-10 px-6 font-semibold rounded-sm text-white">Shop Now</button>
+                        bg-indigo-600/80 h-10 px-6 font-semibold rounded-sm text-white"><a href="product.html">Shop Now</a></button>
                         <button class=" hover:bg-violet-500
                         bg-violet-600/80  text-white h-10 px-6 font-semibold rounded-sm">Explore
                             More</button>
@@ -94,8 +134,10 @@
         </div>
     </header>
 
+
     <main>
 
+        <!-- category -->
         <section class="bg-white">
             <div class="max-w-[90%] mx-auto pt-16 pb-24">
                 <h1 class="text-center text-3xl  pb-5 font-semibold">
@@ -104,7 +146,7 @@
                 <p class="text-center font-semibold text-gray-500">Browse through our wide range of categories and find
                     exactly what you need</p>
 
-                <div class="grid grid-cols-4 gap-4 pt-16 ">
+                <div class="grid grid-cols-4 gap-4 pt-16 max-xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1">
 
                     <div
                         class="hover:shadow-lg hover:-translate-y-1 transition-all
@@ -117,7 +159,7 @@
                         <h1 class="text-2xl font-semibold">Fashion</h1>
                         <p class=" text-gray-900 font-medium text-center ">Latest trends in clothing & accessories </p>
                         <div class="text-indigo-800 font-semibold">
-                            <a href="">Shop Now
+                            <a href="product.html#fashion">Shop Now
                                 <i class="fas fa-arrow-right ml-2"></i>
                             </a>
                         </div>
@@ -135,7 +177,7 @@
                         <h1 class="text-2xl font-semibold">Electronics</h1>
                         <p class=" text-gray-900 font-medium text-center ">Gadgets, devices & accessories </p>
                         <div class="text-indigo-800 font-semibold">
-                            <a href="">Shop Now
+                            <a href="product.html#electronics">Shop Now
                                 <i class="fas fa-arrow-right ml-2"></i>
                             </a>
                         </div>
@@ -152,7 +194,7 @@
                         <h1 class="text-2xl font-semibold">Home & Living</h1>
                         <p class=" text-gray-900 font-medium text-center ">Everything for your home </p>
                         <div class="text-indigo-800 font-semibold">
-                            <a href="">Shop Now
+                            <a href="product.html#house">Shop Now
                                 <i class="fas fa-arrow-right ml-2"></i>
                             </a>
                         </div>
@@ -169,7 +211,7 @@
                         <h1 class="text-2xl font-semibold">Sports & Fitness</h1>
                         <p class=" text-gray-900 font-medium text-center ">Stay active and healthy</p>
                         <div class="text-indigo-800 font-semibold">
-                            <a href="">Shop Now
+                            <a href="product.html#sports">Shop Now
                                 <i class="fas fa-arrow-right ml-2"></i>
                             </a>
                         </div>
@@ -188,7 +230,7 @@
 
                 <div class="flex justify-between pb-10">
                     <p class="text-gray-700 font-semibold">Handpicked just for you</p>
-                    <a href="" class="text-indigo-800 font-semibold">View all
+                    <a href="product.html" class="text-indigo-800 font-semibold">View all
                         <i class="fas fa-arrow-right ml-2"></i>
                     </a>
                 </div>
@@ -205,7 +247,8 @@
                                 class="absolute top-2 left-2 text-white bg-red-500 h-10 w-10 rounded-full flex items-center justify-center text-sm font-semibold">
                                 -30%</div>
                             <button
-                                class="absolute top-2 right-2 h-10 w-10 rounded-full bg-white flex items-center justify-center">
+                                class="
+                                absolute top-2 right-2 h-10 w-10 rounded-full bg-white flex items-center justify-center">
                                 <i class="far fa-heart text-gray-600"></i>
                             </button>
                         </div>
@@ -233,13 +276,13 @@
                         </div>
                     </div>
 
-                    <!-- card 1 -->
+                    <!-- card 2 -->
                     <div
                         class="bg-white rounded-xl overflow-hidden shadow-md  hover:shadow-lg hover:-translate-y-1 transition-all">
                         <!-- img part -->
                         <div class="relative pb-4">
                             <img class="w-full rounded-lg over "
-                                src="https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bGFwdG9wfGVufDB8fDB8fHww"
                                 alt="">
                             <div
                                 class="absolute top-2 left-2 text-white bg-red-500 h-10 w-10 rounded-full flex items-center justify-center text-sm font-semibold">
@@ -273,13 +316,13 @@
                         </div>
                     </div>
 
-                    <!-- card 1 -->
+                    <!-- card 3 -->
                     <div
                         class="bg-white rounded-xl overflow-hidden shadow-md  hover:shadow-lg hover:-translate-y-1 transition-all">
                         <!-- img part -->
                         <div class="relative pb-4">
                             <img class="w-full rounded-lg over "
-                                src="https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                src="https://media.istockphoto.com/id/2252000531/photo/beautiful-christmas-tree-and-other-decor-in-cozy-room-festive-interior-design.jpg?s=612x612&w=0&k=20&c=TZJsa4ME1ys_FvJrQeoAojBKQGFXcsTsaa6SVbcMDZ8="
                                 alt="">
                             <div
                                 class="absolute top-2 left-2 text-white bg-red-500 h-10 w-10 rounded-full flex items-center justify-center text-sm font-semibold">
@@ -313,14 +356,14 @@
                         </div>
                     </div>
 
-                    <!-- card 1 -->
+                    <!-- card 4 -->
                     <div
                         class="
                         bg-white rounded-xl overflow-hidden shadow-md  hover:shadow-lg hover:-translate-y-1 transition-all">
                         <!-- img part -->
                         <div class="relative pb-4">
                             <img class="w-full rounded-lg over "
-                                src="https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                src="https://images.unsplash.com/photo-1486286701208-1d58e9338013?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Zm9vdGJhbGx8ZW58MHx8MHx8fDA%3D"
                                 alt="">
                             <div
                                 class="absolute top-2 left-2 text-white bg-red-500 h-10 w-10 rounded-full flex items-center justify-center text-sm font-semibold">
@@ -491,7 +534,7 @@
                                 src="https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D"
                                 alt="">
                             <div class="">
-                                <h3 class="text-lg font-semibold ">Sarah Jonson</h3>
+                                <h3 class="text-lg font-semibold ">Kripa Nanda</h3>
                                 <div class=" mb-3 text-yellow-500">
                                     <i class="fas fa-star "></i>
                                     <i class="fas fa-star"></i>
@@ -519,7 +562,7 @@
                                 src="https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D"
                                 alt="">
                             <div class="">
-                                <h3 class="text-lg font-semibold ">Sarah Jonson</h3>
+                                <h3 class="text-lg font-semibold ">Sachikanta</h3>
                                 <div class=" mb-3 text-yellow-500">
                                     <i class="fas fa-star "></i>
                                     <i class="fas fa-star"></i>
@@ -547,7 +590,7 @@
                                 src="https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D"
                                 alt="">
                             <div class="">
-                                <h3 class="text-lg font-semibold ">Sarah Jonson</h3>
+                                <h3 class="text-lg font-semibold ">Rojit</h3>
                                 <div class=" mb-3 text-yellow-500">
                                     <i class="fas fa-star "></i>
                                     <i class="fas fa-star"></i>
@@ -566,6 +609,7 @@
                             ! "
                         </p>
                     </div>
+                    <!-- card 4 -->
                     <div class="bg-white p-5 rounded-md shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
 
                         <div class="flex items-center gap-4 ">
@@ -573,7 +617,7 @@
                                 src="https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D"
                                 alt="">
                             <div class="">
-                                <h3 class="text-lg font-semibold ">Sarah Jonson</h3>
+                                <h3 class="text-lg font-semibold ">Robinson</h3>
                                 <div class=" mb-3 text-yellow-500">
                                     <i class="fas fa-star "></i>
                                     <i class="fas fa-star"></i>
@@ -614,7 +658,7 @@
                 <div class="flex  justify-center items-center gap-3 max-sm:flex-col">
                     <button class=" hover:bg-blue-600 hover:text-white active:bg-blue-600 active:text-white
                     max-md:text-base max-md:font-medium max-sm:text-sm
-                    bg-white h-12 px-4 text-lg font-semibold text-blue-400 rounded-md"><a href="#">
+                    bg-white h-12 px-4 text-lg font-semibold text-blue-400 rounded-md"><a href="product.html">
                             Shop Now
                         </a></button>
                     <button class=" hover:bg-white hover:text-blue-500 active:bg-white active:text-indigo-500
@@ -627,8 +671,6 @@
             </div>
 
         </section>
-
-
     </main>
 
     <footer class="bg-gray-800">
@@ -713,6 +755,20 @@
         </div>
     </footer>
 
+ <script>
+    const sidebar = document.getElementById("sidebar");
+    const sidebarBtn = document.getElementById("sidebarBtn");
+
+    sidebarBtn.addEventListener("click", () => {
+        if (sidebar.classList.contains("-left-64")) {
+            sidebar.classList.remove("-left-64");
+            sidebar.classList.add("left-0");
+        } else {
+            sidebar.classList.remove("left-0");
+            sidebar.classList.add("-left-64");
+        }
+    });
+</script>
 </body>
 
 </html>
