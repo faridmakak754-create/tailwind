@@ -9,25 +9,41 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 </head>
-   <style>
-        .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+<style>
+    .gradient-bg {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    @layer utilities {
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
         }
-    </style>
 
-<body class="bg-slate-50">
-    <header>
-        <div class="bg-white">
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+    }
+</style>
+
+<body>
+    <header class="bg-violet-50">
+        <div class="">
             <!-- top -->
-            <div class="max-w-[85%] mx-auto flex justify-between items-center gap-3 py-3 max-sm:py-1">
-                <img src="logo.png" alt="" class="h-12 w-36 object-cover max-sm:w-28">
+            <div class="max-w-[90%] h-20 mx-auto flex justify-between items-center gap-3 py-3 max-sm:py-1">
+                <img src="logo.png" alt="logo" class="h-19 w-36 object-cover ">
 
-                <div class="relative ">
+                <div class="relative max-sm:hidden">
                     <input type="text" placeholder="Search for Products"
                         class=" max-md:w-80 max-sm:w-50 max-sm:text-sm max-sm:p-1 max-sm:h-8 
                         h-10 px-3 w-100  bg-white shadow-sm outline-none rounded-full shadow-sm shadow-gray-200 hover:shadow-blue-400 focus:shadow-red-500">
                     <i class=" fas fa-search absolute right-3 top-3 max-sm:text-xs "></i>
+
+
                 </div>
+
 
                 <div class="flex items-center gap-6 max-lg:hidden">
                     <i class="fa-regular fa-heart text-gray-600 text-lg hover:text-gray-900"></i>
@@ -35,14 +51,14 @@
                     <i class="fa-solid fa-cart-shopping text-gray-600 text-lg hover:text-gray-900"></i>
                     <button class="shadow-md px-6 h-8 font-semibold rounded-sm bg-indigo-700 text-white">Login</button>
                 </div>
-                  <div id="sidebarBtn" class="lg:hidden text-xl max-sm:text-sm">
-                <i class="fa-solid fa-bars"></i>
-            </div>
+                <div id="sidebarBtn" class="lg:hidden text-xl max-sm:text-sm">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
             </div>
         </div>
         <hr class="text-gray-400 max-lg:hidden">
-        <nav class="bg-white py-4 max-lg:hidden">
-            <div class="max-w-[85%] mx-auto flex items-center justify-center gap-6">
+        <nav class=" py-4 max-lg:hidden">
+            <div class="max-w-[85%] mx-auto text-indigo-800 flex items-center justify-center gap-6">
                 <a href="" class="font-semibold">Home</a>
                 <a href="" class="font-semibold">Products</a>
                 <a href="" class="font-semibold">Features</a>
@@ -53,15 +69,25 @@
         </nav>
 
         <!-- hero -->
-        <div class="bg-blue-300/20">
-            <div class="max-w-[85%] mx-auto py-24 flex justify-between">
+        <div class=" bg-gradient-to-br from-violet-200 to bg-indigo-300">
+            <div
+                class="max-w-[90%] mx-auto py-24 flex justify-between max-lg:flex-col-reverse max-lg:items-center max-lg:gap-7">
                 <!-- left -->
-                <div class=" flex flex-col justify-center gap-6">
-                    <h1 class="text-5xl font-bold text-indigo-600">Shop Smart ,<span class="text-blue-600">Live Better</span></h1>
-                    <p class="text-lg text-indigo-900 font-semibold pb-8">Discover top deals on fashion , gadgets and more</p>
-                    <div class="flex items-center gap-4">
-                        <button class="bg-indigo-600/80 h-10 px-6 font-semibold rounded-sm text-white">Shop Now</button>
-                        <button class="bg-blue-600/80 h-10 px-6 font-semibold rounded-sm">View Details</button>
+                <div class=" flex flex-col justify-center gap-6 items-center">
+                    <h1 class="text-5xl font-bold text-white max-sm:text-4xl
+                    ">Shop Smart ,<span class="text-indigo-700">Live Better</span>
+                    </h1>
+                    <p class="text-lg text-indigo-900 font-semibold pb-8 max-sm:text-sm
+                    ">Discover amazing deals on fashion, electronic, home essentials ,<br>
+                        and more. Quality Products at
+                        unbeatable prices delivered to your doorstep.
+                    </p>
+                    <div class="flex items-center gap-4 max-sm:flex-col">
+                        <button class="hover:bg-indigo-600
+                        bg-indigo-600/80 h-10 px-6 font-semibold rounded-sm text-white">Shop Now</button>
+                        <button class=" hover:bg-violet-500
+                        bg-violet-600/80  text-white h-10 px-6 font-semibold rounded-sm">Explore
+                            More</button>
                     </div>
                 </div>
                 <!-- right -->
@@ -70,6 +96,625 @@
 
         </div>
     </header>
+
+    <main>
+
+        <section class="bg-white">
+            <div class="max-w-[90%] mx-auto pt-16 pb-24">
+                <h1 class="text-center text-3xl  pb-5 font-semibold">
+                    Shop By Category
+                </h1>
+                <p class="text-center font-semibold text-gray-500">Browse through our wide range of categories and find
+                    exactly what you need</p>
+
+                <div class="grid grid-cols-4 gap-4 pt-16 max-xl:grid-cols-2 max-md:grid-cols-1">
+
+                    <div
+                        class="hover:shadow-lg hover:-translate-y-1 transition-all
+                        bg-gradient-to-br from-blue-50 to via-indigo-50 px-3 py-6 flex flex-col items-center gap-2 shadow-sm shadow-indigo-300 rounded-md">
+                        <div
+                            class="w-20 h-20 bg-gradient-to-r from-violet-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-tshirt text-white text-2xl"></i>
+                        </div>
+
+                        <h1 class="text-2xl font-semibold">Fashion</h1>
+                        <p class=" text-gray-900 font-medium text-center ">Latest trends in clothing & accessories </p>
+                        <div class="text-indigo-800 font-semibold">
+                            <a href="">Shop Now
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- card 2 -->
+                    <div
+                        class=" hover:shadow-lg hover:-translate-y-1 transition-all
+                        bg-gradient-to-br from-purple-50 to via-pink-50 px-3 py-6 flex flex-col items-center gap-2 shadow-sm shadow-purple-300 rounded-md">
+                        <div
+                            class="w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-laptop text-white text-2xl"></i>
+                        </div>
+
+                        <h1 class="text-2xl font-semibold">Electronics</h1>
+                        <p class=" text-gray-900 font-medium text-center ">Gadgets, devices & accessories </p>
+                        <div class="text-indigo-800 font-semibold">
+                            <a href="">Shop Now
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- card 3 -->
+                    <div
+                        class=" hover:shadow-lg hover:-translate-y-1 transition-all
+                        bg-gradient-to-br from-green-50 to to-teal-50 px-3 py-6 flex flex-col items-center gap-2 shadow-sm shadow-green-300 rounded-md">
+                        <div
+                            class="w-20 h-20 bg-gradient-to-r from-green-500 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-home text-white text-2xl"></i>
+                        </div>
+
+                        <h1 class="text-2xl font-semibold">Home & Living</h1>
+                        <p class=" text-gray-900 font-medium text-center ">Everything for your home </p>
+                        <div class="text-indigo-800 font-semibold">
+                            <a href="">Shop Now
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- card 4 -->
+                    <div
+                        class="hover:shadow-lg hover:-translate-y-1 transition-all
+                        bg-gradient-to-br from-orange-50 to via-red-50 px-3 py-6 flex flex-col items-center gap-2 shadow-sm shadow-orange-300 rounded-md">
+                        <div
+                            class="w-20 h-20 bg-gradient-to-r from-orange-500 to-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-dumbbell text-white text-2xl"></i>
+                        </div>
+
+                        <h1 class="text-2xl font-semibold">Sports & Fitness</h1>
+                        <p class=" text-gray-900 font-medium text-center ">Stay active and healthy</p>
+                        <div class="text-indigo-800 font-semibold">
+                            <a href="">Shop Now
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Features -->
+
+        <section class="bg-violet-50 ">
+            <div class="max-w-[90%] mx-auto pb-16 pt-24">
+                <h3 class="text-2xl pb-4">Featured Products</h3>
+
+                <div class="flex justify-between pb-10">
+                    <p class="text-gray-700 font-semibold">Handpicked just for you</p>
+                    <a href="" class="text-indigo-800 font-semibold">View all
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                <div class="grid grid-cols-4 gap-4 pt-10 max-xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1">
+                    <!-- card 1 -->
+                    <div
+                        class="bg-white rounded-xl overflow-hidden shadow-md  hover:shadow-lg hover:-translate-y-1 transition-all">
+                        <!-- img part -->
+                        <div class="relative pb-4">
+                            <img class="w-full rounded-lg over "
+                                src="https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                alt="">
+                            <div
+                                class="absolute top-2 left-2 text-white bg-red-500 h-10 w-10 rounded-full flex items-center justify-center text-sm font-semibold">
+                                -30%</div>
+                            <button
+                                class="absolute top-2 right-2 h-10 w-10 rounded-full bg-white flex items-center justify-center">
+                                <i class="far fa-heart text-gray-600"></i>
+                            </button>
+                        </div>
+                        <!-- buttom -->
+                        <div class="flex flex-col gap-2 px-3 ">
+                            <h1 class="text-lg font-semibold">Premium White T-Shirt</h1>
+
+                            <div class=" mb-3 text-yellow-500">
+                                <i class="fas fa-star "></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span class="text-gray-500 text-sm ml-2">(4.2)</span>
+                            </div>
+                            <div class="pb-4 flex justify-between pr-4">
+                                <div class="flex items-center gap-3">
+                                    <p class="text-xl font-bold">&#8377; 499</p>
+                                    <p class="text-lg line-through text-gray-500 font-semibold">&#8377; 999</p>
+                                </div>
+                                <button class="hover:bg-indigo-700
+                                bg-indigo-900 px-4 py-1 rounded-md text-white"> <i class="fas fa-cart-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- card 1 -->
+                    <div
+                        class="bg-white rounded-xl overflow-hidden shadow-md  hover:shadow-lg hover:-translate-y-1 transition-all">
+                        <!-- img part -->
+                        <div class="relative pb-4">
+                            <img class="w-full rounded-lg over "
+                                src="https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                alt="">
+                            <div
+                                class="absolute top-2 left-2 text-white bg-red-500 h-10 w-10 rounded-full flex items-center justify-center text-sm font-semibold">
+                                -30%</div>
+                            <button
+                                class="absolute top-2 right-2 h-10 w-10 rounded-full bg-white flex items-center justify-center">
+                                <i class="far fa-heart text-gray-600"></i>
+                            </button>
+                        </div>
+                        <!-- buttom -->
+                        <div class="flex flex-col gap-2 px-3 ">
+                            <h1 class="text-lg font-semibold">Premium White T-Shirt</h1>
+
+                            <div class=" mb-3 text-yellow-500">
+                                <i class="fas fa-star "></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span class="text-gray-500 text-sm ml-2">(4.2)</span>
+                            </div>
+                            <div class="pb-4 flex justify-between pr-4">
+                                <div class="flex items-center gap-3">
+                                    <p class="text-xl font-bold">&#8377; 499</p>
+                                    <p class="text-lg line-through text-gray-500 font-semibold">&#8377; 999</p>
+                                </div>
+                                <button class="hover:bg-indigo-700
+                                bg-indigo-900 px-4 py-1 rounded-md text-white"> <i class="fas fa-cart-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- card 1 -->
+                    <div
+                        class="bg-white rounded-xl overflow-hidden shadow-md  hover:shadow-lg hover:-translate-y-1 transition-all">
+                        <!-- img part -->
+                        <div class="relative pb-4">
+                            <img class="w-full rounded-lg over "
+                                src="https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                alt="">
+                            <div
+                                class="absolute top-2 left-2 text-white bg-red-500 h-10 w-10 rounded-full flex items-center justify-center text-sm font-semibold">
+                                -30%</div>
+                            <button
+                                class="absolute top-2 right-2 h-10 w-10 rounded-full bg-white flex items-center justify-center">
+                                <i class="far fa-heart text-gray-600"></i>
+                            </button>
+                        </div>
+                        <!-- buttom -->
+                        <div class="flex flex-col gap-2 px-3 ">
+                            <h1 class="text-lg font-semibold">Premium White T-Shirt</h1>
+
+                            <div class=" mb-3 text-yellow-500">
+                                <i class="fas fa-star "></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span class="text-gray-500 text-sm ml-2">(4.2)</span>
+                            </div>
+                            <div class="pb-4 flex justify-between pr-4">
+                                <div class="flex items-center gap-3">
+                                    <p class="text-xl font-bold">&#8377; 499</p>
+                                    <p class="text-lg line-through text-gray-500 font-semibold">&#8377; 999</p>
+                                </div>
+                                <button class="hover:bg-indigo-700
+                                bg-indigo-900 px-4 py-1 rounded-md text-white"> <i class="fas fa-cart-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- card 1 -->
+                    <div
+                        class="
+                        bg-white rounded-xl overflow-hidden shadow-md  hover:shadow-lg hover:-translate-y-1 transition-all">
+                        <!-- img part -->
+                        <div class="relative pb-4">
+                            <img class="w-full rounded-lg over "
+                                src="https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                alt="">
+                            <div
+                                class="absolute top-2 left-2 text-white bg-red-500 h-10 w-10 rounded-full flex items-center justify-center text-sm font-semibold">
+                                -30%</div>
+                            <button
+                                class="absolute top-2 right-2 h-10 w-10 rounded-full bg-white flex items-center justify-center">
+                                <i class="far fa-heart text-gray-600"></i>
+                            </button>
+                        </div>
+                        <!-- buttom -->
+                        <div class="flex flex-col gap-2 px-3 ">
+                            <h1 class="text-lg font-semibold">Premium White T-Shirt</h1>
+
+                            <div class=" mb-3 text-yellow-500">
+                                <i class="fas fa-star "></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span class="text-gray-500 text-sm ml-2">(4.2)</span>
+                            </div>
+                            <div class="pb-4 flex justify-between pr-4">
+                                <div class="flex items-center gap-3">
+                                    <p class="text-xl font-bold">&#8377; 499</p>
+                                    <p class="text-lg line-through text-gray-500 font-semibold">&#8377; 999</p>
+                                </div>
+                                <button class="hover:bg-indigo-700
+                                bg-indigo-900 px-4 py-1 rounded-md text-white"> <i class="fas fa-cart-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+        </section>
+
+        <!-- Weeekly Collection -->
+        <section class="bg-white">
+            <div class="max-w-[90%] mx-auto pb-20">
+                <div class=" grid grid-cols-2 pt-24 pb-16 gap-10 max-lg:grid-cols-1 max-lg:justify-items-center ">
+                    <p class="text-4xl tracking-wide font-semibold max-lg:text-center
+                    ">
+                        Upgrade your living <br> style with our Weeekly <br> stylish collections
+                    </p>
+
+                    <div class="flex flex-col gap-10 items-center">
+                        <p class="font-semibold max-lg:text-center ">
+                            Upgrade your lifestyle with our trendy Weeekly collections.Discover stylish looks
+                            that refresh your wardrobe and elevate your everyday style !
+                        </p>
+                        <div class="flex items-center gap-4 max-sm:flex-col">
+                            <button class="hover:bg-indigo-600
+                        bg-indigo-600/80 h-10 px-6 font-semibold rounded-sm text-white">Shop Now</button>
+                            <button class=" hover:bg-violet-500
+                        bg-violet-600/80  text-white h-10 px-6 font-semibold rounded-sm">Explore
+                                More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- scroll -->
+                <div id="scroll" class="flex overflow-x-scroll no-scrollbar">
+                    <!-- card 1 -->
+                    <div class="relative  min-w-74">
+                        <img class="h-40 w-72 object-left-bottom  rounded-lg shadow-md"
+                            src="https://24thspoke.in/cdn/shop/files/tb-image_share_1731603526771_jpg.png?v=1731603589&width=1920"
+                            alt="">
+                        <div class="absolute bottom-7 translate-x-[50%] text-white ">
+                            <h1 class="text-lg font-semibold">Perfect for elegant <br>
+                                evening lover </h1>
+                        </div>
+                    </div>
+
+                    <!-- card 1 -->
+                    <div class="relative  min-w-74">
+                        <img class="h-40 w-72 object-left-bottom  rounded-lg shadow-md"
+                            src="https://24thspoke.in/cdn/shop/files/tb-image_share_1731603526771_jpg.png?v=1731603589&width=1920"
+                            alt="">
+                        <div class="absolute bottom-7 translate-x-[50%] text-white ">
+                            <h1 class="text-lg font-semibold">Perfect for elegant <br>
+                                evening lover </h1>
+                        </div>
+                    </div>
+
+                    <!-- card 1 -->
+                    <div class="relative  min-w-74">
+                        <img class="h-40 w-72 object-left-bottom  rounded-lg shadow-md"
+                            src="https://24thspoke.in/cdn/shop/files/tb-image_share_1731603526771_jpg.png?v=1731603589&width=1920"
+                            alt="">
+                        <div class="absolute bottom-7 translate-x-[50%] text-white ">
+                            <h1 class="text-lg font-semibold">Perfect for elegant <br>
+                                evening lover </h1>
+                        </div>
+                    </div>
+
+                    <!-- card 1 -->
+                    <div class="relative  min-w-74">
+                        <img class="h-40 w-72 object-left-bottom  rounded-lg shadow-md"
+                            src="https://24thspoke.in/cdn/shop/files/tb-image_share_1731603526771_jpg.png?v=1731603589&width=1920"
+                            alt="">
+                        <div class="absolute bottom-7 translate-x-[50%] text-white ">
+                            <h1 class="text-lg font-semibold">Perfect for elegant <br>
+                                evening lover </h1>
+                        </div>
+                    </div>
+
+                    <!-- card 1 -->
+                    <div class="relative  min-w-74">
+                        <img class="h-40 w-72 object-left-bottom  rounded-lg shadow-md"
+                            src="https://24thspoke.in/cdn/shop/files/tb-image_share_1731603526771_jpg.png?v=1731603589&width=1920"
+                            alt="">
+                        <div class="absolute bottom-7 translate-x-[50%] text-white ">
+                            <h1 class="text-lg font-semibold">Perfect for elegant <br>
+                                evening lover </h1>
+                        </div>
+                    </div>
+
+                    <!-- card 1 -->
+                    <div class="relative  min-w-74">
+                        <img class="h-40 w-72 object-left-bottom  rounded-lg shadow-md"
+                            src="https://24thspoke.in/cdn/shop/files/tb-image_share_1731603526771_jpg.png?v=1731603589&width=1920"
+                            alt="">
+                        <div class="absolute bottom-7 translate-x-[50%] text-white ">
+                            <h1 class="text-lg font-semibold">Perfect for elegant <br>
+                                evening lover </h1>
+                        </div>
+                    </div>
+
+                    <!-- card 1 -->
+                    <div class="relative  min-w-74">
+                        <img class="h-40 w-72 object-left-bottom  rounded-lg shadow-md"
+                            src="https://24thspoke.in/cdn/shop/files/tb-image_share_1731603526771_jpg.png?v=1731603589&width=1920"
+                            alt="">
+                        <div class="absolute bottom-7 translate-x-[50%] text-white ">
+                            <h1 class="text-lg font-semibold">Perfect for elegant <br>
+                                evening lover </h1>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </section>
+
+
+
+        <!-- Customer -->
+        <section class="bg-indigo-50">
+            <div class="max-w-[90%] mx-auto pb-16 pt-24">
+                <div class="flex justify-center items-center pb-16">
+                    <div class="flex flex-col gap-2 items-center text-center">
+                        <h1 class="text-3xl font-semibold">What Our Customers Say</h1>
+                        <p class="font-semibold text-gray-600">Join thousands of satisfied customers who trust ShopSmart
+                            for their shopping needs</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-4 gap-2  max-xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1">
+
+                    <!--card 1  -->
+                    <div class="bg-white p-5 rounded-md shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
+
+                        <div class="flex items-center gap-4 ">
+                            <img class="h-12 w-12 object-cover rounded-full"
+                                src="https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D"
+                                alt="">
+                            <div class="">
+                                <h3 class="text-lg font-semibold ">Sarah Jonson</h3>
+                                <div class=" mb-3 text-yellow-500">
+                                    <i class="fas fa-star "></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <p class="text-gray-600">
+                            " The quality of products and delivery speed exceeded my expection. Will definitely shop
+                            again
+                            ! "
+                        </p>
+                    </div>
+
+                    <!-- card 2 -->
+                    <div class="bg-white p-5 rounded-md shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
+
+                        <div class="flex items-center gap-4 ">
+                            <img class="h-12 w-12 object-cover rounded-full"
+                                src="https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D"
+                                alt="">
+                            <div class="">
+                                <h3 class="text-lg font-semibold ">Sarah Jonson</h3>
+                                <div class=" mb-3 text-yellow-500">
+                                    <i class="fas fa-star "></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <p class="text-gray-600">
+                            " The quality of products and delivery speed exceeded my expection. Will definitely shop
+                            again
+                            ! "
+                        </p>
+                    </div>
+
+                    <!--card 3  -->
+                    <div class="bg-white p-5 rounded-md shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
+
+                        <div class="flex items-center gap-4 ">
+                            <img class="h-12 w-12 object-cover rounded-full"
+                                src="https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D"
+                                alt="">
+                            <div class="">
+                                <h3 class="text-lg font-semibold ">Sarah Jonson</h3>
+                                <div class=" mb-3 text-yellow-500">
+                                    <i class="fas fa-star "></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <p class="text-gray-600">
+                            " The quality of products and delivery speed exceeded my expection. Will definitely shop
+                            again
+                            ! "
+                        </p>
+                    </div>
+                    <div class="bg-white p-5 rounded-md shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
+
+                        <div class="flex items-center gap-4 ">
+                            <img class="h-12 w-12 object-cover rounded-full"
+                                src="https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D"
+                                alt="">
+                            <div class="">
+                                <h3 class="text-lg font-semibold ">Sarah Jonson</h3>
+                                <div class=" mb-3 text-yellow-500">
+                                    <i class="fas fa-star "></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <p class="text-gray-600">
+                            " The quality of products and delivery speed exceeded my expection. Will definitely shop
+                            again
+                            ! "
+                        </p>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- cta -->
+        <section class="bg-gradient-to-br from-indigo-400 to-violet-400  ">
+            <div class="max-w-[85%] mx-auto py-16">
+                <div class="text-center pb-12">
+                    <h1 class="text-3xl pb-4 text-white font-bold max-md:text-2xl ">Ready to Shop Now ?
+                    </h1>
+                    <p class="text-lg text-white font-bold max-md:text-base max-md:font-medium">
+                        Discover products you'll love . Explore our Latest collection today
+                    </p>
+                </div>
+                <div class="flex  justify-center items-center gap-3 max-sm:flex-col">
+                    <button class=" hover:bg-blue-600 hover:text-white active:bg-blue-600 active:text-white
+                    max-md:text-base max-md:font-medium max-sm:text-sm
+                    bg-white h-12 px-4 text-lg font-semibold text-blue-400 rounded-md"><a href="#">
+                            Shop Now
+                        </a></button>
+                    <button class=" hover:bg-white hover:text-blue-500 active:bg-white active:text-indigo-500
+                    max-md:text-base max-md:font-medium max-sm:text-sm
+                    h-12 px-4 text-lg font-semibold text-white rounded-md border-2 border-white"><a href="#">
+                            Explore Collection
+                        </a></button>
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+    <footer class="bg-gray-800">
+        <div class="max-w-[85%] mx-auto grid grid-cols-2 pb-10 pt-16 max-lg:grid-cols-1 max-lg:gap-4">
+            <div class="flex flex-col gap-2">
+
+                <img src="logo.png" alt="logo" class="h-12 w-36 object-cover">
+
+                <h3 class="text-lg font-semibold text-gray-300 mb-6">
+                    Your one-stop destination for <br> quality Products at unbeatable prices .
+                </h3>
+                <div class="flex space-x-4 text-white">
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-500 transition  active:bg-blue-500 transition">
+                        <i class="fab fa-facebook-f "></i>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-500 transition active:bg-blue-500 transition">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-500 transition active:bg-blue-500 transition">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-500 transition active:bg-blue-500 transition">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+
+            </div>
+            <div class="grid grid-cols-3 max-md:grid-cols-2 max-md:gap-4 max-sm:grid-cols-1 max-">
+                <div class="flex flex-col">
+                    <h1 class="text-white text-2xl font-semibold">Quick Links</h1>
+                    <a href="#"
+                        class="text-gray-400 font-semibold           hover:text-white   active:text-white">Home</a>
+                    <a href="#quizz"
+                        class="text-gray-400 font-semibold        hover:text-white active:text-white ">Products</a>
+                    <a href="#leaderboard"
+                        class="text-gray-400 font-semibold  hover:text-white active:text-white ">Features</a>
+                    <a href="#features"
+                        class="text-gray-400 font-semibold     hover:text-white active:text-white ">About</a>
+                </div>
+                <div class="flex flex-col">
+                    <h1 class="text-white text-2xl font-semibold">Company</h1>
+                    <a href="" class="text-gray-400 font-semibold  hover:text-white  active:text-white ">Contact us</a>
+                    <a href="" class="text-gray-400 font-semibold  hover:text-white  active:text-white ">Returns &
+                        Refunds </a>
+                    <a href="" class="text-gray-400 font-semibold  hover:text-white  active:text-white ">Privacy
+                        Policy</a>
+                    <a href="" class="text-gray-400 font-semibold  hover:text-white  active:text-white ">Terms of
+                        Services</a>
+                </div>
+                <div class="flex flex-col">
+                    <h1 class="text-white text-2xl font-semibold pb-2">Contact</h1>
+                    <div class="flex flex-col gap-2 text-gray-400 font-semibold">
+                        <p class="flex items-center"> <i class="fas fa-map-marker-alt mr-3 text-indigo-400"></i>
+                            Lilong Turel Ahanbi
+                        </p>
+
+                        <p class="flex items-center">
+                            <i class="fas fa-phone mr-3 text-indigo-400"></i>
+                            +91 8119934105
+                        </p>
+                        <p class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-indigo-400"></i>
+                           fdstore123@gmail.com
+                        </p>
+                        <p class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-indigo-400"></i>
+                            fdkhanz@gmail.com
+                        </p>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+        <div class="text-center text-gray-400 font-bold pb-10">
+            <p>&copy; 2026 FDStore. All rights reserved.</p>
+        </div>
+    </footer>
 
 </body>
 

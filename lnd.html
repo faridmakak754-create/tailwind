@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopSmart - Premium E-commerce</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<style>
+    * {
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    .gradient-bg {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    
+    .category-card:hover {
+        transform: translateY(-10px);
+        transition: transform 0.3s ease;
+    }
+    
+    .product-card:hover {
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+    
+    .sidebar {
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+    }
+    
+    .sidebar.active {
+        transform: translateX(0);
+    }
+    
+    .discount-badge {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: #ef4444;
+        color: white;
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+    }
+    
+    .rating {
+        color: #fbbf24;
+    }
+</style>
+
+<body class="bg-gray-50">
+    <!-- Header Section -->
+    <header class="bg-gradient-to-r from-blue-50 to-indigo-50 shadow-sm">
+        <div class="border-b border-gray-200">
+            <!-- Top Bar -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-3">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="https://via.placeholder.com/150x50/4f46e5/ffffff?text=ShopSmart" alt="ShopSmart Logo" class="h-10">
+                    <span class="ml-2 text-xl font-bold text-gray-800">ShopSmart</span>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="flex-1 max-w-2xl mx-8">
+                    <div class="relative">
+                        <input type="text" 
+                               placeholder="Search for products, brands and more..." 
+                               class="w-full px-5 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent shadow-sm">
+                        <button class="absolute right-4 top-3 text-gray-500 hover:text-indigo-600">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- User Actions -->
+                <div class="flex items-center space-x-6">
+                    <div class="relative group">
+                        <button class="flex flex-col items-center text-gray-700 hover:text-indigo-600">
+                            <i class="far fa-heart text-xl"></i>
+                            <span class="text-xs mt-1">Wishlist</span>
+                        </button>
+                        <div class="hidden group-hover:block absolute right-0 w-48 py-2 mt-2 bg-white rounded-lg shadow-xl z-10">
+                            <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-indigo-50">My Wishlist</a>
+                            <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-indigo-50">Saved Items</a>
+                        </div>
+                    </div>
+                    
+                    <div class="relative group">
+                        <button class="flex flex-col items-center text-gray-700 hover:text-indigo-600">
+                            <i class="fas fa-shopping-cart text-xl"></i>
+                            <span class="text-xs mt-1">Cart</span>
+                        </button>
+                        <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+                    </div>
+                    
+                    <button class="bg-gradient-to-r from-indigo-600 to-blue-600 text-white px-6 py-2 rounded-full font-medium hover:from-indigo-700 hover:to-blue-700 transition-all duration-300">
+                        Sign In
+                    </button>
+                    
+                    <button id="mobileMenuBtn" class="lg:hidden text-gray-700 text-xl">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+                <div class="flex justify-center space-x-8">
+                    <a href="#" class="font-medium text-gray-700 hover:text-indigo-600 border-b-2 border-transparent hover:border-indigo-600 pb-1 transition-all">Home</a>
+                    <a href="#" class="font-medium text-gray-700 hover:text-indigo-600 border-b-2 border-transparent hover:border-indigo-600 pb-1 transition-all">Products</a>
+                    <a href="#" class="font-medium text-gray-700 hover:text-indigo-600 border-b-2 border-transparent hover:border-indigo-600 pb-1 transition-all">Categories</a>
+                    <a href="#" class="font-medium text-gray-700 hover:text-indigo-600 border-b-2 border-transparent hover:border-indigo-600 pb-1 transition-all">Deals</a>
+                    <a href="#" class="font-medium text-gray-700 hover:text-indigo-600 border-b-2 border-transparent hover:border-indigo-600 pb-1 transition-all">New Arrivals</a>
+                    <a href="#" class="font-medium text-gray-700 hover:text-indigo-600 border-b-2 border-transparent hover:border-indigo-600 pb-1 transition-all">Brands</a>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Mobile Sidebar -->
+        <div id="mobileSidebar" class="sidebar fixed inset-y-0 right-0 w-64 bg-white shadow-xl z-50 p-6">
+            <button id="closeSidebar" class="absolute top-4 right-4 text-gray-500 text-xl">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="mt-8 space-y-6">
+                <a href="#" class="block font-medium text-gray-700 hover:text-indigo-600">Home</a>
+                <a href="#" class="block font-medium text-gray-700 hover:text-indigo-600">Products</a>
+                <a href="#" class="block font-medium text-gray-700 hover:text-indigo-600">Categories</a>
+                <a href="#" class="block font-medium text-gray-700 hover:text-indigo-600">Deals</a>
+                <a href="#" class="block font-medium text-gray-700 hover:text-indigo-600">Account</a>
+                <a href="#" class="block font-medium text-gray-700 hover:text-indigo-600">Cart</a>
+                <a href="#" class="block font-medium text-gray-700 hover:text-indigo-600">Wishlist</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="flex flex-col lg:flex-row items-center justify-between">
+                <!-- Left Content -->
+                <div class="lg:w-1/2 mb-12 lg:mb-0">
+                    <h1 class="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                        Shop Smart,
+                        <span class="block text-yellow-300">Live Better</span>
+                    </h1>
+                    <p class="text-xl mb-8 text-indigo-100">
+                        Discover amazing deals on fashion, electronics, home essentials, and more. 
+                        Quality products at unbeatable prices delivered to your doorstep.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <button class="bg-white text-indigo-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:-translate-y-1">
+                            <i class="fas fa-shopping-bag mr-2"></i>Shop Now
+                        </button>
+                        <button class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-indigo-600 transition-all duration-300">
+                            <i class="fas fa-play-circle mr-2"></i>Watch Demo
+                        </button>
+                    </div>
+                    
+                    <div class="mt-12 grid grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold">50K+</div>
+                            <div class="text-sm text-indigo-200">Happy Customers</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold">10K+</div>
+                            <div class="text-sm text-indigo-200">Products</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold">24/7</div>
+                            <div class="text-sm text-indigo-200">Support</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Image -->
+                <div class="lg:w-1/2 relative">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                             alt="Shopping Experience" 
+                             class="rounded-2xl shadow-2xl">
+                        <div class="absolute -bottom-4 -left-4 bg-white text-gray-800 p-4 rounded-xl shadow-lg">
+                            <div class="text-sm font-semibold">Trending Now</div>
+                            <div class="text-2xl font-bold text-indigo-600">50% OFF</div>
+                            <div class="text-xs">Summer Collection</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Shop By Category</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Browse through our wide range of categories and find exactly what you need</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Category 1 -->
+                <div class="category-card bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 text-center hover:shadow-xl transition-all duration-300">
+                    <div class="w-20 h-20 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-tshirt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Fashion</h3>
+                    <p class="text-gray-600 mb-4">Latest trends in clothing & accessories</p>
+                    <a href="#" class="text-indigo-600 font-medium hover:text-indigo-800">
+                        Shop Now <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Category 2 -->
+                <div class="category-card bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-6 text-center hover:shadow-xl transition-all duration-300">
+                    <div class="w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-laptop text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Electronics</h3>
+                    <p class="text-gray-600 mb-4">Gadgets, devices & accessories</p>
+                    <a href="#" class="text-purple-600 font-medium hover:text-purple-800">
+                        Shop Now <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Category 3 -->
+                <div class="category-card bg-gradient-to-br from-green-50 to-teal-50 rounded-xl p-6 text-center hover:shadow-xl transition-all duration-300">
+                    <div class="w-20 h-20 bg-gradient-to-r from-green-500 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-home text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Home & Living</h3>
+                    <p class="text-gray-600 mb-4">Everything for your home</p>
+                    <a href="#" class="text-green-600 font-medium hover:text-green-800">
+                        Shop Now <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Category 4 -->
+                <div class="category-card bg-gradient-to-br from-orange-50 to-red-50 rounded-xl p-6 text-center hover:shadow-xl transition-all duration-300">
+                    <div class="w-20 h-20 bg-gradient-to-r from-orange-500 to-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-dumbbell text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Sports & Fitness</h3>
+                    <p class="text-gray-600 mb-4">Stay active and healthy</p>
+                    <a href="#" class="text-orange-600 font-medium hover:text-orange-800">
+                        Shop Now <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center mb-12">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-800">Featured Products</h2>
+                    <p class="text-gray-600 mt-2">Handpicked just for you</p>
+                </div>
+                <a href="#" class="text-indigo-600 font-semibold hover:text-indigo-800">
+                    View All <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                             alt="Wireless Headphones" 
+                             class="w-full h-48 object-cover">
+                        <div class="discount-badge">-30%</div>
+                        <button class="absolute top-3 right-3 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-md hover:bg-gray-100">
+                            <i class="far fa-heart text-gray-600"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold text-lg text-gray-800 mb-2">Premium Wireless Headphones</h3>
+                        <div class="rating mb-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span class="text-gray-500 text-sm ml-2">(4.2)</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-2xl font-bold text-gray-800">$199.99</span>
+                                <span class="text-gray-500 line-through ml-2">$249.99</span>
+                            </div>
+                            <button class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                             alt="Smart Watch" 
+                             class="w-full h-48 object-cover">
+                        <button class="absolute top-3 right-3 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-md hover:bg-gray-100">
+                            <i class="far fa-heart text-gray-600"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold text-lg text-gray-800 mb-2">Smart Watch Series 5</h3>
+                        <div class="rating mb-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="text-gray-500 text-sm ml-2">(4.8)</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-2xl font-bold text-gray-800">$299.99</span>
+                            </div>
+                            <button class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1544441893-675973e31985?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                             alt="Running Shoes" 
+                             class="w-full h-48 object-cover">
+                        <div class="discount-badge">-40%</div>
+                        <button class="absolute top-3 right-3 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-md hover:bg-gray-100">
+                            <i class="far fa-heart text-gray-600"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold text-lg text-gray-800 mb-2">Premium Running Shoes</h3>
+                        <div class="rating mb-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span class="text-gray-500 text-sm ml-2">(4.0)</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-2xl font-bold text-gray-800">$89.99</span>
+                                <span class="text-gray-500 line-through ml-2">$149.99</span>
+                            </div>
+                            <button class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1525904097878-94fb15835963?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                             alt="Backpack" 
+                             class="w-full h-48 object-cover">
+                        <button class="absolute top-3 right-3 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-md hover:bg-gray-100">
+                            <i class="far fa-heart text-gray-600"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold text-lg text-gray-800 mb-2">Waterproof Laptop Backpack</h3>
+                        <div class="rating mb-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="text-gray-500 text-sm ml-2">(5.0)</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-2xl font-bold text-gray-800">$49.99</span>
+                            </div>
+                            <button class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offers -->
+    <section class="py-16 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Special Offers</h2>
+                <p class="text-indigo-100">Limited time deals you don't want to miss</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div>
+                    <div class="text-5xl font-bold mb-6">Summer Sale</div>
+                    <div class="text-8xl font-bold text-yellow-300 mb-6">50% OFF</div>
+                    <p class="text-xl mb-8">On all fashion items. Hurry up before the offer ends!</p>
+                    
+                    <div class="flex items-center space-x-6 mb-8">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold">05</div>
+                            <div class="text-sm">Days</div>
+                        </div>
+                        <div class="text-2xl">:</div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold">18</div>
+                            <div class="text-sm">Hours</div>
+                        </div>
+                        <div class="text-2xl">:</div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold">45</div>
+                            <div class="text-sm">Minutes</div>
+                        </div>
+                        <div class="text-2xl">:</div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold">22</div>
+                            <div class="text-sm">Seconds</div>
+                        </div>
+                    </div>
+                    
+                    <button class="bg-white text-indigo-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-all transform hover:scale-105">
+                        Shop Collection <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+                
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                         alt="Summer Sale" 
+                         class="rounded-2xl shadow-2xl">
+                    <div class="absolute -bottom-4 -right-4 bg-white text-gray-800 p-6 rounded-xl shadow-lg max-w-xs">
+                        <div class="text-2xl font-bold text-indigo-600 mb-2">Free Shipping</div>
+                        <div class="text-sm">On all orders over $100</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">What Our Customers Say</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Join thousands of satisfied customers who trust ShopSmart for their shopping needs</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-50 rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b786d49d?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" 
+                             alt="Sarah Johnson" 
+                             class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Sarah Johnson</h4>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"The quality of products and delivery speed exceeded my expectations. Will definitely shop again!"</p>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-50 rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" 
+                             alt="Michael Chen" 
+                             class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Michael Chen</h4>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Excellent customer service and great prices. Found everything I needed in one place."</p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-50 rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" 
+                             alt="Emma Davis" 
+                             class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Emma Davis</h4>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Fast delivery and amazing quality. The packaging was also very secure and eco-friendly."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-16 bg-gradient-to-r from-blue-500 to-indigo-600">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+            <h2 class="text-3xl font-bold mb-4">Stay Updated</h2>
+            <p class="text-blue-100 mb-8">Subscribe to our newsletter for exclusive deals and updates</p>
+            
+            <div class="max-w-md mx-auto">
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <input type="email" 
+                           placeholder="Enter your email" 
+                           class="flex-1 px-6 py-3 rounded-full text-gray-800 focus:outline-none focus:ring-2 focus:ring-white">
+                    <button class="bg-white text-indigo-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-all">
+                        Subscribe
+                    </button>
+                </div>
+                <p class="text-sm text-blue-100 mt-4">By subscribing, you agree to our Privacy Policy</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center mb-6">
+                        <img src="https://via.placeholder.com/150x50/ffffff/4f46e5?text=ShopSmart" alt="ShopSmart Logo" class="h-8">
+                        <span class="ml-2 text-xl font-bold">ShopSmart</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">Your one-stop destination for quality products at unbeatable prices.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white text-xl">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Shop</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Categories</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">New Arrivals</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Deals</a></li>
+                    </ul>
+                </div>
+
+                <!-- Customer Service -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Customer Service</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">FAQs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Shipping Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Returns & Refunds</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Contact Us</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-3 text-indigo-400"></i>
+                            123 Street, City, Country
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-3 text-indigo-400"></i>
+                            +1 234 567 8900
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-indigo-400"></i>
+                            support@shopsmart.com
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-clock mr-3 text-indigo-400"></i>
+                            Mon-Sun: 9:00 AM - 8:00 PM
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 ShopSmart. All rights reserved.</p>
+                <p class="mt-2 text-sm">Made with <i class="fas fa-heart text-red-500"></i> for shopping enthusiasts</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile sidebar functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const closeSidebar = document.getElementById('closeSidebar');
+        const mobileSidebar = document.getElementById('mobileSidebar');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileSidebar.classList.add('active');
+        });
+
+        closeSidebar.addEventListener('click', () => {
+            mobileSidebar.classList.remove('active');
+        });
+
+        // Close sidebar when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!mobileSidebar.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+                mobileSidebar.classList.remove('active');
+            }
+        });
+
+        // Add to cart functionality
+        document.querySelectorAll('.product-card button').forEach(button => {
+            button.addEventListener('click', function() {
+                const productName = this.closest('.product-card').querySelector('h3').textContent;
+                const cartCount = document.querySelector('.absolute .bg-red-500');
+                let count = parseInt(cartCount.textContent);
+                cartCount.textContent = count + 1;
+                
+                // Show notification
+                alert(`Added ${productName} to cart!`);
+            });
+        });
+
+        // Wishlist functionality
+        document.querySelectorAll('.product-card .fa-heart').forEach(heart => {
+            heart.addEventListener('click', function(e) {
+                e.stopPropagation();
+                this.classList.toggle('far');
+                this.classList.toggle('fas');
+                this.classList.toggle('text-red-500');
+                
+                if (this.classList.contains('fas')) {
+                    alert('Added to wishlist!');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
