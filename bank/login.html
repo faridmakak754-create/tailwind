@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="bg-green-800">
+        <div class="max-w-[90%] mx-auto flex justify-between items-center h-20">
+            <div>
+                <h1 class="text-2xl font-bold text-white ">FINX BANK</h1>
+                <p class="text-sm text-gray-100">Banking made simple & smart</p>
+            </div>
+
+            <div class="flex items-center gap-6 text-white max-md:hidden">
+                <a href="#" class=" hover:text-green-300 hover:border-b-2 hover:border-yellow-400">Home</a>
+                <a href="#" class=" hover:text-green-300 hover:border-b-2 hover:border-yellow-400">Features</a>
+                <a href="#" class=" hover:text-green-300 hover:border-b-2 hover:border-yellow-400">Pricing</a>
+                <a href="#" class=" hover:text-green-300 hover:border-b-2 hover:border-yellow-400">About</a>
+                <a href="#" class=" hover:text-green-300 hover:border-b-2 hover:border-yellow-400">Contact</a>
+                <a href="#" class="bg-[#24df68] font-semibold px-5 py-2 rounded-md hover:bg-[#7aec7a]">Login</a>
+            </div>
+
+            <div id="sidebarBtn" class="md:hidden text-2xl text-green-500">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- mobile -->
+    <div id="sidebar"
+        class="bg-green-900/80 min-h-screen w-64 absolute z-50 py-6 px-4 -left-64 transition-all duration-300 ease-in-out">
+
+        <div class="flex flex-col items-center pt-5 gap-5">
+            <a href="index.html"
+                class="font-semibold text-white hover:text-green-300 hover:border-b-2 hover:border-yellow-400">Home</a>
+            <a href="product.html"
+                class="font-semibold text-white hover:text-green-300 hover:border-b-2 hover:border-yellow-400">Products</a>
+            <a href=""
+                class="font-semibold text-white hover:text-green-300 hover:border-b-2 hover:border-yellow-400">Features</a>
+            <a href=""
+                class="font-semibold text-white hover:text-green-300 hover:border-b-2 hover:border-yellow-400">About</a>
+            <a href=""
+                class="font-semibold text-white hover:text-green-300 hover:border-b-2 hover:border-yellow-400">Contact</a>
+
+
+            <a href="login.html"
+                class="bg-[#24df68] font-semibold px-5 py-2 w-34 rounded-md hover:bg-[#7aec7a] text-white text-center ">Login</a>
+        </div>
+
+    </div>
+    <main class="bg-gradient-to-bl from-green-700 via-green-200 to-blue-900">
+        <!-- login -->
+        <section class="max-w-[90%] mx-auto py-16">
+            <div class="flex items-center gap-6 pb-10 max-lg:flex-col-reverse">
+
+                <div class="w-full bg-gradient-to-br from-green-600 to-green-800 max-w-[400px] rounded-md shadow-sm shadow-green-800">
+
+                    <form action="UsersLoginServlet" class="flex flex-col  gap-2 p-6 ">
+                        <h3 class="text-center text-white/90 text-xl font-semibold">Internet Banking Login</h3>
+                        <label class="text-lg text-white/90 font-semibold">Email :</label>
+                        <input type="email" placeholder="Enter Your Email" name="user_email" required
+                            class="bg-white py-2 outline-none px-2 rounded-sm">
+                        <label class="text-lg text-white/90 font-semibold">Password :</label>
+                        <input type="password" placeholder="Enter your Password" name="user_password"
+                            class="bg-white py-2 outline-none px-2 rounded-sm mb-2">
+                        <div class="flex flex-col items-center gap-2">
+                            <input type="submit" value="Login"
+                                class="bg-green-200 w-24 py-1.5 font-semibold rounded-sm">
+                            <a href="#" class="text-white/90 ">New User ? Register</a>
+                        </div>
+
+
+                    </form>
+                </div>
+
+                <div
+                    class="w-[calc(100%-400px)] bg-green-50 py-14  flex flex-col justify-center gap-4 px-8 rounded-md shadow-sm shadow-green-200  max-lg:w-[100%] max-sm:py-7">
+                    <h1 class="text-4xl text-green-600 font-bold max-sm:text-2xl">Your Money <span
+                            class="text-blue-600">Our Responsibility</span></h1>
+                    <p class="text-gray-400 font-semibold max-sm:text-sm">Secure , fast and reliable internet banking
+                        for all your needs. Transfer funds , manage accounts _ all from your dashboard.</p>
+                </div>
+
+            </div>
+
+            <!-- alert -->
+            <div class="text-white font-semibold">
+                <h3 class="text-lg font-bold text-red-400">⚠️ Customer Alert</h3>
+                <ul class="list-disc pl-5 text-sm">
+                    <li>Never share OTP , PIN or Password.</li>
+                    <li>Do not click unknown links.</li>
+                    <li>Always check the website URL.</li>
+                </ul>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 border-t border-slate-500 py-14 max-md:py-7">
+        <div class="max-w-[90%] mx-auto grid grid-cols-2 max-lg:grid-cols-1 gap-6">
+
+            <div class="flex flex-col gap-2 ">
+                <h2 class="text-2xl font-bold text-white">Finx Bank</h2>
+                <p class="text-slate-400 text-sm ">
+                    Smart digital banking built for the modern world.
+                </p>
+            </div>
+
+            <div class=" grid grid-cols-3 max-sm:grid-cols-2 gap-6">
+
+                <div class="flex flex-col gap-3">
+                    <h4 class="text-white font-semibold">Quick Links</h4>
+                    <a class="text-slate-400 hover:text-white text-sm">Home</a>
+                    <a class="text-slate-400 hover:text-white text-sm">Features </a>
+                    <a class="text-slate-400 hover:text-white text-sm">Pricing</a>
+                    <a class="text-slate-400 hover:text-white text-sm">About</a>
+                    <a class="text-slate-400 hover:text-white text-sm">Term & Condition</a>
+                    <a class="text-slate-400 hover:text-white text-sm">Privacy Policy</a>
+                </div>
+
+                <div class="flex flex-col gap-3">
+                    <h4 class="text-white font-semibold">Products</h4>
+                    <a class="text-slate-400 hover:text-white text-sm">Savings</a>
+                    <a class="text-slate-400 hover:text-white text-sm">Cards</a>
+                    <a class="text-slate-400 hover:text-white text-sm">Loans</a>
+                    <a class="text-slate-400 hover:text-white text-sm">Digital Banking</a>
+                </div>
+
+                <div class="flex flex-col gap-3">
+                    <h4 class="text-white font-semibold">Support</h4>
+                    <a class="text-slate-400 hover:text-white text-sm">Help</a>
+                    <a class="text-slate-400 hover:text-white text-sm">Contact</a>
+                    <a class="text-slate-400 hover:text-white text-sm">Security</a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- bottom footer -->
+        <div class="mt-10 border-t border-slate-800 pt-6">
+            <div class="max-w-[90%] mx-auto flex justify-between max-sm:flex-col gap-4 items-center">
+                <p class="text-slate-500 text-sm">© 2026 Finx Bank. All rights reserved.</p>
+
+                <div class="flex gap-6 text-slate-400 text-xl">
+                    <i class="fa-brands fa-twitter hover:text-blue-400"></i>
+                    <i class="fa-brands fa-linkedin hover:text-blue-400"></i>
+                    <i class="fa-brands fa-github hover:text-blue-400"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const sidebar = document.getElementById("sidebar");
+        const sidebarBtn = document.getElementById("sidebarBtn");
+
+        sidebarBtn.addEventListener("click", () => {
+            if (sidebar.classList.contains("-left-64")) {
+                sidebar.classList.remove("-left-64");
+                sidebar.classList.add("left-0");
+            } else {
+                sidebar.classList.remove("left-0");
+                sidebar.classList.add("-left-64");
+            }
+        });
+    </script>
+
+</body>
+
+</html>
