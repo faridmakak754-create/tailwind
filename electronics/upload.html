@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="profile.jpg" type="image/jpg">
+
+    <style>
+        @layer utilities {
+            .no-scrollbar::-webkit-scrollbar {
+                display: none;
+            }
+
+            .no-scrollbar {
+                -ms-overflow-style: none;
+                /* IE and Edge */
+                scrollbar-width: none;
+                /* Firefox */
+            }
+        }
+    </style>
+</head>
+
+
+<body class="bg-gray-50">
+
+
+    <header class="bg-gray-100">
+        <div class="">
+            <!-- top -->
+            <div class="max-w-[90%] h-20 mx-auto flex justify-between items-center gap-3 py-3 max-sm:py-1">
+                <img src="logo.png" alt="logo" class="h-19 w-36 object-cover ">
+
+                <div class="relative max-lg:hidden">
+                    <input type="text" placeholder="Search for Products"
+                        class=" max-md:w-80 max-sm:w-50 max-sm:text-sm max-sm:p-1 max-sm:h-8 
+                        h-10 px-3 w-100  bg-white outline-none rounded-full shadow-sm shadow-gray-200 hover:shadow-blue-400 focus:shadow-red-500">
+                    <i class=" fas fa-search absolute right-3 top-3 max-sm:text-xs "></i>
+
+
+                </div>
+
+
+                <div class="flex items-center gap-6 max-lg:hidden">
+
+                    <i class="fa-regular fa-heart text-gray-600 text-lg hover:text-gray-900"></i>
+                    <i class="fa-solid fa-cart-shopping text-gray-600 text-lg hover:text-gray-900"></i>
+                    <button
+                        class="shadow-md px-6 h-8 font-semibold rounded-sm bg-blue-600 text-white hover:animate-pulse">
+                        Login
+                    </button>
+                </div>
+                <!-- handburger -->
+                <div onclick="openClose()" class="lg:hidden text-2xl ">
+                    <!-- <i class="fa-solid fa-bars"></i> -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-settings2 lucide-settings-2" aria-hidden="true">
+                        <path d="M14 17H5"></path>
+                        <path d="M19 7h-9"></path>
+                        <circle cx="17" cy="17" r="3"></circle>
+                        <circle cx="7" cy="7" r="3"></circle>
+                    </svg>
+
+
+                </div>
+            </div>
+
+        </div>
+        </div>
+        <hr class="text-gray-300 max-lg:hidden">
+        <!-- nav -->
+        <nav class=" py-4 max-lg:hidden">
+            <div class="max-w-[85%] mx-auto text-blue-800 flex items-center justify-center gap-6">
+                <a href="index.html"
+                    class="font-semibold border-b-2 border-transparent hover:text-blue-600 hover:border-slate-400 ">Home</a>
+                <a href="product.html"
+                    class="font-semibold border-b-2 border-transparent  hover:text-blue-600 hover:border-slate-400">Products</a>
+                <a href=""
+                    class="font-semibold border-b-2 border-transparent  hover:text-blue-600 hover:border-slate-400">Feature</a>
+                <a href=""
+                    class="font-semibold border-b-2 border-transparent hover:text-blue-600  hover:border-slate-400">About</a>
+                <a href=""
+                    class="font-semibold border-b-2 border-transparent hover:text-blue-600  hover:border-slate-400">Contact</a>
+            </div>
+
+        </nav>
+        <!-- mobile -->
+        <div id="sidebar"
+            class="bg-slate-700  min-h-screen w-64 absolute top-0 z-50 py-6 px-4 -left-0 -left-64 transition-all duration-500 ease-in-out">
+            <div class="flex items-center justify-between mb-6">
+                <h1
+                    class="text-2xl font-bold bg-gradient-to-br from-gray-200 via-blue-500 to-blue-400 bg-clip-text text-transparent">
+                    User 's Pannel</h1>
+                <div onclick="openClose()">
+                    <i class="fa-solid fa-close  text-xl text-gray-50"></i>
+                </div>
+            </div>
+
+
+            <div class=" relative">
+                <input type="text" placeholder="Search for Products"
+                    class="
+                        h-10 px-3 w-56  bg-white  outline-none rounded-full shadow-sm shadow-gray-200 hover:shadow-blue-400 focus:shadow-red-500">
+                <i class=" fas fa-search absolute right-3 top-3 max-sm:text-xs "></i>
+
+
+            </div>
+
+            <div class="flex flex-col items-center pt-5 gap-5">
+                <a href="index.html" class="font-semibold text-white ">Home</a>
+                <a href="product.html" class="font-semibold text-white ">Products</a>
+                <a href="" class="font-semibold text-white ">Features</a>
+                <a href="" class="font-semibold text-white ">About</a>
+                <a href="" class="font-semibold text-white ">Contact</a>
+
+
+                <a href="login.html"
+                    class="shadow-md px-6 h-10 w-40 font-semibold text-center py-1  rounded-full bg-blue-700 text-white hover:bg-indigo-800">Login</a>
+
+
+
+            </div>
+            <hr class="mt-5 text-gray-300 font-extra-bold  border ">
+
+            <div class="flex gap-3 pt-5 justify-center items-center">
+
+                <i class="fa-solid fa-cart-shopping text-4xl text-white/90"></i>
+            </div>
+        </div>
+        <!-- overlay -->
+        <div id="overlay" class="fixed inset-0 bg-black/50 hidden z-40" onclick="openClose()">
+        </div>
+    </header>
+
+    <!-- upload -->
+    <section class="max-w-4xl mx-auto my-10  bg-gradient-to-br rounded-lg shadow-sm bg-white border border-gray-200 ">
+        <h1 class="text-center py-4 font-semibold text-2xl">Upload Your Item</h1>
+        <form onsubmit="handleSubmit(event)" class="grid grid-cols-2 max-[890px]:grid-cols-1 ">
+            <div class="p-6">
+
+                <label for="fileInput" class="flex flex-col items-center justify-around border-2 border-dashed border-blue-400 p-5 rounded-3xl h-80 max-sm:h-60
+
+            ">
+                    <i class="fa-solid fa-cloud-arrow-up text-blue-400 text-4xl"></i>
+                    <div class="flex flex-col items-center">
+                        <p class="font-semibold">Drag and Drop files to upload </p>
+                        <p class="font-semibold">or</p>
+                    </div>
+
+                    <div class="flex flex-col items-center gap-1">
+                        <p class="bg-blue-400 w-24 py-1 rounded-2xl text-white font-semibold text-center ">Browse</p>
+                        <p class="text-sm text-gray-600">Supported files: jpg , jpeg , png</p>
+                    </div>
+                    <p id="fileName" class="text-sm text-green-600 mt-2"></p>
+                </label>
+                <input id="fileInput" type="file" name="file" required class="hidden">
+            </div>
+
+            <!-- right side -->
+            <div class="p-6 space-y-2 ">
+                <!-- category -->
+                <div class=" flex  items-center gap-4 ">
+                    <label for="category"
+                        class="font-semibold w-28 shrink-0  max-[408px]:w-19 max-[408px]:text-sm ">Category:</label>
+                    <div class="relative w-full">
+                        <input id="category" type="text" placeholder="Enter Your Category" name="category"
+                            class=" bg-white w-full outline-none py-2 px-4  rounded-full italic border  border-gray-400 focus:border-blue-600  max-[500px]:text-sm max-[340px]:px-1">
+                        <i
+                            class="fa-solid fa-layer-group absolute right-3 top-1/2 -translate-y-1/2  text-blue-400 "></i>
+                    </div>
+
+                </div>
+
+                <!-- Name -->
+                <div class=" flex  items-center gap-4 relative">
+                    <label for="name"
+                        class="font-semibold w-28 shrink-0  max-[408px]:w-19 max-[408px]:text-sm ">Title:</label>
+                    <div class="relative w-full">
+                        <input id="name" type="text" placeholder="Enter Your Tittle" name="name"
+                            class=" bg-white w-full outline-none py-2 px-6 rounded-full italic border  border-gray-400 focus:border-blue-600  max-[500px]:text-sm max-[340px]:px-1">
+                        <i class=" fa-solid fa-tag absolute right-3 top-1/2 -translate-y-1/2 text-blue-400"></i>
+                    </div>
+
+                </div>
+
+                <!-- Price-->
+                <div class=" flex  items-center gap-4 relative">
+                    <label for="price"
+                        class="font-semibold w-28 shrink-0  max-[408px]:w-19 max-[408px]:text-sm">Price:</label>
+                    <div class="relative w-full">
+                        <input id="price" type="number" placeholder="Enter Your Price" name="price"
+                            class=" bg-white w-full outline-none py-2 px-6 rounded-full italic border  border-gray-400 focus:border-blue-600  max-[500px]:text-sm max-[340px]:px-1">
+                        <i class=" fa-solid fa-indian-rupee-sign absolute right-2 top-1/2 -translate-y-1/2
+                            text-blue-400"></i>
+                    </div>
+
+                </div>
+
+                <!-- discount -->
+                <div class=" flex  items-center gap-4 relative">
+                    <label for="discount"
+                        class="font-semibold w-28 shrink-0 max-[408px]:w-19 max-[408px]:text-sm">Discount %: </label>
+                    <div class="relative w-full">
+                        <input id="discount" type="number" placeholder="Enter Your Discount" name="category"
+                            class=" bg-white w-full outline-none py-2 px-6 rounded-full italic border  border-gray-400 focus:border-blue-600  max-[500px]:text-sm max-[340px]:px-1">
+                        <i class=" fa-solid fa-percent absolute right-2 top-1/2 -translate-y-1/2 text-blue-400"></i>
+                    </div>
+
+                </div>
+                <!-- Rating -->
+                <div class=" flex  items-center gap-4 relative">
+                    <label for="rating" class="font-semibold w-28 shrink-0  max-[408px]:w-19 max-[408px]:text-sm">Rating
+                        :</label>
+                    <div class="relative w-full">
+                        <input id="rating" type="number" placeholder="Enter Your Rating" name="category"
+                            class=" bg-white w-full outline-none py-2 px-6 rounded-full italic border  border-gray-400 focus:border-blue-600  max-[500px]:text-sm max-[340px]:px-1">
+                        <i class=" fa-solid fa-star absolute right-2 top-1/2 -translate-y-1/2 text-blue-400"></i>
+                    </div>
+
+                </div>
+                <!-- description -->
+                <div class=" flex  items-center gap-4 relative">
+                    <label for="description"
+                        class="font-semibold w-28 shrink-0  max-[408px]:w-19 max-[408px]:text-sm">Description:</label>
+                    <div class="relative w-full">
+
+                        <input id="description" type="text" placeholder="Enter Your Description" name="category"
+                            class=" bg-white  w-full outline-none py-2 px-6 italic rounded-full border  border-gray-400 focus:border-blue-600  max-[500px]:text-sm max-[340px]:px-1 ">
+                        <i class=" fa-solid fa-align-left absolute right-2 top-1/2 -translate-y-1/2 text-blue-400"></i>
+                    </div>
+
+                </div>
+                <!-- Made In -->
+                <div class=" flex  items-center gap-4 relative">
+                    <label for="madeIn"
+                        class="font-semibold w-28 shrink-0  max-[408px]:w-19 max-[408px]:text-sm">MadeIn:</label>
+                    <div class="w-full relative ">
+                        <input id="madeIn" type="text" placeholder="Enter Made In Country" name="category"
+                            class=" bg-white w-full outline-none py-2 px-4 rounded-full italic border  border-gray-400 focus:border-blue-600   max-[500px]:text-sm max-[340px]:px-1 ">
+                        <i
+                            class=" fa-solid fa-globe absolute right-2 top-1/2 -translate-y-1/2 text-blue-400  max-[370pxpx]:text-sm "></i>
+                    </div>
+
+                </div>
+
+                <div class="flex items-center justify-center max-[890px]:justify-end">
+                    <button type="submit"
+                        class="bg-blue-400 w-60  mt-5 py-2 rounded-md font-semibold text-white ">Submit</button>
+                </div>
+
+
+            </div>
+        </form>
+
+    </section>
+
+    <!-- recently added Product -->
+    <section class="bg-white">
+        <div class="max-w-[90%] mx-auto pb-16 pt-24">
+            <h1 class="text-xl font-semibold pb-6">Recently Added Products</h1>
+            <div id="recentlyProduct" class="flex gap-3 overflow-x-scroll no-scrollbar">
+
+                <!-- render -->
+
+
+            </div>
+    </section>
+
+    <script>
+
+        // handburger
+        function openClose() {
+            const sidebar = document.getElementById("sidebar");
+            const overlay = document.getElementById("overlay");
+
+            sidebar.classList.toggle("-left-64");
+            overlay.classList.toggle("hidden");
+            document.body.classList.toggle("overflow-hidden");
+        }
+
+        // file-drag
+
+        const box = document.querySelector("label[for='fileInput']");
+        const input = document.getElementById("fileInput");
+        const text = document.getElementById("fileName");
+
+        box.ondragover = e => e.preventDefault();
+
+        box.ondrop = e => {
+            e.preventDefault();
+            input.files = e.dataTransfer.files;
+            text.textContent = input.files[0].name;
+        };
+
+        input.onchange = () => {
+            text.textContent = input.files[0].name;
+        };
+
+
+
+        // recently product
+        for (let i = 0; i < 10; i++) {
+            recentlyProduct.innerHTML += `
+   
+                    <div class=" p-2 bg-white min-w-64 rounded-[14px] shadow-sm">
+                        <!-- img part -->
+                        <div class="relative pb-4">
+                            <img class="w-full h-40 rounded-[6px] object-cover "
+                                src="https://images.unsplash.com/photo-1517420879524-86d64ac2f339?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHNtYXJ0JTIwd2F0Y2h8ZW58MHx8MHx8fDA%3D"
+                                alt="">
+                            <div
+                                class="absolute top-2 left-2 text-white bg-red-500 h-8 w-14 rounded-sm flex items-center justify-center text-sm font-semibold">
+                                -35%</div>
+                            <button
+                                class="absolute top-2 right-2 h-10 w-10 rounded-full bg-white flex items-center justify-center">
+                                <i class="far fa-heart text-gray-600"></i>
+                            </button>
+                        </div>
+                        <div class="flex flex-col gap-2 px-3 ">
+                            <div class="flex justify-between items-center">
+                                <h1 class="text-lg font-semibold">Premium Watch</h1>
+                                <p class="font-semibold">
+                                    4.5
+                                    <i class="fa-solid fa-star text-yellow-400"></i>
+
+                                </p>         
+                            </div>
+                            <p class="text-sm text-gray-500 font-semibold">
+                              Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                              
+                            </p>
+                            <div class="flex items-center gap-3">
+                                <p class="text-xl font-bold">&#8377; 499</p>
+                                <p class="text-lg line-through text-gray-500 font-semibold">&#8377; 999</p>
+                            </div>
+                            <button class="bg-blue-800 py-1 text-white font-semibold rounded-md mb-3">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+   
+   `;
+
+        }
+
+    </script>
+</body>
+
+</html>

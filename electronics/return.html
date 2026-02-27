@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <header class="bg-gray-100">
+        <div class="">
+            <!-- top -->
+            <div class="max-w-[90%] h-20 mx-auto flex justify-between items-center gap-3 py-3 max-sm:py-1">
+                <img src="logo.png" alt="logo" class="h-19 w-36 object-cover ">
+
+                <div class="relative max-lg:hidden">
+                    <input type="text" placeholder="Search for Products"
+                        class=" max-md:w-80 max-sm:w-50 max-sm:text-sm max-sm:p-1 max-sm:h-8 
+                        h-10 px-3 w-100  bg-white outline-none rounded-full shadow-sm shadow-gray-200 hover:shadow-blue-400 focus:shadow-red-500">
+                    <i class=" fas fa-search absolute right-3 top-3 max-sm:text-xs "></i>
+
+
+                </div>
+
+
+                <div class="flex items-center gap-6 max-lg:hidden">
+
+                    <i class="fa-regular fa-heart text-gray-600 text-lg hover:text-gray-900"></i>
+                    <i class="fa-solid fa-cart-shopping text-gray-600 text-lg hover:text-gray-900"></i>
+                    <button
+                        class="shadow-md px-6 h-8 font-semibold rounded-sm bg-blue-600 text-white hover:animate-pulse">
+                        Login
+                    </button>
+                </div>
+                <!-- handburger -->
+                <div onclick="openClose()" class="lg:hidden text-2xl ">
+                    <!-- <i class="fa-solid fa-bars"></i> -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-settings2 lucide-settings-2" aria-hidden="true">
+                        <path d="M14 17H5"></path>
+                        <path d="M19 7h-9"></path>
+                        <circle cx="17" cy="17" r="3"></circle>
+                        <circle cx="7" cy="7" r="3"></circle>
+                    </svg>
+
+
+                </div>
+            </div>
+
+        </div>
+        </div>
+        <hr class="text-gray-300 max-lg:hidden">
+        <!-- nav -->
+        <nav class=" py-4 max-lg:hidden">
+            <div class="max-w-[85%] mx-auto text-blue-800 flex items-center justify-center gap-6">
+                <a href="index.html"
+                    class="font-semibold border-b-2 border-transparent hover:text-blue-600 hover:border-slate-400 ">Home</a>
+                <a href="product.html"
+                    class="font-semibold border-b-2 border-transparent  hover:text-blue-600 hover:border-slate-400">Products</a>
+                <a href=""
+                    class="font-semibold border-b-2 border-transparent  hover:text-blue-600 hover:border-slate-400">Feature</a>
+                <a href=""
+                    class="font-semibold border-b-2 border-transparent hover:text-blue-600  hover:border-slate-400">About</a>
+                <a href=""
+                    class="font-semibold border-b-2 border-transparent hover:text-blue-600  hover:border-slate-400">Contact</a>
+            </div>
+
+        </nav>
+        <!-- mobile -->
+        <div id="sidebar"
+            class="bg-slate-700  min-h-screen w-64 absolute top-0 z-50 py-6 px-4 -left-0 -left-64 transition-all duration-500 ease-in-out">
+            <div class="flex items-center justify-between mb-6">
+                <h1
+                    class="text-2xl font-bold bg-gradient-to-br from-gray-200 via-blue-500 to-blue-400 bg-clip-text text-transparent">
+                    User 's Pannel</h1>
+                <div onclick="openClose()">
+                    <i class="fa-solid fa-close  text-xl text-gray-50"></i>
+                </div>
+            </div>
+
+
+            <div class=" relative">
+                <input type="text" placeholder="Search for Products"
+                    class="
+                        h-10 px-3 w-56  bg-white  outline-none rounded-full shadow-sm shadow-gray-200 hover:shadow-blue-400 focus:shadow-red-500">
+                <i class=" fas fa-search absolute right-3 top-3 max-sm:text-xs "></i>
+
+
+            </div>
+
+            <div class="flex flex-col items-center pt-5 gap-5">
+                <a href="index.html" class="font-semibold text-white ">Home</a>
+                <a href="product.html" class="font-semibold text-white ">Products</a>
+                <a href="" class="font-semibold text-white ">Features</a>
+                <a href="" class="font-semibold text-white ">About</a>
+                <a href="" class="font-semibold text-white ">Contact</a>
+
+
+                <a href="login.html"
+                    class="shadow-md px-6 h-10 w-40 font-semibold text-center py-1  rounded-full bg-blue-700 text-white hover:bg-indigo-800">Login</a>
+
+
+
+            </div>
+            <hr class="mt-5 text-gray-300 font-extra-bold  border ">
+
+            <div class="flex gap-3 pt-5 justify-center items-center">
+
+                <i class="fa-solid fa-cart-shopping text-4xl text-white/90"></i>
+            </div>
+        </div>
+        <!-- overlay -->
+        <div id="overlay" class="fixed inset-0 bg-black/50 hidden z-40" onclick="openClose()">
+        </div>
+    </header>
+
+    <section class="bg-gray-50">
+        <div class="max-w-[90%] mx-auto py-8">
+            <div class="grid gap-5">
+                <div class="grid place-content-center gap-1">
+                    <h1
+                        class="text-center text-4xl max-sm:text-3xl font-bold bg-gradient-to-br from-blue-800 via-blue-300 to-gray-700 bg-clip-text text-transparent">
+                        Return & Refund Policy
+                    </h1>
+                    <p class="text-center font-medium max-sm:text-sm ">
+                        Please review our return & refund guidelines carefully before making any payments.
+                    </p>
+                </div>
+
+                <p class="text-center font-medium text-gray-700 max-sm:text-sm">
+                    We want you to be satisfied with your purchase.
+                </p>
+            </div>
+
+
+            <!-- point to  -->
+            <div class="py-8 bg-white mt-15 shadow-sm px-6 space-y-7">
+                <!-- 1 -->
+                <div class="grid gap-2">
+                    <h1 class="text-2xl text-blue-800 font-medium max-sm:text-xl">1. Return Eligibility</h1>
+                    <ul>
+                        <li class="font-semibold">Products may be returned within 7 days of delivery if:</li>
+                        <li class="flex items-center gap-3 text-gray-600 font-semibold">
+                            <i class="fa-solid fa-hand-point-right text-blue-400 "></i>
+                            The item is unused
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-600 font-semibold">
+                            <i class="fa-solid fa-hand-point-right text-blue-400 "></i>
+                            It is in original packaging
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-600 font-semibold">
+                            <i class="fa-solid fa-hand-point-right text-blue-400 "></i>
+                            All accessories are included
+                        </li>
+                    </ul>
+                </div>
+                <!-- 2 -->
+                <div class="grid gap-2">
+                    <h1 class="text-2xl text-blue-800 font-medium max-sm:text-xl">2. Non-Returnable Items</h1>
+                    <ul>
+                        <li class="flex items-center gap-3 text-gray-600 font-semibold">
+                            <i class="fa-solid fa-hand-point-right text-blue-400 "></i>
+                            Products damaged by the customer
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-600 font-semibold">
+                            <i class="fa-solid fa-hand-point-right text-blue-400 "></i>
+                            Opened or activated software products
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-600 font-semibold">
+                            <i class="fa-solid fa-hand-point-right text-blue-400 "></i>
+                            Items without original packaging
+                        </li>
+                    </ul>
+                </div>
+                <!-- 3 -->
+                <div class="grid gap-2">
+                    <h1 class="text-2xl text-blue-800 font-medium max-sm:text-xl">3. Refund Process</h1>
+                    <p class=" font-medium text-gray-700 max-sm:text-sm">
+                        Refunds will be processed after product inspection.
+                        The amount will be credited within 5-7 working days to the original payment method.
+                    </p>
+                </div>
+                <!-- 4 -->
+                <div class="grid gap-2">
+                    <h1 class="text-2xl text-blue-800 font-medium max-sm:text-xl ">4. Replacement Policy</h1>
+                    <p class=" font-medium text-gray-700 max-sm:text-sm">
+                        Defective products may be eligible for replacement subject to stock availability.
+
+                    </p>
+                </div>
+                <!-- 5 -->
+                <div class="grid gap-2">
+                    <h1 class="text-2xl text-blue-800 font-medium max-sm:text-xl">5. Important Note</h1>
+                    <p class=" font-medium text-gray-700 max-sm:text-sm">
+                        An unboxing video is recommended for claiming damage or missing items.
+                    </p>
+                </div>
+
+            </div>
+
+            <p class="py-6 text-center max-w-[80%] mx-auto text-gray-800 font-medium max-sm:text-sm">
+                We aim to provide a smooth and transparent return and refund process for our customers.
+                If you have any concerns regarding your order, please contact our support team, and we will
+                assist you as quickly as possible.
+            </p>
+        </div>
+    </section>
+
+    <!-- footer -->
+
+    <footer class=" bg-gray-600   pt-10 pb-2">
+        <div class="grid grid-cols-4 max-w-[90%] mx-auto gap-6 max-md:grid-cols-2 max-sm:grid-cols-1">
+            <!-- about -->
+            <div class="flex flex-col gap-2">
+                <h1 class="text-white font-semibold text-xl max-lg:text-lg">About FDStore</h1>
+                <hr class="w-16 text-blue-500  ">
+                <p class="text-gray-50  max-w-60 ">FDStore is your one-stop shop for electronics, offering quality
+                    products, affordable prices
+                    , and dependable customer service. We aim to provide the best shopping experience with trusted
+                    devices
+                    and
+                    fast support.
+                </p>
+
+                <div>
+                    <div>
+                        <i class="fa-solid fa-location-dot text-blue-400"></i>
+                        <span class="font-mono text-black/80 font-semibold">Lilong, Manipur, India</span>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-phone text-blue-400"></i>
+                        <span class="font-mono text-black/80 font-semibold">+91 8119934105</span>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-envelope text-blue-400"></i>
+                        <span class="font-mono text-black/80 font-semibold">fdstore@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- quick links -->
+            <div class="flex flex-col gap-2">
+                <h1 class="text-white font-semibold text-xl  max-lg:text-lg">Quick Links</h1>
+                <hr class="w-16 text-blue-500  ">
+
+                <div class="grid  tracking-wider ">
+                    <a href="" class="max-lg:text-base
+                    text-gray-50 font-medium  hover:translate-x-1 transition-all duration-500 hover:text-gray-50">
+                        <i class="fa-solid fa-caret-right text-blue-300"></i>
+                        Home
+                    </a>
+                    <a href="" class="max-lg:text-base
+                    text-gray-50 font-medium hover:translate-x-1 transition-all duration-500 hover:text-gray-50">
+                        <i class="fa-solid fa-caret-right text-blue-300"></i>
+                        About
+                    </a>
+                    <a href="" class="max-lg:text-base
+                    text-gray-50 font-medium hover:translate-x-1 transition-all duration-500 hover:text-gray-50">
+                        <i class="fa-solid fa-caret-right text-blue-300"></i>
+                        Products
+                    </a>
+                    <a href="" class="max-lg:text-base
+                    text-gray-50 font-medium hover:translate-x-1 transition-all duration-500 hover:text-gray-50">
+                        <i class="fa-solid fa-caret-right text-blue-300"></i>
+                        Features
+                    </a>
+                    <a href="" class="max-lg:text-base
+                    text-gray-50 font-medium hover:translate-x-1 transition-all duration-500 hover:text-gray-50">
+                        <i class="fa-solid fa-caret-right text-blue-300"></i>
+                        About
+                    </a>
+                    <a href="" class="max-lg:text-base
+                    text-gray-50 font-medium hover:translate-x-1 transition-all duration-500 hover:text-gray-50">
+                        <i class="fa-solid fa-caret-right text-blue-300"></i>
+                        Contact
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Categories -->
+            <div class="flex flex-col gap-2">
+                <h1 class="text-white font-semibold text-xl max-lg:text-lg">Categories</h1>
+                <hr class="w-16 text-blue-500  ">
+
+                <div class="grid ">
+                    <a href="" class="max-lg:text-base
+                    text-gray-50 font-medium hover:translate-x-1 transition-all duration-500 hover:text-gray-50">
+                        <i class="fa-solid fa-caret-right text-blue-300"></i>
+                        Mobiles
+                    </a>
+                    <a href="" class="max-lg:text-base
+                    text-gray-50 font-medium hover:translate-x-1 transition-all duration-500 hover:text-gray-50">
+                        <i class="fa-solid fa-caret-right text-blue-300"></i>
+                        Laptops
+                    </a>
+                    <a href="" class="max-lg:text-base
+                    text-gray-50 font-medium hover:translate-x-1 transition-all duration-500 hover:text-gray-50">
+                        <i class="fa-solid fa-caret-right text-blue-300"></i>
+                        Products
+                    </a>
+                    <a href="" class="max-lg:text-base
+                    text-gray-50 font-medium hover:translate-x-1 transition-all duration-500 hover:text-gray-50">
+                        <i class="fa-solid fa-caret-right text-blue-300"></i>
+                        Headphones
+                    </a>
+                    <a href="" class="max-lg:text-base
+                    text-gray-50 font-medium hover:translate-x-1 transition-all duration-500 hover:text-gray-50">
+                        <i class="fa-solid fa-caret-right text-blue-300"></i>
+                        Smart Watches
+                    </a>
+                    <a href="" class="max-lg:text-base
+                    text-gray-50 font-medium hover:translate-x-1 transition-all duration-500 hover:text-gray-50">
+                        <i class="fa-solid fa-caret-right text-blue-300"></i>
+                        Accessories
+                    </a>
+                </div>
+            </div>
+            <!-- Legal Section -->
+            <div class="flex flex-col gap-2">
+                <h1 class="text-white font-semibold text-xl max-lg:text-lg">Legal </h1>
+                <hr class="w-16 text-blue-500  ">
+
+                <div class="grid ">
+                    <a href="term&condition.html" class="max-lg:text-base 
+                   text-gray-50 font-medium hover:translate-x-1 transition-all duration-500 hover:text-gray-50">
+                        <i class="fa-solid fa-caret-right text-blue-300"></i>
+                        Terms & Conditions
+                    </a>
+                    <a href="privacy.html" class="max-lg:text-base
+                    text-gray-50 font-medium hover:translate-x-1 transition-all duration-500 hover:text-gray-50">
+                        <i class="fa-solid fa-caret-right text-blue-300"></i>
+                        Privacy Policy
+                    </a>
+                    <a href="return.html" class="max-lg:text-base
+                    text-gray-50 font-medium hover:translate-x-1 transition-all duration-500 hover:text-gray-50">
+                        <i class="fa-solid fa-caret-right text-blue-300"></i>
+                        Return and Refund Policy
+                    </a>
+                    <a href="" class="max-lg:text-base
+                    text-gray-50 font-medium hover:translate-x-1 transition-all duration-500 hover:text-gray-50">
+                        <i class="fa-solid fa-caret-right text-blue-300"></i>
+                        Shipping Policy
+                    </a>
+                    <a href="" class="max-lg:text-base
+                    text-gray-50 font-medium hover:translate-x-1 transition-all duration-500 hover:text-gray-50">
+                        <i class="fa-solid fa-caret-right text-blue-300"></i>
+                        Disclaimer
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Newslatter -->
+        <div class="bg-gray-800 py-8 max-w-[80%] m-auto mt-8 rounded-lg px-3 shadow-sm shadow-gray-500">
+            <div class="flex  flex-col items-center mb-4 text-center">
+                <h1 class="text-2xl font-semibold text-gray-100 max-md:text-xl">Subscribe to Our Newslatter</h1>
+                <p class="text-gray-500 max-md:text-sm ">Stay updated with the latest news and anouncements from FDStore
+                </p>
+            </div>
+
+            <div class="flex justify-center items-center max-sm:flex-col max-sm:gap-2 ">
+                <input type="email" placeholder="Enter your Email Address"
+                    class="bg-white  h-10 px-6 rounded-s-lg  outline-none max-sm:rounded-lg max-sm:w-full max-[350px]:text-sm max-sm:h-8">
+                <button
+                    class="bg-blue-400 px-6 h-10 rounded-e-lg font-semibold text-white max-sm:rounded-lg max-sm:w-full max-[350px]:text-sm max-sm:h-8 ">Subscribe</button>
+            </div>
+
+
+        </div>
+        <hr class="max-w-[70%] m-auto mt-2 text-gray-100 ">
+
+        <p class="text-center mt-3 text-gray-300">"&copy; 2026 FDStore . All rights reserved."</p>
+    </footer>
+
+
+    <script>
+        function openClose() {
+            const sidebar = document.getElementById("sidebar");
+            const overlay = document.getElementById("overlay");
+
+            sidebar.classList.toggle("-left-64");
+            overlay.classList.toggle("hidden");
+            document.body.classList.toggle("overflow-hidden");
+        }
+    </script>
+
+</body>
+
+</html>

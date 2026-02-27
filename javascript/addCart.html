@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Cart</title>
+</head>
+<body>
+  
+    <!-- Product container -->
+    <h1 class=" p-5 text-2xl">Add Products</h1>
+
+    <section id="container" class="grid grid-cols-4 max-w-[95%] mx-auto  gap-4 ">
+       
+    </section>
+
+
+
+    <!-- cart container -->
+  <h1 class="p-5  text-2xl">Your Cart : </h1>
+  <section id="cartContainer" class="grid grid-cols-4 max-w-[95%] mx-auto  gap-4 ">
+     
+  </section>
+
+
+    <script>
+
+ // product data
+    const products = [
+      {
+        id: 1,
+        name: "iPhone 14 Pro Max",
+        price: 120000
+      },
+      {
+        id: 2,
+        name: "Samsung Galaxy S23 Ultra",
+        price: 110000
+      },
+      {
+        id: 3,
+        name: "OnePlus 11 Pro",
+        price: 90000
+      },
+        { id: 4,
+          name: "Redmi 14 Pro Max",
+          price: 40000
+      }
+    ];
+
+
+        const container =document.getElementById("container") 
+        for (let i = 0; i <products.length; i++) {
+            container.innerHTML +=`
+        
+         <div class="bg-slate-500 text-white flex flex-col gap-3 p-5">
+          <p class="">ID: ${products[i].id}</p>
+            <p class="">Prducts Name :${products[i].name}</p>
+            <p>Price: &#8377;${products[i].price}</p>
+
+            <button onclick="addToCart(${products[i].id})" class="bg-gray-50   text-black  py-1 mx-aut"> Add to Cart</button>
+        </div>   
+        `;
+            
+        }
+
+const cart=[]
+
+
+     function addToCart(id) {
+      const product = products.find(product => product.id == id);
+      cart.push(product);
+      viewCart();
+    }
+
+    
+    // render the current cart information
+    function viewCart() {
+      const cartContainer = document.getElementById("cartContainer");
+      cartContainer.innerHTML = ``;
+      for (let i = 0; i < cart.length; i++) {
+        cartContainer.innerHTML += `
+       <div class="bg-gray-700 text-white  p-5 flex flex-col gap-2">
+       <div class="flex items-center justify-between">
+            <h1>${cart[i].name}</h1>
+            <i onclick="removeFromCart(${cart[i].id})" class="fa-solid fa-close text-red-400 text-xl cursor-pointer"></i>
+        </div> 
+            <h1>ID: ${cart[i].id}</h1>
+            <p>Price : ₹${cart[i].price}</p>   
+        </div>
+         
+        `;
+
+      } 
+    }
+
+    function removeFromCart(id){
+        const remove =cart.findIndex(remove => remove.id==id);
+        cart.splice(remove, 1)
+      viewCart()
+
+    }
+
+
+
+
+    </script>
+    
+
+</body>
+</html>

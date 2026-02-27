@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <h1>Add your Item</h1>
+    <form onsubmit="OnSubmit(event)" class="grid mx-auto gap-2  max-w-150 bg-gray-300 p-5">
+        <label>Titile :</label>
+        <input type="text" placeholder="Titile of the item" name="title" required  class="h-10 bg-white px-5 rounded-md outline-none">
+        
+
+        <label>Actual Price :</label>
+        <input type="text" placeholder="Price of the item" name="actualPrice" required
+        class="h-10 bg-white px-5 rounded-md outline-none">
+
+        <label>Offer Price :</label>
+        <input type="text" placeholder="Price of the item" name="offerPrice" required
+        class="h-10 bg-white px-5 rounded-md outline-none">
+
+        <label>Description :</label>
+        <input type="text" placeholder=" Description of the item" name="description" required
+        class="h-10 bg-white px-5 rounded-md outline-none">
+
+
+        <input type="file" name="file" required
+        class="bg-white h-20">
+
+        <button type="submit" class="bg-slate-400 py-1 w-40 mx-auto">Submit</button>
+
+    </form>
+
+    <section id="cartContainer" class="grid grid-cols-4 gap-2 gap-y-5 max-xl:grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1">
+   
+    </section>
+
+
+    <script>
+        const cartContainer=document.getElementById("cartContainer");
+
+        function OnSubmit(e){
+            e.preventDefault();
+            const formData =e.target;
+          const  title= formData.title.value;
+           const  actualPrice=formData.actualPrice.value;
+           const  offerPrice=formData.offerPrice.value;
+          const  description=formData.description.value;
+          
+         const file = formData.file.files[0];
+          const imageURL = URL.createObjectURL(file);
+
+            cartContainer.innerHTML +=`
+                 <div class=" p-2 bg-white  rounded-[14px]  shadow-sm hover:-translate-y-1 transition-all hover:shadow-lg">
+            <!-- img part -->
+
+            <img class="w-full h-48 object-cover rounded-[6px] over "
+                src="${imageURL}"
+                alt="">
+
+
+            <div class="flex flex-col gap-2 px-3 ">
+                <div>
+                    <h1 class="text-lg font-semibold">${title}</h1>
+                    <p class="text-sm text-gray-500 font-semibold">${description}
+                        </p>
+                </div>
+                <div class="flex items-center gap-3">
+                    <p class="text-xl font-bold">&#8377; ${offerPrice}</p>
+                    <p class="text-lg line-through text-gray-500 font-semibold">&#8377; ${actualPrice}</p>
+                </div>
+                <button class="bg-indigo-800 py-1 text-white font-semibold rounded-md mb-3">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+            `;
+
+
+        }
+    </script>
+
+
+</body>
+
+</html>

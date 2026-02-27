@@ -1,31 +1,31 @@
-const users=[
+const users = [
     {
-        name :"Farid",
-        phone:8119934105,
-        email:"farid@gmail.com",
+        name: "Farid",
+        phone: 8119934105,
+        email: "farid@gmail.com",
     },
 
     {
-        name :"Premjit",
-        phone:9087654321,
-        email:"premjit@gmail.com",
+        name: "Premjit",
+        phone: 9087654321,
+        email: "premjit@gmail.com",
     },
     {
-        name :"Ricky",
-        phone:6909013635,
-        email:"ricky@gmail.com",
+        name: "Ricky",
+        phone: 6909013635,
+        email: "ricky@gmail.com",
     },
     {
-        name :"Kripa",
-        phone:1234567890,
-        email:"kripa@gmail.com",
+        name: "Kripa",
+        phone: 1234567890,
+        email: "kripa@gmail.com",
     },
 
 ]
-const card=document.getElementById("card");
+const card = document.getElementById("card");
 for (let i = 0; i < users.length; i++) {
-   
-    card.innerHTML +=`
+
+    card.innerHTML += `
      <div class="bg-gradient-to-br from-slate-50 to-slate-300 py-4 px-4  shadow-sm rounded-sm hover:-translate-y-1 transition-all ">
             <div class="flex gap-2 items-center">
                 <div class="h-10 w-10 rounded-full bg-indigo-400 flex justify-center items-center text-2xl text-white  font-semibold hover:bg-indigo-700">
@@ -43,5 +43,24 @@ for (let i = 0; i < users.length; i++) {
     
     
     `
-    
+
 }
+
+function order(amount, distance) {
+    let details = ""
+    if (amount >= 10000) {
+        details += "20% discount ";
+
+    }
+    if (distance <= 5) {
+        details += "1 day delivery";
+
+    }
+    else {
+        details += "2 day delivery ";
+
+    }
+    console.log(details);
+
+}
+order(12000, 2)

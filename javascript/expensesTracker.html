@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExpensesTracker</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <!-- summary -->
+    <header class="grid grid-cols-3 gap-4 max-w-4xl mx-auto p-5 max-sm:grid-cols-1">
+
+        <div class="bg-slate-700 p-5 flex justify-center flex-col items-center rounded-lg">
+            <h1 id="balance" class="text-lg text-white font-bold ">&#8377 5000</h1>
+            <p class="text-sm text-gray-300 font-semibold tracking-wider">Balance</p>
+        </div>
+
+
+        <div class="bg-slate-700 p-5 flex justify-center flex-col items-center rounded-lg">
+            <h1 id="credit" class="text-lg text-white font-bold ">&#8377 5000</h1>
+            <p class="text-sm text-gray-300 font-semibold tracking-wider">Credit</p>
+        </div>
+
+
+        <div class="bg-slate-700 p-5 flex justify-center flex-col items-center rounded-lg">
+            <h1 id="debit" class="text-lg text-white font-bold ">&#8377 5000</h1>
+            <p class="text-sm text-gray-300 font-semibold tracking-wider">Debit</p>
+        </div>
+
+    </header>
+
+    <!-- form -->
+    <main onsubmit="handleSubmit(event)" class="grid  gap-6 max-w-4xl mx-auto p-5 sm:grid-cols-2">
+
+        <section class="shadow-sm rounded-lg p-3 max-h-84">
+            <form class="space-y-2">
+                <p class="text-gray-400 ">Add New Transaction</p>
+                <!-- Amount -->
+                <div>
+                    <label for="amount" class="text-sm text-gray-500 font-semibold">Amount</label>
+                    <input id="amount" type="text" placeholder="Amount" name="amount" required
+                        class="text block w-full p-3 bg-gray-300 outline-none rounded-lg  hover:shadow hover:shadow-blue-400 focus:shadow focus:shadow-red-400">
+                </div>
+                <!-- remark -->
+                <div>
+                    <label for="remark" class="text-sm text-gray-500 font-semibold">Remark</label>
+                    <input id="remark" type="text" placeholder="Remark" name="remark" required
+                        class="text block w-full p-3 bg-gray-300 outline-none rounded-lg hover:shadow hover:shadow-blue-400 focus:shadow focus:shadow-red-400">
+                </div>
+
+                <!-- action -->
+                <div>
+                    <p class="text-sm text-gray-500 font-semibold">Action</p>
+                    <div class="flex gap-4">
+                        <!-- credit -->
+                        <div class="flex items-center gap-2">
+                            <input id="creditInput" type="radio" name="action" value="credit" required>
+                            <label for="creditInput"
+                                class="text-sm text-gray-500 font-semibold tracking-wider">Credit</label>
+                        </div>
+
+                        <!-- debit -->
+                        <div class="flex items-center gap-2">
+                            <input id="debitInput" type="radio" name="action" value="debit" required>
+                            <label for="debitInput"
+                                class="text-sm text-gray-500 font-semibold tracking-wider">Debit</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit"
+                    class="bg-blue-600 w-full p-2 rounded-lg text-white font-semibold mt-4">Submit</button>
+
+
+
+            </form>
+        </section>
+
+        <!-- transaction History -->
+        <section>
+            <p class="text-lg text-wider text-gray-400 mb-2">Transaction History</p>
+            <div id="transactionHistory" class="grid gap-4">
+             
+            </div>
+        </section>
+          &frac45;
+    </main>
+
+
+    <script>
+        const transactions = [
+            { amount: 120, remark: "From Alex", action: "credit", createdAt: 1771345607093 },
+            { amount: 50, remark: "Transfer to John", action: "debit", createdAt: 1771345537094 },
+            { amount: 10, remark: "Gift", action: "credit", createdAt: 1771345477095 },
+
+        ];
+        const transactionHistory = document.getElementById("transactionHistory");
+
+        // render History
+        function renderHistory() {
+            transactionHistory.innerHTML = ``;
+            for (let i = 0; i < transactions.length; i++) {
+                transactionHistory.innerHTML += `
+                <div
+                    class="shadow-sm p-3 flex flex-col gap-2 rounded-lg bg-slate-200 hover:-translate-y-1 hover:transition-all hover:duration-300">
+                    <div onclick="historyRemove(this)" class="text-right text-gray-500 text-xl cursor-pointer">
+
+                        <i class="fa-solid fa-close"></i>
+                    </div>
+                    <div class="flex justify-between">
+                        <div class="flex flex-col gap-2">
+                            <p class="text-gray-500 text-sm font-semibold tracking-wider">${transactions[i].remark}</p>
+                             <p class="text-gray-600 text-xs">
+                                    ${new Date(transactions[i].createdAt).toLocaleString("en-GB", {
+                                    day: "2-digit",
+                                    month: "short",
+                                    year: "2-digit",
+                                    hour: "numeric",
+                                    minute: "2-digit",
+                                    hour12: true
+                                })
+                                }
+                            </p>
+
+                         
+                        </div>
+
+                        <p class="text-green-500 font-semibold
+                         ${transactions[i].action == "credit" ? "text-green-600" : "text-red-600"}
+                         ">
+                             ${transactions[i].action == "credit" ? "+ " : "- "} ${transactions[i].amount}
+                   </p>
+                </div>
+
+                                      
+                    `;
+            }
+        }
+
+        // find total
+        let summary = { credit: 0, debit: 0 };
+        let balance = 0;
+
+        function findTotals() {
+            summary = transactions.reduce(
+                (acc, curr) => {
+                    if (curr.action == "credit") {
+                        acc.credit += curr.amount;
+
+                    }
+                    else {
+                        acc.debit += curr.amount;
+                    }
+                    return acc;
+
+                },
+                { credit: 0, debit: 0 }
+            );
+
+            balance = summary.credit - summary.debit
+        }
+
+        // update state
+        function updateStates() {
+            document.getElementById("balance").innerText = "₹" + balance;
+            document.getElementById("credit").innerText = "₹" + summary.credit;
+            document.getElementById("debit").innerText = "₹" + summary.debit;
+
+        }
+
+
+        // historyRemove
+        function historyRemove(el) {
+            // el = clicked ❌ icon
+            const card = el.closest(".flex"); // find the transaction box
+            card.remove(); // remove only this card from DOM
+        }
+
+
+
+        function refreshUI() {
+            findTotals();
+            updateStates();
+            renderHistory();
+        }
+
+        // page load
+        refreshUI();
+
+
+        function handleSubmit(e) {
+            e.preventDefault();
+
+            // get value from form
+            const amount = Number(e.target.amount.value);
+            const remark = e.target.remark.value;
+            const action = e.target.action.value;
+
+            // add to array
+            transactions.unshift({ amount, remark, action, createdAt: new Date().getTime() });
+
+
+
+            e.target.reset();
+
+            // all function 
+            refreshUI();
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

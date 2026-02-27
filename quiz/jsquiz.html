@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Quiz App</title>
+</head>
+
+<body class="bg-slate-100">
+
+    <section class="max-w-2xl mx-auto mt-10">
+        <div class="bg-white shadow-sm p-5 rounded-lg">
+
+            <!-- Progress -->
+            <p id="progress" class="text-center text-sm font-semibold text-gray-500 mb-2"></p>
+
+            <!-- Question and Timer -->
+            <div class="flex justify-between">
+                <h1 id="question" class="font-semibold text-lg"></h1>
+                <p class="font-semibold text-gray-400 text-lg">
+                    Time : <span id="counter"></span>
+                </p>
+            </div>
+
+            <!-- Options -->
+            <div class="flex flex-col gap-2 mt-3">
+
+                <label class="flex items-center gap-3 option cursor-pointer font-semibold">
+                    <input type="radio" name="option">
+                    <span id="opt_a"></span>
+                </label>
+
+                <label class="flex items-center gap-3 option cursor-pointer  font-semibold">
+                    <input type="radio" name="option">
+                    <span id="opt_b"></span>
+                </label>
+
+                <label class="flex items-center gap-3 option cursor-pointer  font-semibold">
+                    <input type="radio" name="option">
+                    <span id="opt_c"></span>
+                </label>
+
+                <label class="flex items-center gap-3 option cursor-pointer  font-semibold">
+                    <input type="radio" name="option">
+                    <span id="opt_d"></span>
+                </label>
+
+            </div>
+
+            <!-- Next Button -->
+            <div class="flex justify-end pt-4">
+
+                <button id="next"
+                    class="bg-green-600 py-1 px-5 rounded-md text-white font-semibold flex items-center gap-2">
+                    Next <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+
+        // Quiz Data
+        let quiz = [
+
+            {
+                question: "Which keyword is used to declare a variable in JavaScript?",
+                option_a: "var",
+                option_b: "int",
+                option_c: "string",
+                option_d: "float",
+                correct: "var"
+            },
+
+            {
+                question: "Which method is used to select an element by ID?",
+                option_a: "querySelectorAll()",
+                option_b: "getElementById()",
+                option_c: "getElementsByClass()",
+                option_d: "selectElement()",
+                correct: "getElementById()"
+            },
+
+            {
+                question: "Which symbol is used for single line comment in JavaScript?",
+                option_a: "//",
+                option_b: "/* */",
+                option_c: "#",
+                option_d: "<!-- -->",
+                correct: "//"
+            },
+
+            {
+                question: "Which method is used to add an element at the end of an array?",
+                option_a: "push()",
+                option_b: "pop()",
+                option_c: "shift()",
+                option_d: "unshift()",
+                correct: "push()"
+            },
+
+            {
+                question: "Which function is used to print something in the console?",
+                option_a: "print()",
+                option_b: "console.log()",
+                option_c: "log.console()",
+                option_d: "write()",
+                correct: "console.log()"
+            },
+
+            {
+                question: "Which keyword is used to declare a constant variable?",
+                option_a: "let",
+                option_b: "var",
+                option_c: "const",
+                option_d: "constant",
+                correct: "const"
+            },
+
+            {
+                question: "Which event occurs when a user clicks an element?",
+                option_a: "onchange",
+                option_b: "onmouseover",
+                option_c: "onclick",
+                option_d: "onload",
+                correct: "onclick"
+            },
+
+            {
+                question: "Which method converts JSON string into object?",
+                option_a: "JSON.parse()",
+                option_b: "JSON.stringify()",
+                option_c: "JSON.convert()",
+                option_d: "JSON.toObject()",
+                correct: "JSON.parse()"
+            },
+
+            {
+                question: "Which operator is used for strict equality?",
+                option_a: "==",
+                option_b: "=",
+                option_c: "===",
+                option_d: "!=",
+                correct: "==="
+            },
+
+            {
+                question: "Which method is used to add HTML inside an element?",
+                option_a: "innerText",
+                option_b: "innerHTML",
+                option_c: "textContent",
+                option_d: "appendText",
+                correct: "innerHTML"
+            }
+
+        ];
+
+
+        // Variables
+        let index = 0;
+        let score = 0;
+        let answered = false;
+        let timer;
+        let count = 10;
+
+
+        // Elements
+        const question = document.getElementById("question");
+
+        const opt_a = document.getElementById("opt_a");
+        const opt_b = document.getElementById("opt_b");
+        const opt_c = document.getElementById("opt_c");
+        const opt_d = document.getElementById("opt_d");
+
+        const options = document.querySelectorAll(".option");
+
+        const nextBtn = document.getElementById("next");
+
+        const counter = document.getElementById("counter");
+
+        const progress = document.getElementById("progress");
+
+
+
+        // Load Question
+        function loadQuestion() {
+
+            clearInterval(timer);
+
+            count = 10;
+
+            answered = false;
+
+            startTimer();
+
+            let q = quiz[index];
+
+            progress.innerText = `Question ${index + 1} / ${quiz.length}`;
+
+            question.innerText = q.question;
+
+            opt_a.innerText = q.option_a;
+            opt_b.innerText = q.option_b;
+            opt_c.innerText = q.option_c;
+            opt_d.innerText = q.option_d;
+
+
+            options.forEach(opt => {
+
+                opt.classList.remove("text-green-600", "text-red-600");
+
+                opt.style.pointerEvents = "auto";
+
+                opt.querySelector("input").checked = false;
+
+            });
+
+        }
+
+
+
+        // Timer
+        function startTimer() {
+
+            counter.innerText = count;
+
+            timer = setInterval(() => {
+
+                count--;
+
+                counter.innerText = count;
+
+                if (count === 0) {
+
+                    clearInterval(timer);
+
+                    disableOptions();
+
+                    nextQuestion();
+
+                }
+
+            }, 1000);
+
+        }
+
+
+
+        // Disable options
+        function disableOptions() {
+
+            options.forEach(opt => {
+
+                opt.style.pointerEvents = "none";
+
+                let text = opt.querySelector("span").innerText;
+
+                if (text === quiz[index].correct) {
+
+                    opt.classList.add("text-green-600");
+
+                }
+
+            });
+
+        }
+
+
+
+        // Option Click
+        options.forEach(opt => {
+
+            opt.addEventListener("click", () => {
+
+                if (answered) return;
+
+                answered = true;
+
+                clearInterval(timer);
+
+                let selected = opt.querySelector("span").innerText;
+
+                let correct = quiz[index].correct;
+
+                disableOptions();
+
+                if (selected === correct) {
+
+                    opt.classList.add("text-green-600");
+
+                    score++;
+
+                }
+
+                else {
+
+                    opt.classList.add("text-red-600");
+
+                }
+
+            });
+
+        });
+
+
+
+        // Next Question
+        function nextQuestion() {
+
+            if (index < quiz.length - 1) {
+
+                index++;
+
+                loadQuestion();
+
+            }
+
+            else {
+
+                showScore();
+
+            }
+
+        }
+
+
+
+        // Show Score
+        function showScore() {
+
+            document.querySelector(".bg-white").innerHTML = `
+
+                <h1 class="text-2xl font-bold text-center mb-3">
+                    Quiz Finished
+                </h1>
+
+                <p class="text-center text-lg font-semibold text-green-600">
+                    Your Score: ${score} / ${quiz.length}
+                </p>
+
+            `;
+
+        }
+
+
+
+        // Next Button Click
+        nextBtn.addEventListener("click", nextQuestion);
+
+
+
+        // Start Quiz
+        loadQuestion();
+
+    </script>
+
+</body>
+
+</html>

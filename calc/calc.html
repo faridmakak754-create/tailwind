@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Page</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+
+<body class="bg-gray-200">
+
+<div class="max-w-[80%] mx-auto text-center">
+
+  
+<script>
+function order(amount, distance){
+  let discountText="";
+  let delivered="";
+  let discountAmount=0;
+  let finalAmount =amount;
+
+  //discount
+  if(amount >=10000){
+    discountAmount=amount*0.20;
+    finalAmount =amount -discountAmount;
+
+    discountText=" You get 20% discount." 
+  }
+  else{
+    discountText="You get no discount."
+  }
+
+
+  //delivered
+
+  if(distance <= 5){
+    delivered=" The Order will be delivered in 1 day."
+  }
+  else{
+    delivered=" The order will be delivered in 2 day."
+  }
+
+  console.log(discountText
+  + " The Original Price is : " + amount
+  + " and the discount Amount is : " + discountAmount
+  + " You Pay Only : "  +finalAmount
+  + delivered
+);
+  
+  
+
+}
+order(10000 , 6)
+</script>
+
+</body>
+</html>

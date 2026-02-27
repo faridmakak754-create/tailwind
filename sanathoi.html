@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div id="instruction" class="sticky top-10 mx-5">
+    <!-- <h1 class="text-orange-300 animate-pulse rounded-lg p-2 anim bg-red-500 sticky top-10 text-center text-lg font-serif" ></h1> -->
+        </div>
+    <section id="unison" class=" ">
+
+     <!-- <div class="bg-pink-500 px-5 max-w-80 mx-auto flex flex-col space-y-7 mt-30 py-6 rounded-lg">
+        <h1 class="text-white">Who is the newly elected C.M of Manipur?</h1>
+        <div class="flex gap-3 justify-center">
+            <button onclick="Quiz('a')" class="text-white h-10 w-10 bg-orange-600 rounded-full"> A</button>
+            <button onclick="Quiz('b')" class="text-white h-10 w-10 bg-orange-600 rounded-full"> B</button>
+            <button onclick="Quiz('c')" class="text-white h-10 w-10 bg-orange-600 rounded-full"> C</button>
+            <button onclick="Quiz('d')" class="text-white h-10 w-10 bg-orange-600 rounded-full"> D</button>
+        </div>
+    </div >
+
+    <div class=" justify-center max-w-80 mx-auto flex gap-3  space-y-7 mt-3 ">
+    <h1 id="popUp" class="h-10 text-red-700 w-10 flex justify-center items-center bg-orange-600 rounded-lg"></h1>
+    <h1 id="sec" class=" text-red-700 flex justify-center items-center h-10 w-10 bg-orange-600 rounded-lg"></h1>
+    <h1 id="third" class="text-[#eabc3a] h-10 w-10 flex justify-center items-center bg-orange-600 rounded-lg"></h1>
+    <h1 id="forth" class=" text-red-700 h-10 w-10 flex justify-center items-center bg-yellow-600 rounded-lg"></h1>
+    </div>
+      -->
+    </section>
+
+    </div >
+    
+   <script>
+
+    const options = [
+        {
+            Question:"🎯 What is the state-bird of Manipur?",
+
+            a:"Nongin",
+            b:"Swamp",
+            c:"Parrot",
+            d:"Mynah",
+            option:["a"]
+        },
+        {
+            Question:"🎯 What is the state-flower of Manipur?",
+            a:"Lotus",
+            b:"Shirui Lily",
+            c:"Sunflower",
+            d:"Turnip",
+            option:["a"]
+        },
+        {
+            Question:" ❓ Where is Sangai found?",
+            a:"Zoo",
+            b:"Keibul Lamjao",
+            c:"Iriosenba",
+            d:"Senctuary",
+            option:["b"]
+        },
+        {
+            Question:"📚 Where is the fire-place of Manipur located?",
+            a:"Andro",
+            b:"Kakching",
+            c:"Ukhrul",
+            d:"CCpur",
+            option:["a"]
+        },
+        {
+            Question:"🧠 Name the freshwater Lake of northeastern India?",
+            a:"Loktak",
+            b:"Ithai",
+            c:"Nambul",
+            d:"Takmu",
+            option:["a"]
+        },
+                {
+            Question: "🧠 What is the capital of India?",
+            a: "Mumbai",
+            b: "Kolkata",
+            c: "New Delhi",
+            d: "Chennai",
+            option: ["c"]
+        },
+        {
+            Question: "🌍 Which planet is known as the Red Planet?",
+            a: "Earth",
+            b: "Mars",
+            c: "Jupiter",
+            d: "Venus",
+            option: ["b"]
+        },
+        {
+            Question: "🐅 What is the national animal of India?",
+            a: "Lion",
+            b: "Elephant",
+            c: "Tiger",
+            d: "Leopard",
+            option: ["c"]
+        },
+
+            {
+        Question: "🧠 What is the largest planet in our solar system?",
+        a: "Earth",
+        b: "Mars",
+        c: "Jupiter",
+        d: "Saturn",
+        option: ["c"]
+    },
+    {
+        Question: "🌞 Which gas do plants absorb from the atmosphere?",
+        a: "Oxygen",
+        b: "Carbon Dioxide",
+        c: "Nitrogen",
+        d: "Hydrogen",
+        option: ["b"]
+    },
+    {
+        Question: "🗺 Which country is home to the Great Wall?",
+        a: "India",
+        b: "Japan",
+        c: "China",
+        d: "Korea",
+        option: ["c"]
+    },
+    {
+        Question: "💻 Which language is used to add interactivity to a website?",
+        a: "HTML",
+        b: "CSS",
+        c: "JavaScript",
+        d: "Python",
+        option: ["c"]
+    },
+    {
+        Question: "🏔 Which is the highest mountain in the world?",
+        a: "K2",
+        b: "Mount Everest",
+        c: "Kangchenjunga",
+        d: "Lhotse",
+        option: ["b"]
+    }
+    ]
+
+
+     let count = 0;
+    const unison = document.getElementById("unison");
+    const instruction = document.getElementById("instruction");
+  
+
+    for (i=0;i<options.length;i++){
+        unison.innerHTML += `
+            <div class=" shadow-lg bg-orange-300 px-5 max-w-120 mb-20 mx-auto flex flex-col space-y-7 mt-30 py-6 rounded-lg">
+        <h1 class=" font-bold text-center  text-white"> ${options[i].Question}</h1>
+        <div class="flex gap-3 justify-center max-lg:flex-col">
+            <button onclick="Quiz(${i}, 'a')" class="text-white hover:bg-blue-800 active:bg-gray-400 px-3 max-w-25 mx-auto py-1  bg-pink-500 rounded-lg">  A: <br> ${options[i].a}</button>
+            <button onclick="Quiz(${i}, 'b')" class="text-white hover:bg-blue-800 active:bg-gray-400 px-3 max-w-25 mx-auto  py-1  bg-pink-500 rounded-lg"> B: <br>  ${options[i].b}</button>
+            <button onclick="Quiz(${i}, 'c')" class="text-white hover:bg-blue-800 active:bg-gray-400 px-3 max-w-35 mx-auto  py-1  bg-pink-500 rounded-lg">  C: <br>  ${options[i].c}</button>
+            <button onclick="Quiz(${i}, 'd')" class="text-white hover:bg-blue-800 active:bg-gray-400 px-3 max-w-25 mx-auto  py-1  bg-pink-500 rounded-lg">  D:<br>  ${options[i].d}</button>
+             
+            
+        </div>
+        
+
+
+      
+
+        <div class=" bg-blue-800 justify-center max-w-80 mx-auto flex gap-3  space-y-7 mt-3 ">
+ <h1 id="opt-${i}-a"   class="h-10 text-red-700 w-10 flex justify-center items-center bg-orange-600 rounded-lg"></h1>
+ <h1 id="opt-${i}-b" class=" text-red-700 flex justify-center items-center h-10 w-10 bg-orange-600 rounded-lg"></h1>
+ <h1 id="opt-${i}-c" class="text-[#eabc3a] h-10 w-10 flex justify-center items-center bg-orange-600 rounded-lg"></h1>
+ <h1 id="opt-${i}-d" class=" text-red-700 h-10 w-10 flex justify-center items-center bg-orange-600 rounded-lg"></h1>
+ </div>
+
+        `;
+       
+}
+  
+                function Quiz(index, clicked){
+
+            
+            const right = options[index].option[0];
+
+         const letters = ['a','b','c','d'];
+
+        letters.forEach(letter => {
+
+        const box = document.getElementById(`opt-${index}-${letter}`);
+
+        if(letter === right){
+
+            box.innerHTML = `<i class="fa-solid fa-check text-green-500"></i>`;
+
+        }else{
+
+            box.innerHTML = `<i class="fa-solid fa-x text-gray-500"></i>`;
+
+        }
+
+    });
+  count ++;
+
+
+      if(count >= options.length){
+
+               document.getElementById("instruction").innerHTML = `<h1 class="text-orange-300 animate-pulse rounded-lg p-2 anim bg-red-500  text-center text-lg font-serif" >
+                        Quiz already completed. Thank you!
+                            </h1>`;
+                    
+                        //console.log("Quiz already completed. Thank you!");
+                        alert(" ⚠️Oops! You're crossing the limits!");
+                        
+                        return;
+                    }
+
+
+
+}
+
+
+            
+
+
+            
+            
+
+
+            // const correct = (option === right);
+            
+            // function OnHtml(choose){
+                
+            //     if(choose == correct)
+
+            // }
+        
+
+         </script>
+</body>
+</html>

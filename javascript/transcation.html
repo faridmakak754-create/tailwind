@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body class="bg-gray-50">
+
+    <h1 class="text-center pt-5 text-2xl">Summary </h1>
+    <!-- Summary Details -->
+    <section class="flex justify-between my-5 ">
+        <div class="bg-slate-200 flex justify-between px-5 h-40  py-10  w-[90%] mx-auto shadow-sm rounded-md">
+            <div>
+                <p class="text-xl ">Balance</p>
+                <p class="text-xl ">&#8377 <span id="balance">00</span> </p>
+            </div>
+
+            <div>
+                <p class="text-green-500 text-xl font-semibold">Credit</p>
+                <p class="text-green-500 text-xl font-semibold">&#8377<span id="credit">00</span></p>
+            </div>
+            <div>
+                <p class="text-red-500 text-xl font-semibold">Debit</p>
+                <p class="text-red-500 text-xl font-semibold">&#8377 <span id="debit">00</span></p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Form -->
+
+    <form onsubmit="OnSubmit(event)" class="grid mx-auto gap-2  max-w-150 bg-gray-300 p-5 shadow-sm rounded-md">
+        <label>Amount:</label>
+        <input type="text" placeholder="Amount" name="amount" required
+            class="h-10 bg-white px-5 rounded-md outline-none">
+
+        <label>Remark:</label>
+        <input type="text" placeholder="Remark" name="remark" required
+            class="h-10 bg-white px-5 rounded-md outline-none">
+
+        <div class="flex gap-4">
+            <label for="">Credit</label>
+            <input type="radio" name="transaction" value="credit">
+
+            <label for="">Debit</label>
+            <input type="radio" name="transaction" value="debit">
+        </div>
+
+        <button type="submit" class="bg-slate-400 py-1 w-40 mx-auto">Submit</button>
+    </form>
+
+    <!-- History Card -->
+    <h1 class="text-2xl text-center mt-10">Transaction History</h1>
+
+    <div class="w-full  p-6">
+        <div class="bg-white shadow-lg rounded-sm w-full overflow-x-auto">
+
+
+            <table class="w-full border-collapse ">
+                <thead class="bg-slate-300  ">
+                    <tr>
+                        <th class="px-6 py-4">Remark</th>
+                        <th class="px-6 py-4">Amount</th>
+                        <th class="px-6 py-4">Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="transactionHistory"
+                    class="bg-slate-200 divide-y divide-gray-400 text-center text-xl text-slate-600">
+
+                    <tr id="noData">
+                        <td colspan="3" class="py-5">
+                            No Transaction Yet
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+
+    <script>
+        const transactions = [
+            { amount: 20, remark: "From Alex", transaction: "credit" },
+            { amount: 50, remark: "Transfer to John", transaction: "debit" },
+            { amount: 10, remark: "Gift", transaction: "credit" },
+            { amount: 60, remark: "Groceries", transaction: "debit" },
+            { amount: 100, remark: "Salary", transaction: "credit" },
+            { amount: 30, remark: "Electricity Bill", transaction: "debit" },
+            { amount: 40, remark: "From Sam", transaction: "credit" },
+        ];
+
+        const transactionHistory = document.getElementById("transactionHistory");
+
+        let summary = { credit: 0, debit: 0 };
+        let balance = 0;
+
+        function findTotals() {
+            summary = transactions.reduce(
+                (acc, curr) => {
+                    if (curr.transaction === "credit") {
+                        acc.credit += curr.amount;
+                    } else {
+                        acc.debit += curr.amount;
+                    }
+                    return acc;
+                },
+                { credit: 0, debit: 0 }
+            );
+
+            balance = summary.credit - summary.debit;
+        }
+
+        function updateStates() {
+            document.getElementById("credit").innerText = summary.credit;
+            document.getElementById("debit").innerText = summary.debit;
+            document.getElementById("balance").innerText = balance;
+        }
+
+        function renderHistory() {
+            transactionHistory.innerHTML = "";
+
+            if (transactions.length === 0) {
+                transactionHistory.innerHTML = `
+                <tr>
+                    <td colspan="3" class="py-5">No Transaction Yet</td>
+                </tr>`;
+                return;
+            }
+
+            for (let i = 0; i < transactions.length; i++) {
+                transactionHistory.innerHTML += `
+                <tr>
+                    <td class="px-6 py-4">${transactions[i].remark}</td>
+                    <td class="px-6 py-4 ${transactions[i].transaction === "credit" ? "text-green-500" : "text-red-500"}">
+                        ₹ ${transactions[i].amount}
+                    </td>
+                    <td class="px-6 py-4">
+                        <button onclick="removeHistory(${i})"
+                          class="text-white bg-red-500 h-8 w-20 rounded-md">
+                          Delete
+                        </button>
+                    </td>
+                </tr>
+            `;
+            }
+        }
+
+        function removeHistory(index) {
+            transactions.splice(index, 1);
+            refreshUI();
+        }
+
+        function refreshUI() {
+            findTotals();
+            updateStates();
+            renderHistory();
+        }
+
+        function OnSubmit(e) {
+            e.preventDefault();
+            const formData = e.target;
+
+            transactions.unshift({
+                amount: Number(formData.amount.value),
+                remark: formData.remark.value,
+                transaction: formData.transaction.value
+            });
+
+            formData.reset();
+            refreshUI();
+        }
+
+        // Initial load
+        refreshUI();
+    </script>
+
+
+
+</body>
+
+</html>
